@@ -1,0 +1,37 @@
+/* Extending the orginal class from Bootstrap */
+.navbar {
+  border-bottom: 1px solid var(--brand-color);
+  background-color: var(--black);
+  font-family: "Gobold Thin", "Quicksand", Calibri, "Trebuchet MS", sans-serif,
+    cursive;
+}
+
+.nav-link {
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.nav-link:after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  background-color: tomato;
+  width: 0;
+  left: 50%;
+  bottom: 0;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  -webkit-transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
+  transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
+}
+
+.nav-link:hover,
+.navbar-nav .active {
+  color: var(--brand-color) !important;
+  cursor: pointer;
+}
+
+.navbar-nav .nav-link {
+  text-align: center;
+}

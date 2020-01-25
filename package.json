@@ -4,8 +4,23 @@
   "private": true,
   "dependencies": {
     "@devloco/react-scripts-wptheme": "3.3.0-wp.11",
+    "@fortawesome/fontawesome-svg-core": "^1.2.26",
+    "@fortawesome/free-brands-svg-icons": "^5.12.0",
+    "@fortawesome/free-regular-svg-icons": "^5.12.0",
+    "@fortawesome/free-solid-svg-icons": "^5.12.0",
+    "@fortawesome/react-fontawesome": "^0.1.8",
+    "axios": "^0.19.2",
+    "bootstrap": "^4.4.1",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react-bootstrap": "^1.0.0-beta.16",
+    "react-dom": "^16.12.0",
+    "react-epic-spinners": "^0.4.1",
+    "react-instafeed": "^1.0.0",
+    "react-instagram-embed": "^1.5.0",
+    "react-router": "^5.1.2",
+    "react-router-bootstrap": "^0.25.0",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.3.0"
   },
   "scripts": {
     "crabuild": "react-scripts build",
@@ -31,5 +46,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "homepage": "/public_html/wp-content/themes/stadium8",
+  "browserLaunchTo": "http://localhost/public_html/",
+  "devDependencies": {}
 }

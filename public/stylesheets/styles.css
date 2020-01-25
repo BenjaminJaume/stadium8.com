@@ -1,0 +1,219 @@
+:root {
+  /* Flat UI Palette v1 */
+  --midnight-blue: #2c3e50;
+  --wet-asphalt: #34495e;
+  --dracula-orchid: #2d3436;
+  --black-pearl: #1e272e;
+  --good-night: #485460;
+  --silver: #bdc3c7;
+  --clouds: #ecf0f1;
+  --concrete: #95a5a6;
+  --belize-hole: #2980b9;
+  --blue-marina: #12cbc4;
+  --peter-river: #3498db;
+  --electron-blue: #0984e3;
+  --merchant-marine-blue: #0652dd;
+  --emerald: #2ecc71;
+  --emerald-link: rgba(46, 204, 113, 0.7);
+  --alizarin: #e74c3c;
+  --red-pigment: #ea2027;
+  --carrot: #e67e22;
+  --sun-flower: #f1c40f;
+  --sun-flower-link: rgba(241, 196, 15, 0.7);
+  --amethyst: #9b59b6;
+  --indigo: #3f00ff;
+
+  --linkedin-color: #0077b5;
+  --github-color: #24292e;
+  --facebook-color: #4267b2;
+  --whatsapp-color: #00e676;
+
+  /* Other random colors */
+  --black: #2a2a2e;
+  --brand-color: #eeff05;
+  --brand-color-hover: rgba(238, 255, 5, 0.7);
+}
+
+@font-face {
+  font-family: "Gobold";
+  src: url("../fonts/gobold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Gobold Thin";
+  src: url("../fonts/gobol-thin.woff2") format("woff2");
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Gobold Thin", "Quicksand", Calibri, "Trebuchet MS", sans-serif,
+    cursive;
+  margin-top: 77px;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Extending the orginal class from Bootstrap */
+.btn:hover {
+  cursor: pointer;
+}
+
+/* Extending the orginal classes from Bootstrap */
+.btn-outline-success {
+  color: var(--emerald);
+  border-color: var(--emerald);
+}
+
+.btn-outline-success:hover {
+  background-color: var(--emerald);
+  border-color: var(--emerald);
+}
+.btn-outline-success:not(:disabled):not(.disabled).active,
+.btn-outline-success:not(:disabled):not(.disabled):active,
+.show > .btn-outline-success.dropdown-toggle {
+  background-color: var(--emerald);
+  border-color: var(--emerald);
+}
+
+.btn-success {
+  background-color: var(--emerald);
+  border-color: var(--emerald);
+}
+
+.btn-success.disabled,
+.btn-success:disabled {
+  background-color: var(--emerald);
+  border-color: var(--emerald);
+}
+
+.btn {
+  border-radius: 40px;
+}
+
+.card-deck {
+  justify-content: space-evenly;
+}
+
+.card-deck .card {
+  margin: 0 0 1rem;
+}
+
+.card-body {
+  padding: 1rem 0.5rem;
+  background-color: var(--not-black);
+}
+
+/* Text color classes */
+.text-red-pigment {
+  color: var(--red-pigment);
+}
+
+.text-emerald {
+  color: var(--emerald);
+}
+
+.text-sun-flower {
+  color: var(--sun-flower);
+}
+
+.text-peter-river {
+  color: var(--peter-river);
+}
+
+.text-good-night {
+  color: var(--good-night);
+}
+
+.text-belize-hole {
+  color: var(--belize-hole);
+}
+
+.text-electron-blue {
+  color: var(--electron-blue);
+}
+
+/* Link color classes */
+.link-sun-flower {
+  color: var(--sun-flower);
+  text-decoration: underline;
+}
+
+.link-sun-flower:hover {
+  color: var(--sun-flower-link);
+  cursor: pointer;
+}
+
+.link-emerald {
+  color: var(--emerald);
+  text-decoration: underline;
+}
+
+.link-emerald:hover {
+  color: var(--emerald-link);
+  cursor: pointer;
+}
+
+.divider {
+  margin: 3rem 0;
+  background-color: white;
+  width: 50vw;
+}
+
+.brand-icons-contact a {
+  font-size: 3em;
+  text-decoration: none;
+  /* Do not replace it with text-white */
+  color: white;
+}
+
+.brand-icons-contact .whatsapp-icon:hover {
+  background-color: white;
+}
+
+.brand-icons-contact a:hover {
+  text-decoration: none;
+  background-color: white;
+  border-radius: 5px;
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+/* @media (max-width: 575px) {
+} */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+}
+
+/* Column management */
+/* Small devices (landscape phones) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+}
+
+/* Column management */
+/* Medium devices (tablets) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .download-button {
+    margin: 0;
+  }
+}
+
+/* Column management */
+/* Large devices (desktops) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+}

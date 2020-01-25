@@ -1,0 +1,132 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+/* Extending the orginal class from Bootstrap */
+.navbar {
+  border-bottom: 1px solid var(--brand-color);
+  background-color: var(--black);
+  font-family: "Gobold Thin", "Quicksand", Calibri, "Trebuchet MS", sans-serif,
+    cursive;
+}
+
+.nav-link {
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.nav-link:after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  background-color: tomato;
+  width: 0;
+  left: 50%;
+  bottom: 0;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  -webkit-transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
+  transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
+}
+
+.nav-link:hover,
+.navbar-nav .active {
+  color: var(--brand-color) !important;
+  cursor: pointer;
+}
+
+.navbar-nav .nav-link {
+  text-align: center;
+}
+
+.icon-portfolio {
+  margin: 5px;
+  font-size: 0.75rem;
+}
+
+.icon-portfolio img {
+  width: 25px;
+  height: 25px;
+}
+
+.loading-text {
+  color: white;
+}
+
+.link-contact-me {
+  color: var(--sun-flower);
+  text-decoration: underline;
+}
+
+.link-contact-me:hover {
+  color: var(--sun-flower);
+  opacity: 0.7;
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575px) {
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  .icon-portfolio {
+    font-size: 1rem;
+  }
+}
+
+/* Column management */
+/* Small devices (landscape phones) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .card-deck .card {
+    -ms-flex: 0 0 48.7%;
+    flex: 0 0 48.7%;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+}
+
+/* Column management */
+/* Medium devices (tablets) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .card-deck .card {
+    -ms-flex: 0 0 32%;
+    flex: 0 0 32%;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .card-deck .card {
+    -ms-flex: 0 0 24%;
+    flex: 0 0 24%;
+  }
+}
+
+/* Column management */
+/* Large devices (desktops) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+}
+
+.container-page404 {
+  height: calc(100vh - 77px);
+}
+
+
+/*# sourceMappingURL=/index.css.map */
