@@ -23,7 +23,7 @@
   --amethyst: #9b59b6;
   --indigo: #3f00ff;
 
-  --linkedin-color: #0077b5;
+  --instagram-color: #e1306c;
   --github-color: #24292e;
   --facebook-color: #4267b2;
   --whatsapp-color: #00e676;
@@ -31,7 +31,7 @@
   /* Other random colors */
   --black: #2a2a2e;
   --brand-color: #eeff05;
-  --brand-color-hover: rgba(238, 255, 5, 0.7);
+  --brand-link: rgba(238, 255, 5, 0.7);
 }
 
 @font-face {
@@ -42,6 +42,11 @@
 @font-face {
   font-family: "Gobold Thin";
   src: url("../fonts/gobol-thin.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Gobold Cuts";
+  src: url("../fonts/gobold-cuts.woff2") format("woff2");
 }
 
 html {
@@ -57,127 +62,51 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.font-brand {
+  font-family: "Gobold Thin";
+}
+
+.font-brand-bold {
+  font-family: "Gobold";
+}
+
+.font-brand-cuts {
+  font-family: "Gobold Cuts";
+}
+
+.font-brand-2 {
+  font-family: "Quicksand";
+}
+
 /* Extending the orginal class from Bootstrap */
 .btn:hover {
   cursor: pointer;
-}
-
-/* Extending the orginal classes from Bootstrap */
-.btn-outline-success {
-  color: var(--emerald);
-  border-color: var(--emerald);
-}
-
-.btn-outline-success:hover {
-  background-color: var(--emerald);
-  border-color: var(--emerald);
-}
-.btn-outline-success:not(:disabled):not(.disabled).active,
-.btn-outline-success:not(:disabled):not(.disabled):active,
-.show > .btn-outline-success.dropdown-toggle {
-  background-color: var(--emerald);
-  border-color: var(--emerald);
-}
-
-.btn-success {
-  background-color: var(--emerald);
-  border-color: var(--emerald);
-}
-
-.btn-success.disabled,
-.btn-success:disabled {
-  background-color: var(--emerald);
-  border-color: var(--emerald);
 }
 
 .btn {
   border-radius: 40px;
 }
 
-.card-deck {
-  justify-content: space-evenly;
-}
-
-.card-deck .card {
-  margin: 0 0 1rem;
-}
-
-.card-body {
-  padding: 1rem 0.5rem;
-  background-color: var(--not-black);
-}
-
 /* Text color classes */
-.text-red-pigment {
-  color: var(--red-pigment);
-}
-
-.text-emerald {
-  color: var(--emerald);
-}
-
-.text-sun-flower {
-  color: var(--sun-flower);
-}
-
-.text-peter-river {
-  color: var(--peter-river);
-}
-
-.text-good-night {
-  color: var(--good-night);
-}
-
-.text-belize-hole {
-  color: var(--belize-hole);
-}
-
-.text-electron-blue {
-  color: var(--electron-blue);
+.text-brand {
+  color: var(--brand-color);
 }
 
 /* Link color classes */
-.link-sun-flower {
-  color: var(--sun-flower);
+.link-brand {
+  color: var(--brand-color);
   text-decoration: underline;
 }
 
-.link-sun-flower:hover {
-  color: var(--sun-flower-link);
+.link-brand:hover {
+  color: var(--brand-link);
   cursor: pointer;
 }
 
-.link-emerald {
-  color: var(--emerald);
-  text-decoration: underline;
-}
-
-.link-emerald:hover {
-  color: var(--emerald-link);
-  cursor: pointer;
-}
-
-.divider {
+.diviseur {
   margin: 3rem 0;
   background-color: white;
   width: 50vw;
-}
-
-.brand-icons-contact a {
-  font-size: 3em;
-  text-decoration: none;
-  /* Do not replace it with text-white */
-  color: white;
-}
-
-.brand-icons-contact .whatsapp-icon:hover {
-  background-color: white;
-}
-
-.brand-icons-contact a:hover {
-  text-decoration: none;
-  background-color: white;
-  border-radius: 5px;
 }
 
 /* Extra small devices (portrait phones, less than 576px) */
@@ -204,9 +133,6 @@ body {
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-  .download-button {
-    margin: 0;
-  }
 }
 
 /* Column management */

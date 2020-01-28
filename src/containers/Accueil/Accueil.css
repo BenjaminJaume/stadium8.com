@@ -1,7 +1,10 @@
-.img-accueil {
-  background: url("./images/background-accueil.png") no-repeat center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+.accueil {
+  background-color: var(--black);
+  max-width: 2000px;
+  min-height: calc(100vh - 77px);
+}
+
+.entete-accueil {
+  color: var(--brand-color);
+  font-size: 1.75rem;
 }

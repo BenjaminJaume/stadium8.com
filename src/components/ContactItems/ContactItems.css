@@ -1,0 +1,33 @@
+.whatsapp-icon {
+  font-size: 3em;
+  text-decoration: none;
+}
+
+.whatsapp-icon:hover {
+  text-decoration: none;
+  border-radius: 5px;
+  color: var(--whatsapp-color);
+  cursor: pointer;
+}
+
+.whatsapp-icon:focus {
+  /* border-color: #ccc; */
+  outline: 0;
+}
+
+.clipboard-icon:hover {
+  cursor: pointer;
+  color: var(--silver);
+}
+
+.instagram-icon:hover {
+  color: var(--instagram-color);
+}
+
+.facebook-icon:hover {
+  color: var(--facebook-color);
+}
+
+.mail-icon:hover {
+  color: var(--sun-flower);
+}

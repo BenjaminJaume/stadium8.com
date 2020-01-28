@@ -13,12 +13,6 @@ const Footer = ({ phoneNumber }) => {
   return (
     <>
       <footer id="footer" className="bg-light pt-5 pb-1">
-        <p id="message-bottom">
-          Created with{" "}
-          <FontAwesomeIcon icon={faHeart} className="text-red-pigment" /> by
-          Benjamin Jaume
-        </p>
-
         <div className="mb-3">
           <ContactItems phoneNumber={phoneNumber} />
         </div>
@@ -31,7 +25,7 @@ const Footer = ({ phoneNumber }) => {
             href="#"
             role="button"
           >
-            TOP
+            Revenir
             <FontAwesomeIcon icon={faArrowAltCircleUp} className="ml-2" />
           </a>
           {/* eslint-enable */}
@@ -39,7 +33,7 @@ const Footer = ({ phoneNumber }) => {
 
         <p className="text-muted">
           <FontAwesomeIcon icon={faCopyright} className="mr-1" />
-          Benjamin Jaume
+          STADIUM8 - Tous droits réservés
         </p>
       </footer>
     </>

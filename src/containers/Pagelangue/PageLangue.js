@@ -7,44 +7,60 @@ const PageLangue = () => {
     <div className="container page-langue pt-5">
       <div className="row">
         <div className="col-12 text-center mb-5">
-          <img src="./images/logo-black-xl.png" className="img-fluid" alt="" />
+          <img
+            src="./images/logo-black-full.png"
+            className="main-logo img-fluid"
+            alt=""
+          />
         </div>
       </div>
       <div className="row">
-        <div className="col-12 col-lg-4 text-center mb-5 mb-lg-0">
-          <LinkContainer to="/:langue" className="px-3 py-2" exact>
-            <button className="btn btn-warning">
+        <div className="col-12 col-lg-5 text-center mb-3 mb-lg-0">
+          <LinkContainer
+            to="/:langue"
+            className="btn btn-warning px-3 py-2"
+            exact
+          >
+            <span>
               <img
                 src="./images/pays/costa-rica.png"
                 className="img-fluid mr-2"
                 alt="CR"
               />
               Español
-            </button>
+            </span>
           </LinkContainer>
         </div>
-        <div className="col-12 col-lg-4 text-center mb-5 mb-lg-0">
-          <LinkContainer to="/:langue" className="px-3 py-2" exact>
-            <button className="btn btn-danger">
+        <div className="col-12 col-lg-2 text-center mb-3 mb-lg-0">
+          <LinkContainer
+            to="/:langue"
+            className="btn btn-danger px-3 py-2"
+            exact
+          >
+            <span>
               <img
                 src="./images/pays/usa.png"
                 className="img-fluid mr-2"
                 alt="US"
               />
               English
-            </button>
+            </span>
           </LinkContainer>
         </div>
-        <div className="col-12 col-lg-4 text-center mb-5 mb-lg-0">
-          <LinkContainer to="/:langue" className="px-3 py-2" exact>
-            <button className="btn btn-primary">
+        <div className="col-12 col-lg-5 text-center mb-3 mb-lg-0">
+          <LinkContainer
+            to="/:langue"
+            className="btn btn-primary px-3 py-2"
+            exact
+          >
+            <span>
               <img
                 src="./images/pays/france.png"
                 className="img-fluid mr-2"
                 alt="FR"
               />
               Français
-            </button>
+            </span>
           </LinkContainer>
         </div>
       </div>

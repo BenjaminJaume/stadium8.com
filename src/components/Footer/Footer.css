@@ -1,25 +1,37 @@
-.icon-portfolio {
-  margin: 5px;
-  font-size: 0.75rem;
+footer {
+  color: var(--silver);
+  text-align: center;
 }
 
-.icon-portfolio img {
-  width: 25px;
-  height: 25px;
+footer a {
+  font-size: 3em;
+  text-decoration: none;
+  color: var(--silver);
 }
 
-.loading-text {
-  color: white;
+footer a:hover {
+  text-decoration: none;
 }
 
-.link-contact-me {
-  color: var(--sun-flower);
-  text-decoration: underline;
+#message-bottom:hover {
+  -webkit-animation: heartBeat 1s;
+  animation: heartBeat 1s;
+  cursor: default;
 }
 
-.link-contact-me:hover {
-  color: var(--sun-flower);
-  opacity: 0.7;
+.popover-footer {
+  font-size: 3em;
+  text-decoration: none;
+}
+
+.popover-footer:hover {
+  text-decoration: none;
+  color: var(--whatsapp-color);
+  cursor: pointer;
+}
+
+.popover-footer:focus {
+  outline: 0;
 }
 
 /* Extra small devices (portrait phones, less than 576px) */
@@ -28,18 +40,11 @@
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
-  .icon-portfolio {
-    font-size: 1rem;
-  }
 }
 
 /* Column management */
 /* Small devices (landscape phones) */
 @media (min-width: 576px) and (max-width: 767.98px) {
-  .card-deck .card {
-    -ms-flex: 0 0 48.7%;
-    flex: 0 0 48.7%;
-  }
 }
 
 /* Medium devices (tablets, 768px and up) */
@@ -49,18 +54,10 @@
 /* Column management */
 /* Medium devices (tablets) */
 @media (min-width: 768px) and (max-width: 991.98px) {
-  .card-deck .card {
-    -ms-flex: 0 0 32%;
-    flex: 0 0 32%;
-  }
 }
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-  .card-deck .card {
-    -ms-flex: 0 0 24%;
-    flex: 0 0 24%;
-  }
 }
 
 /* Column management */
