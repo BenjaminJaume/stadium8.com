@@ -24,7 +24,6 @@
   --indigo: #3f00ff;
 
   --instagram-color: #e1306c;
-  --github-color: #24292e;
   --facebook-color: #4267b2;
   --whatsapp-color: #00e676;
 
@@ -32,6 +31,8 @@
   --black: #2a2a2e;
   --brand-color: #eeff05;
   --brand-link: rgba(238, 255, 5, 0.7);
+
+  --navbar-height: 77px;
 }
 
 @font-face {
@@ -56,7 +57,7 @@ html {
 body {
   font-family: "Gobold Thin", "Quicksand", Calibri, "Trebuchet MS", sans-serif,
     cursive;
-  margin-top: 77px;
+  margin-top: var(--navbar-height);
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -107,6 +108,10 @@ body {
   margin: 3rem 0;
   background-color: white;
   width: 50vw;
+}
+
+.cone {
+  max-height: 200px;
 }
 
 /* Extra small devices (portrait phones, less than 576px) */

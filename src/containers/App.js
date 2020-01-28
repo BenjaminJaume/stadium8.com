@@ -22,7 +22,6 @@ export default class App extends Component {
     super(props);
     this.state = {
       langue: ""
-      // langue: this.props.match.params.langue || ""
     };
   }
 

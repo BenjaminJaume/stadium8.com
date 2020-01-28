@@ -1,7 +1,6 @@
 .accueil {
   background-color: var(--black);
-  max-width: 2000px;
-  min-height: calc(100vh - 77px);
+  min-height: calc(100vh - var(--navbar-height));
 }
 
 .entete-accueil {

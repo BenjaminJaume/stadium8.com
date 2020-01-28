@@ -50,5 +50,7 @@
   },
   "homepage": "/wp-content/themes/stadium8",
   "browserLaunchTo": "http://localhost/public_html/",
-  "devDependencies": {}
+  "devDependencies": {
+    "css-loader": "^3.4.2"
+  }
 }
