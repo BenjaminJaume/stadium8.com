@@ -11,7 +11,7 @@ const Page404 = props => {
       <div
         className="container-fluid container-page404 text-center py-5"
         style={{
-          background: `url("./images/background-page404.jpg") no-repeat center center`,
+          background: `url("./wp-content/themes/stadium8/images/background-page404.jpg") no-repeat center center`,
           backgroundSize: "cover",
           height: "calc(100vh - var(--navbar-height))"
         }}
@@ -26,7 +26,9 @@ const Page404 = props => {
                 </h1>
               </div>
               <div>
-                <p className="lead">Quelque chose ne tourne pas rond...</p>
+                <p className="lead">
+                  C'est un coup dur... mais ne perdez pas de vu votre objectif!
+                </p>
                 <Link to="/" className="btn btn-danger px-4">
                   <FontAwesomeIcon
                     icon={faArrowAltCircleLeft}

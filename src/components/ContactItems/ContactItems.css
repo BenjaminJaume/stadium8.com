@@ -1,16 +1,22 @@
-.whatsapp-icon {
+[class*="-brand-icon"] {
+  font-size: 3em;
+  text-decoration: none;
+  color: var(--silver);
+}
+
+.whatsapp-brand-icon {
   font-size: 3em;
   text-decoration: none;
 }
 
-.whatsapp-icon:hover {
+.whatsapp-brand-icon:hover {
   text-decoration: none;
   border-radius: 5px;
   color: var(--whatsapp-color);
   cursor: pointer;
 }
 
-.whatsapp-icon:focus {
+.whatsapp-brand-icon:focus {
   /* border-color: #ccc; */
   outline: 0;
 }
@@ -20,14 +26,14 @@
   color: var(--silver);
 }
 
-.instagram-icon:hover {
+.instagram-brand-icon:hover {
   color: var(--instagram-color);
 }
 
-.facebook-icon:hover {
+.facebook-brand-icon:hover {
   color: var(--facebook-color);
 }
 
-.mail-icon:hover {
+.mail-brand-icon:hover {
   color: var(--sun-flower);
 }

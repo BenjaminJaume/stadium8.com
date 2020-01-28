@@ -12,7 +12,7 @@ import {
 
 import "./Accueil.css";
 
-export default class Accueil extends Component {
+class Accueil extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -169,7 +169,7 @@ export default class Accueil extends Component {
               <span className="entete-accueil font-brand-bold">
                 <FontAwesomeIcon
                   icon={faFutbol}
-                  className="mr-2  align-middle"
+                  className="mr-2 align-baseline"
                 />
                 Football5
               </span>
@@ -181,7 +181,7 @@ export default class Accueil extends Component {
               <span className="entete-accueil font-brand-bold">
                 <FontAwesomeIcon
                   icon={faDumbbell}
-                  className="mr-2 align-middle"
+                  className="mr-2 align-baseline"
                 />
                 Gymnase
               </span>
@@ -196,7 +196,7 @@ export default class Accueil extends Component {
               <span className="entete-accueil font-brand-bold">
                 <FontAwesomeIcon
                   icon={faBasketballBall}
-                  className="mr-2 align-middle"
+                  className="mr-2 align-baseline"
                 />
                 Multisport
               </span>
@@ -209,7 +209,7 @@ export default class Accueil extends Component {
               <span className="entete-accueil font-brand-bold">
                 <FontAwesomeIcon
                   icon={faCalendarAlt}
-                  className="mr-2 align-middle"
+                  className="mr-2 align-baseline"
                 />
                 Évènements
               </span>
@@ -222,7 +222,7 @@ export default class Accueil extends Component {
               <span className="entete-accueil font-brand-bold">
                 <FontAwesomeIcon
                   icon={faHotTub}
-                  className="mr-2 align-middle"
+                  className="mr-2 align-baseline"
                 />
                 SPA
               </span>
@@ -237,3 +237,5 @@ export default class Accueil extends Component {
     );
   }
 }
+
+export default Accueil;

@@ -31,7 +31,7 @@ class ContactItems extends Component {
       <>
         <a
           href="https://urlgeni.us/instagram/m_yC"
-          className="instagram-icon px-1"
+          className="instagram-brand-icon px-1"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -40,14 +40,14 @@ class ContactItems extends Component {
 
         <a
           href="https://www.facebook.com/stadium8samara/"
-          className="facebook-icon px-1"
+          className="facebook-brand-icon px-1"
           target="_blank"
           rel="noopener noreferrer"
         >
           <FontAwesomeIcon icon={faFacebookSquare} />
         </a>
 
-        <span className="whatsapp-icon px-1">
+        <span className="whatsapp-brand-icon px-1">
           <OverlayTrigger
             trigger="click"
             placement="top"
@@ -99,7 +99,7 @@ class ContactItems extends Component {
 
         <a
           href="mailto:stadiumcr@gmail.com"
-          className="mail-icon px-1"
+          className="mail-brand-icon px-1"
           target="_blank"
           rel="noopener noreferrer"
         >
