@@ -32,7 +32,7 @@
   --brand-color: #eeff05;
   --brand-link: rgba(238, 255, 5, 0.7);
 
-  --navbar-height: 77px;
+  --navbar-height: 76px;
 }
 
 @font-face {
@@ -91,6 +91,10 @@ body {
 /* Text color classes */
 .text-brand {
   color: var(--brand-color);
+}
+
+.text-silver {
+  color: var(--silver);
 }
 
 /* Link color classes */

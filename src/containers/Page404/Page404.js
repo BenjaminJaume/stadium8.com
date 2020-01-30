@@ -11,9 +11,9 @@ const Page404 = props => {
       <div
         className="container-fluid container-page404 text-center py-5"
         style={{
-          background: `url("./wp-content/themes/stadium8/images/background-page404.jpg") no-repeat center center`,
-          backgroundSize: "cover",
-          height: "calc(100vh - var(--navbar-height))"
+          background: `url("./wp-content/themes/stadium8/images/background-page404.jpg") no-repeat center fixed`,
+          backgroundColor: "var(--black)",
+          backgroundSize: "cover"
         }}
       >
         <div className="row h-100 align-items-center">

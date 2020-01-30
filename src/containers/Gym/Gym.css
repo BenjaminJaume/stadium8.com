@@ -1,0 +1,4 @@
+.container-gym {
+  background-color: var(--black);
+  height: calc(100vh - 77px);
+}

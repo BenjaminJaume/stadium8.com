@@ -1,9 +1,0 @@
-.accueil {
-  background-color: var(--black);
-  min-height: calc(100vh - var(--navbar-height));
-}
-
-.entete-accueil {
-  color: var(--brand-color);
-  font-size: 1.75rem;
-}

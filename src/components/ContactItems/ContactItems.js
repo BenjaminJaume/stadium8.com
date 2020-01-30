@@ -30,7 +30,7 @@ class ContactItems extends Component {
     return (
       <>
         <a
-          href="https://urlgeni.us/instagram/m_yC"
+          href="https://urlgeni.us/instagram/2civ"
           className="instagram-brand-icon px-1"
           target="_blank"
           rel="noopener noreferrer"
@@ -39,7 +39,7 @@ class ContactItems extends Component {
         </a>
 
         <a
-          href="https://www.facebook.com/stadium8samara/"
+          href="https://urlgeni.us/facebook/YLfC"
           className="facebook-brand-icon px-1"
           target="_blank"
           rel="noopener noreferrer"

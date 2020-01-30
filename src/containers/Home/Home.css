@@ -1,0 +1,9 @@
+.container-home {
+  background-color: var(--black);
+  min-height: calc(100vh - var(--navbar-height));
+}
+
+.header-home {
+  color: var(--brand-color);
+  font-size: 1.75rem;
+}

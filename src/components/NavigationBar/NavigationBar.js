@@ -80,8 +80,8 @@ const NavigationBar = () => {
             </li>
             <li className="nav-item">
               <IndexLinkContainer
-                to="/gymnase"
-                href="/gymnase"
+                to="/gym"
+                href="/gym"
                 className="nav-link"
                 data-toggle="collapse"
                 data-target=".navbar-collapse.show"
@@ -114,8 +114,8 @@ const NavigationBar = () => {
             </li>
             <li className="nav-item">
               <IndexLinkContainer
-                to="/evenements"
-                href="/evenements"
+                to="/events"
+                href="/events"
                 className="nav-link"
                 data-toggle="collapse"
                 data-target=".navbar-collapse.show"

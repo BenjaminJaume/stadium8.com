@@ -3,7 +3,22 @@ footer {
   text-align: center;
 }
 
-footer a {
+/* #wave-footer {
+  cursor: pointer;
+  shape-rendering: crispEdges;
+  fill: url(#MyGradient);
+} */
+
+.wave-container {
+  position: relative;
+  background: var(--black);
+  color: var(--silver);
+  text-align: center;
+  overflow: hidden;
+}
+
+.wave-container > svg {
+  display: block;
 }
 
 footer a:hover {
