@@ -1,5 +1,4 @@
 import React from "react";
-import "./Contact.css";
 
 const Contact = props => {
   return (
@@ -8,7 +7,6 @@ const Contact = props => {
         <div className="col-12 col-lg-6 mx-auto">
           <div className="bg-light rounded text-center p-5">
             <h1 className="mb-4">Cette page est en construction</h1>
-
             <img
               src="./wp-content/themes/stadium8/images/construction.svg"
               alt="Cone"

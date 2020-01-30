@@ -34,15 +34,15 @@ const NavigationBar = () => {
           className="navbar-toggler"
           type="button"
           data-toggle="collapse"
-          data-target="#stadium8-navigationbar"
-          aria-controls="stadium8-navigationbar"
+          data-target="#navigation-bar"
+          aria-controls="navigation-bar"
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        <div className="collapse navbar-collapse" id="stadium8-navigationbar">
+        <div id="navigation-bar" className="collapse navbar-collapse">
           <ul className="navbar-nav ml-auto">
             <li className="nav-item">
               <IndexLinkContainer
