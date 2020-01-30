@@ -50,13 +50,18 @@
   src: url("../fonts/gobold-cuts.woff2") format("woff2");
 }
 
+@font-face {
+  font-family: "Gobold Light";
+  src: url("../fonts/gobold-light.woff2") format("woff2");
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: "Gobold Thin", "Quicksand", Calibri, "Trebuchet MS", sans-serif,
-    cursive;
+  font-family: "Gobold Light", "Gobold Thin", "Quicksand", Calibri,
+    "Trebuchet MS", sans-serif, cursive;
   margin-top: var(--navbar-height);
 
   -webkit-font-smoothing: antialiased;
@@ -77,6 +82,10 @@ body {
 
 .font-brand-2 {
   font-family: "Quicksand";
+}
+
+.font-brand-light {
+  font-family: "Gobold Light";
 }
 
 /* Extending the orginal class from Bootstrap */
@@ -116,6 +125,11 @@ body {
 
 .cone {
   max-height: 200px;
+}
+
+.opacity-75 {
+  opacity: 0.75;
+  filter: alpha(opacity=75);
 }
 
 /* Extra small devices (portrait phones, less than 576px) */

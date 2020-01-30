@@ -10,7 +10,7 @@ const Footer = ({ phoneNumber }) => {
     <>
       <footer id="footer" className="bg-light pb-1">
         <div className="wave-container">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 175">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 200">
             {/*
             For future usage
             <defs>

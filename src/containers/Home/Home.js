@@ -77,18 +77,14 @@ class Home extends Component {
     } = this.state;
 
     return (
-      <div
-        className="container-fluid container-home py-5 px-lg-5"
-        // /wp-content/themes/stadium8/
-      >
+      <div className="container-fluid container-home py-5 px-lg-5">
         <div className="row">
           <div className="col-12 text-center mb-3">
             <h3 className="text-white p-0 m-0">
               Bienvenue sur notre site officiel
             </h3>
             <img
-              // /wp-content/themes/stadium8
-              src="./images/logo-white-xl.png"
+              src="./wp-content/themes/stadium8/images/logo-white-xl.png"
               alt="STADIUM8"
               title="STADIUM8 - Polideportivo Samara"
               className="img-fluid"
@@ -96,9 +92,9 @@ class Home extends Component {
           </div>
         </div>
         <div
-          className="rounded py-3"
+          className="rounded py-3 border border-secondary"
           style={{
-            backgroundImage: `url("./images/background-features.jpg")`,
+            backgroundImage: `url("./wp-content/themes/stadium8/images/background-home-top.jpg")`,
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",
             backgroundColor: "var(--black)",
@@ -106,10 +102,10 @@ class Home extends Component {
           }}
         >
           <div className="row">
-            <div className="col-12 col-lg-6 text-white mb-5 mb-lg-0">
-              <div className="d-flex-column align-items-center text-center h-100">
+            <div className="col-12 col-lg-6 text-white mb-3 mb-lg-0">
+              <div className="d-flex flex-column justify-content-center text-center h-100">
                 <p className="text-brand">Citation du mois:</p>
-                <blockquote className="font-brand-bold font-italic text-center h3">
+                <blockquote className="font-brand-bold font-italic h3 mb-0">
                   {errorCitations ? (
                     <div>
                       "Si vous pensez que vous allez échouer, alors vous allez
@@ -159,12 +155,14 @@ class Home extends Component {
                         {post.modified.slice(8, 10)}/{post.modified.slice(5, 7)}
                         /{post.modified.slice(0, 4)} - {post.title.rendered}
                       </h3>
-                      <div
-                        className="font-brand-2 text-dark bg-light rounded mx-2 p-2"
-                        dangerouslySetInnerHTML={this.createMarkup(
-                          post.excerpt.rendered
-                        )}
-                      />
+                      <div className="opacity-75">
+                        <div
+                          className="font-brand-2 text-white bg-dark rounded border mx-2 p-2"
+                          dangerouslySetInnerHTML={this.createMarkup(
+                            post.excerpt.rendered
+                          )}
+                        />
+                      </div>
                     </div>
                   ))
                 )}
@@ -174,9 +172,9 @@ class Home extends Component {
         </div>
         <hr className="diviseur mx-auto" />
         <div
-          className="rounded p-3"
+          className="rounded p-3 border border-secondary"
           style={{
-            backgroundImage: `url("./images/background-home.jpg")`,
+            backgroundImage: `url("./wp-content/themes/stadium8/images/background-home-features.jpg")`,
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",
             backgroundColor: "var(--black)",
@@ -197,7 +195,7 @@ class Home extends Component {
                 />
                 Football5
               </span>
-              <p className="lead font-brand text-white mb-3">
+              <p className="lead font-brand-light text-white mb-3">
                 Catégorie de football qui se joue à 5 contre 5
               </p>
             </div>
@@ -209,7 +207,7 @@ class Home extends Component {
                 />
                 Gymnase
               </span>
-              <p className="lead font-brand text-white mb-3">
+              <p className="lead font-brand-light text-white mb-3">
                 Un batiement entier consacré aux Arts Martiaux, à la fitness &
                 au bodybuilding
               </p>
@@ -224,7 +222,7 @@ class Home extends Component {
                 />
                 Multisport
               </span>
-              <p className="lead font-brand text-white mb-3">
+              <p className="lead font-brand-light text-white mb-3">
                 Nous mettons à disposition un terrain à ciel ouvert, pour faire
                 du Basket, du Volleyball, du Handball, etc.
               </p>
@@ -237,7 +235,7 @@ class Home extends Component {
                 />
                 Évènements
               </span>
-              <p className="lead font-brand text-white mb-3">
+              <p className="lead font-brand-light text-white mb-3">
                 Vous avez la possibilité d'organiser des évènements privés en
                 réservant à l'avance
               </p>
@@ -250,7 +248,7 @@ class Home extends Component {
                 />
                 SPA
               </span>
-              <p className="lead font-brand text-white mb-0">
+              <p className="lead font-brand-light text-white mb-0">
                 Et enfin, le SPA est en accès libre & illimité pour tout abonné
                 ou détenteur d'un pass à la journée!
               </p>

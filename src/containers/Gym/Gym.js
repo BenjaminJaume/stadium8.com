@@ -6,7 +6,7 @@ const Gym = props => {
     <div
       className="container-fluid container-gym"
       style={{
-        background: `url("./wp-content/themes/stadium8/images/background-gymnase.jpg") no-repeat center fixed`,
+        background: `url("./wp-content/themes/stadium8/images/background-gym.jpg") no-repeat center fixed`,
         backgroundColor: "var(--black)",
         backgroundSize: "cover"
       }}

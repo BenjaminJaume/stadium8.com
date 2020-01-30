@@ -45676,15 +45676,15 @@ const NavigationBar = () => {
   }), "Football5"))), _react.default.createElement("li", {
     className: "nav-item"
   }, _react.default.createElement(_reactRouterBootstrap.IndexLinkContainer, {
-    to: "/gymnase",
-    href: "/gymnase",
+    to: "/gym",
+    href: "/gym",
     className: "nav-link",
     "data-toggle": "collapse",
     "data-target": ".navbar-collapse.show"
   }, _react.default.createElement("span", null, _react.default.createElement(_reactFontawesome.FontAwesomeIcon, {
     icon: _freeSolidSvgIcons.faDumbbell,
     className: "align-baseline mr-2"
-  }), "Gymnase"))), _react.default.createElement("li", {
+  }), "gym"))), _react.default.createElement("li", {
     className: "nav-item"
   }, _react.default.createElement(_reactRouterBootstrap.IndexLinkContainer, {
     to: "/multisport",
@@ -45781,7 +45781,7 @@ const Football5 = () => {
 
 var _default = Football5;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js"}],"containers/Gymnase/Gymnase.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js"}],"containers/gym/gym.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -45793,12 +45793,12 @@ var _react = _interopRequireDefault(require("react"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// import "./Gymnase.css";
-const Gymnase = () => {
-  return _react.default.createElement("div", null, "Page Gymnase");
+// import "./gym.css";
+const gym = () => {
+  return _react.default.createElement("div", null, "Page gym");
 };
 
-var _default = Gymnase;
+var _default = gym;
 exports.default = _default;
 },{"react":"../node_modules/react/index.js"}],"containers/Multisport/Multisport.js":[function(require,module,exports) {
 "use strict";
@@ -54801,7 +54801,7 @@ var _Acceuil = _interopRequireDefault(require("../containers/Accueil/Acceuil"));
 
 var _Football = _interopRequireDefault(require("../containers/Football5/Football5"));
 
-var _Gymnase = _interopRequireDefault(require("../containers/Gymnase/Gymnase"));
+var _gym = _interopRequireDefault(require("../containers/gym/gym"));
 
 var _Multisport = _interopRequireDefault(require("../containers/Multisport/Multisport"));
 
@@ -54825,9 +54825,9 @@ function App() {
     path: "/football5",
     component: _Football.default
   }, _react.default.createElement(_Football.default, null)), _react.default.createElement(_reactRouterDom.Route, {
-    path: "/gymnase",
-    component: _Gymnase.default
-  }, _react.default.createElement(_Gymnase.default, null)), _react.default.createElement(_reactRouterDom.Route, {
+    path: "/gym",
+    component: _gym.default
+  }, _react.default.createElement(_gym.default, null)), _react.default.createElement(_reactRouterDom.Route, {
     path: "/multisport",
     component: _Multisport.default
   }, _react.default.createElement(_Multisport.default, null)), _react.default.createElement(_reactRouterDom.Route, {
@@ -54856,7 +54856,7 @@ function App() {
 
 var _default = App;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","../components/NavigationBar/NavigationBar":"components/NavigationBar/NavigationBar.js","../containers/Accueil/Acceuil":"containers/Accueil/Acceuil.js","../containers/Football5/Football5":"containers/Football5/Football5.js","../containers/Gymnase/Gymnase":"containers/Gymnase/Gymnase.js","../containers/Multisport/Multisport":"containers/Multisport/Multisport.js","../containers/Evenements/Evenements":"containers/Evenements/Evenements.js","../containers/Spa/Spa":"containers/Spa/Spa.js","../containers/Contact/Contact":"containers/Contact/Contact.js","../containers/Portfolio/Portfolio":"containers/Portfolio/Portfolio.js","../containers/Postlist/Postlist":"containers/Postlist/Postlist.js","../containers/Page404/Page404":"containers/Page404/Page404.js"}],"index.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","../components/NavigationBar/NavigationBar":"components/NavigationBar/NavigationBar.js","../containers/Accueil/Acceuil":"containers/Accueil/Acceuil.js","../containers/Football5/Football5":"containers/Football5/Football5.js","../containers/gym/gym":"containers/gym/gym.js","../containers/Multisport/Multisport":"containers/Multisport/Multisport.js","../containers/Evenements/Evenements":"containers/Evenements/Evenements.js","../containers/Spa/Spa":"containers/Spa/Spa.js","../containers/Contact/Contact":"containers/Contact/Contact.js","../containers/Portfolio/Portfolio":"containers/Portfolio/Portfolio.js","../containers/Postlist/Postlist":"containers/Postlist/Postlist.js","../containers/Page404/Page404":"containers/Page404/Page404.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
