@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { HollowDotsSpinner } from "react-epic-spinners";
+import CarouselQuotes from "../../components/CarouselQuotes/CarouselQuotes";
 
 import "./Home.css";
 
@@ -22,7 +23,7 @@ class Home extends Component {
     this.setState({ isLoadingCitations: true, isLoadingPosts: true });
 
     axios
-      .get("https://stadium8.com/wp-json/wp/v2/posts?categories=47&per_page=3")
+      .get("https://stadium8.com/wp-json/wp/v2/posts?categories=47&per_page=5")
       .then(response => {
         if (response.status === 200) {
           this.setState({
@@ -56,7 +57,7 @@ class Home extends Component {
 
   createMarkup(html) {
     return {
-      __html: html.replace("<p>", "&ldquo;").replace("</p>", "&bdquo;")
+      __html: html.replace("<p>", "&ldquo; ").replace("</p>", " &bdquo;")
     };
   }
 
@@ -97,74 +98,10 @@ class Home extends Component {
                         <HollowDotsSpinner color="white" className="mx-auto" />
                       </h2>
                     ) : (
-                      <div
-                        id="carousel-home"
-                        className="carousel slide"
-                        data-ride="carousel"
-                      >
-                        <div className="carousel-inner">
-                          <div
-                            className="carousel-item active"
-                            data-interval="5000"
-                          >
-                            {citations[0] ? (
-                              <p
-                                dangerouslySetInnerHTML={this.createMarkup(
-                                  citations[0].content.rendered
-                                )}
-                              />
-                            ) : (
-                              ""
-                            )}
-                          </div>
-                          <div className="carousel-item" data-interval="5000">
-                            {citations[1] ? (
-                              <p
-                                dangerouslySetInnerHTML={this.createMarkup(
-                                  citations[1].content.rendered
-                                )}
-                              />
-                            ) : (
-                              ""
-                            )}
-                          </div>
-                          <div className="carousel-item" data-interval="5000">
-                            {citations[2] ? (
-                              <p
-                                dangerouslySetInnerHTML={this.createMarkup(
-                                  citations[2].content.rendered
-                                )}
-                              />
-                            ) : (
-                              ""
-                            )}
-                          </div>
-                        </div>
-                        <a
-                          className="carousel-control-prev"
-                          href="#carousel-home"
-                          role="button"
-                          data-slide="prev"
-                        >
-                          <span
-                            className="carousel-control-prev-icon"
-                            aria-hidden="true"
-                          ></span>
-                          <span className="sr-only">Previous</span>
-                        </a>
-                        <a
-                          className="carousel-control-next"
-                          href="#carousel-home"
-                          role="button"
-                          data-slide="next"
-                        >
-                          <span
-                            className="carousel-control-next-icon"
-                            aria-hidden="true"
-                          ></span>
-                          <span className="sr-only">Next</span>
-                        </a>
-                      </div>
+                      <CarouselQuotes
+                        citations={citations}
+                        createMarkup={this.createMarkup}
+                      />
                     )}
                   </div>
                 </div>
