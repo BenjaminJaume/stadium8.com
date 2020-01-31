@@ -78,7 +78,7 @@ class Home extends Component {
         }}
       >
         <div className="color-brand-filter">
-          <div className="container-fluid py-5 px-lg-5">
+          <div className="container-fluid container-100vh py-5 px-lg-5">
             <div className="row h-100 align-items-center">
               <div className="col-12 col-lg-6 text-white mb-3 mb-lg-0">
                 <div className="d-flex flex-column justify-content-center text-center h-100">

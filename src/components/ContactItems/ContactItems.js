@@ -27,7 +27,11 @@ class ContactItems extends Component {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img src="./images/brand-icons/instagram.png" alt="" height="32" />
+          <img
+            src="./wp-content/themes/stadium8/images/brand-icons/instagram.png"
+            alt=""
+            height="32"
+          />
         </a>
 
         <a
@@ -36,7 +40,11 @@ class ContactItems extends Component {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img src="./images/brand-icons/facebook.png" alt="" height="32" />
+          <img
+            src="./wp-content/themes/stadium8/images/brand-icons/facebook.png"
+            alt=""
+            height="32"
+          />
         </a>
 
         <span className="whatsapp-brand-icon px-1">
@@ -85,7 +93,11 @@ class ContactItems extends Component {
               </Popover>
             }
           >
-            <img src="./images/brand-icons/whatsapp.png" alt="" height="32" />
+            <img
+              src="./wp-content/themes/stadium8/images/brand-icons/whatsapp.png"
+              alt=""
+              height="32"
+            />
           </OverlayTrigger>
         </span>
 
@@ -95,7 +107,11 @@ class ContactItems extends Component {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img src="./images/brand-icons/mail.png" alt="" height="32" />
+          <img
+            src="./wp-content/themes/stadium8/images/brand-icons/mail.png"
+            alt=""
+            height="32"
+          />
         </a>
 
         <a
@@ -104,7 +120,11 @@ class ContactItems extends Component {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img src="./images/brand-icons/youtube.png" alt="" height="32" />
+          <img
+            src="./wp-content/themes/stadium8/images/brand-icons/youtube.png"
+            alt=""
+            height="32"
+          />
         </a>
       </>
     );

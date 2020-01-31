@@ -183,8 +183,8 @@ body {
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
   .container-100vh {
-    height: calc(100% - var(--navbar-height));
-    height: calc(100vh - var(--navbar-height));
+    min-height: calc(100% - var(--navbar-height));
+    min-height: calc(100vh - var(--navbar-height));
   }
 }
 
