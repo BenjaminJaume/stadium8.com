@@ -2,16 +2,8 @@ import React, { Component } from "react";
 import Popover from "react-bootstrap/Popover";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faFacebookSquare,
-  faWhatsappSquare,
-  faInstagram
-} from "@fortawesome/free-brands-svg-icons";
 import { faClipboard } from "@fortawesome/free-regular-svg-icons";
-import {
-  faPhoneAlt,
-  faEnvelopeSquare
-} from "@fortawesome/free-solid-svg-icons";
+import { faPhoneAlt } from "@fortawesome/free-solid-svg-icons";
 // @ts-ignore
 import { CopyToClipboard } from "react-copy-to-clipboard";
 
@@ -35,7 +27,7 @@ class ContactItems extends Component {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <FontAwesomeIcon icon={faInstagram} />
+          <img src="./images/brand-icons/instagram.png" alt="" height="32" />
         </a>
 
         <a
@@ -44,7 +36,7 @@ class ContactItems extends Component {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <FontAwesomeIcon icon={faFacebookSquare} />
+          <img src="./images/brand-icons/facebook.png" alt="" height="32" />
         </a>
 
         <span className="whatsapp-brand-icon px-1">
@@ -93,7 +85,7 @@ class ContactItems extends Component {
               </Popover>
             }
           >
-            <FontAwesomeIcon icon={faWhatsappSquare} />
+            <img src="./images/brand-icons/whatsapp.png" alt="" height="32" />
           </OverlayTrigger>
         </span>
 
@@ -103,7 +95,16 @@ class ContactItems extends Component {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <FontAwesomeIcon icon={faEnvelopeSquare} />
+          <img src="./images/brand-icons/mail.png" alt="" height="32" />
+        </a>
+
+        <a
+          href="https://www.youtube.com/watch?v=Tds61VW3wyI"
+          className="youtube-brand-icon px-1"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src="./images/brand-icons/youtube.png" alt="" height="32" />
         </a>
       </>
     );

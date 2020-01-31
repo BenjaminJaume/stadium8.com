@@ -1,14 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { HollowDotsSpinner } from "react-epic-spinners";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faFutbol,
-  faDumbbell,
-  faBasketballBall,
-  faCalendarAlt,
-  faHotTub
-} from "@fortawesome/free-solid-svg-icons";
 
 import "./Home.css";
 
@@ -30,7 +22,7 @@ class Home extends Component {
     this.setState({ isLoadingCitations: true, isLoadingPosts: true });
 
     axios
-      .get("https://stadium8.com/wp-json/wp/v2/posts?categories=47&per_page=1")
+      .get("https://stadium8.com/wp-json/wp/v2/posts?categories=47&per_page=3")
       .then(response => {
         if (response.status === 200) {
           this.setState({
@@ -63,7 +55,9 @@ class Home extends Component {
   }
 
   createMarkup(html) {
-    return { __html: html };
+    return {
+      __html: html.replace("<p>", "&ldquo;").replace("</p>", "&bdquo;")
+    };
   }
 
   render() {
@@ -77,65 +71,105 @@ class Home extends Component {
     } = this.state;
 
     return (
-      <div className="container-fluid container-home py-5 px-lg-5">
-        <div className="row">
-          <div className="col-12 text-center mb-3">
-            <h3 className="text-white p-0 m-0">
-              Bienvenue sur notre site officiel
-            </h3>
-            <img
-              src="./wp-content/themes/stadium8/images/logo-white-xl.png"
-              alt="STADIUM8"
-              title="STADIUM8 - Polideportivo Samara"
-              className="img-fluid"
-            />
-          </div>
-        </div>
-        <div
-          className="rounded py-3 border border-secondary"
-          style={{
-            backgroundImage: `url("./wp-content/themes/stadium8/images/background-home-top.jpg")`,
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "center",
-            backgroundColor: "var(--black)",
-            backgroundSize: "cover"
-          }}
-        >
-          <div className="row">
-            <div className="col-12 col-lg-6 text-white mb-3 mb-lg-0">
-              <div className="d-flex flex-column justify-content-center text-center h-100">
-                <p className="text-brand">Citation du mois:</p>
-                <blockquote className="font-brand-bold font-italic h3 mb-0">
-                  {errorCitations ? (
-                    <div>
-                      "Si vous pensez que vous allez échouer, alors vous allez
-                      probablement échouer." - Kobe Bryant
-                    </div>
-                  ) : (
-                    ""
-                  )}
-
-                  {isLoadingCitations ? (
-                    <h2 className="loading-text text-center mb-5">
-                      <HollowDotsSpinner color="white" className="mx-auto" />
-                    </h2>
-                  ) : (
-                    citations.map(citation => (
-                      <div key={citation.id}>
-                        <div
-                          dangerouslySetInnerHTML={this.createMarkup(
-                            citation.excerpt.rendered
-                          )}
-                        />
+      <div
+        className="responsive-background background-position-fixed"
+        style={{
+          backgroundImage: `url("./wp-content/themes/stadium8/images/background-home.jpg")`
+        }}
+      >
+        <div className="color-brand-filter">
+          <div className="container-fluid py-5 px-lg-5">
+            <div className="row h-100 align-items-center">
+              <div className="col-12 col-lg-6 text-white mb-3 mb-lg-0">
+                <div className="d-flex flex-column justify-content-center text-center h-100">
+                  <div className="font-brand-bold font-italic h1 mb-0">
+                    {errorCitations ? (
+                      <div>
+                        &rdquo;Si vous pensez que vous allez échouer, alors vous
+                        allez probablement échouer.&bdquo; - Kobe Bryant
                       </div>
-                    ))
-                  )}
-                </blockquote>
+                    ) : (
+                      ""
+                    )}
+
+                    {isLoadingCitations ? (
+                      <h2 className="loading-text text-center mb-5">
+                        <HollowDotsSpinner color="white" className="mx-auto" />
+                      </h2>
+                    ) : (
+                      <div
+                        id="carousel-home"
+                        className="carousel slide"
+                        data-ride="carousel"
+                      >
+                        <div className="carousel-inner">
+                          <div
+                            className="carousel-item active"
+                            data-interval="5000"
+                          >
+                            {citations[0] ? (
+                              <p
+                                dangerouslySetInnerHTML={this.createMarkup(
+                                  citations[0].content.rendered
+                                )}
+                              />
+                            ) : (
+                              ""
+                            )}
+                          </div>
+                          <div className="carousel-item" data-interval="5000">
+                            {citations[1] ? (
+                              <p
+                                dangerouslySetInnerHTML={this.createMarkup(
+                                  citations[1].content.rendered
+                                )}
+                              />
+                            ) : (
+                              ""
+                            )}
+                          </div>
+                          <div className="carousel-item" data-interval="5000">
+                            {citations[2] ? (
+                              <p
+                                dangerouslySetInnerHTML={this.createMarkup(
+                                  citations[2].content.rendered
+                                )}
+                              />
+                            ) : (
+                              ""
+                            )}
+                          </div>
+                        </div>
+                        <a
+                          className="carousel-control-prev"
+                          href="#carousel-home"
+                          role="button"
+                          data-slide="prev"
+                        >
+                          <span
+                            className="carousel-control-prev-icon"
+                            aria-hidden="true"
+                          ></span>
+                          <span className="sr-only">Previous</span>
+                        </a>
+                        <a
+                          className="carousel-control-next"
+                          href="#carousel-home"
+                          role="button"
+                          data-slide="next"
+                        >
+                          <span
+                            className="carousel-control-next-icon"
+                            aria-hidden="true"
+                          ></span>
+                          <span className="sr-only">Next</span>
+                        </a>
+                      </div>
+                    )}
+                  </div>
+                </div>
               </div>
-            </div>
-            <div className="col-12 col-lg-6 text-white">
-              <div className="text-center">
-                <p className="text-brand">Dernières actualités:</p>
+              <div className="col-12 col-lg-6 text-white text-center">
                 {errorPosts ? (
                   <div>
                     Désolé, il n'y a pas d'actualités disponible pour le moment.
@@ -150,108 +184,24 @@ class Home extends Component {
                   </h2>
                 ) : (
                   posts.map(post => (
-                    <div key={post.id}>
-                      <h3 className="text-brand">
+                    <div
+                      key={post.id}
+                      className="opacity-black-75 rounded border border-secondary pt-4 mb-4 mx-3"
+                    >
+                      <h3 className="text-brand w-75 mx-auto font-weight-bold">
                         {post.modified.slice(8, 10)}/{post.modified.slice(5, 7)}
                         /{post.modified.slice(0, 4)} - {post.title.rendered}
                       </h3>
-                      <div className="opacity-75">
-                        <div
-                          className="font-brand-2 text-white bg-dark rounded border mx-2 p-2"
-                          dangerouslySetInnerHTML={this.createMarkup(
-                            post.excerpt.rendered
-                          )}
-                        />
-                      </div>
+                      <div
+                        className="font-brand-2 text-white mx-2 p-1 px-lg-4 pb-lg-3"
+                        dangerouslySetInnerHTML={this.createMarkup(
+                          post.excerpt.rendered
+                        )}
+                      />
                     </div>
                   ))
                 )}
               </div>
-            </div>
-          </div>
-        </div>
-        <hr className="diviseur mx-auto" />
-        <div
-          className="rounded p-3 border border-secondary"
-          style={{
-            backgroundImage: `url("./wp-content/themes/stadium8/images/background-home-features.jpg")`,
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "center",
-            backgroundColor: "var(--black)",
-            backgroundSize: "cover"
-          }}
-        >
-          <div className="row">
-            <div className="col-12 text-center mb-3">
-              <h4 className="text-white">
-                Ici, nous proposons les activités & services suivants:
-              </h4>
-            </div>
-            <div className="col-lg-6 text-white text-center mb-4">
-              <span className="header-home font-brand-bold">
-                <FontAwesomeIcon
-                  icon={faFutbol}
-                  className="mr-2 align-baseline"
-                />
-                Football5
-              </span>
-              <p className="lead font-brand-light text-white mb-3">
-                Catégorie de football qui se joue à 5 contre 5
-              </p>
-            </div>
-            <div className="col-lg-6 text-white text-center mb-4">
-              <span className="header-home font-brand-bold">
-                <FontAwesomeIcon
-                  icon={faDumbbell}
-                  className="mr-2 align-baseline"
-                />
-                Gymnase
-              </span>
-              <p className="lead font-brand-light text-white mb-3">
-                Un batiement entier consacré aux Arts Martiaux, à la fitness &
-                au bodybuilding
-              </p>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-lg-6 text-white text-center mb-4">
-              <span className="header-home font-brand-bold">
-                <FontAwesomeIcon
-                  icon={faBasketballBall}
-                  className="mr-2 align-baseline"
-                />
-                Multisport
-              </span>
-              <p className="lead font-brand-light text-white mb-3">
-                Nous mettons à disposition un terrain à ciel ouvert, pour faire
-                du Basket, du Volleyball, du Handball, etc.
-              </p>
-            </div>
-            <div className="col-lg-6 text-white text-center mb-4">
-              <span className="header-home font-brand-bold">
-                <FontAwesomeIcon
-                  icon={faCalendarAlt}
-                  className="mr-2 align-baseline"
-                />
-                Évènements
-              </span>
-              <p className="lead font-brand-light text-white mb-3">
-                Vous avez la possibilité d'organiser des évènements privés en
-                réservant à l'avance
-              </p>
-            </div>
-            <div className="col-lg-12 text-white text-center">
-              <span className="header-home font-brand-bold">
-                <FontAwesomeIcon
-                  icon={faHotTub}
-                  className="mr-2 align-baseline"
-                />
-                SPA
-              </span>
-              <p className="lead font-brand-light text-white mb-0">
-                Et enfin, le SPA est en accès libre & illimité pour tout abonné
-                ou détenteur d'un pass à la journée!
-              </p>
             </div>
           </div>
         </div>

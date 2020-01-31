@@ -9,16 +9,14 @@ const Page404 = props => {
   return (
     <>
       <div
-        className="container-fluid container-page404 text-center py-5"
+        className="container-fluid container-100vh responsive-background background-position-fixed text-center py-5"
         style={{
-          background: `url("./wp-content/themes/stadium8/images/background-page404.jpg") no-repeat center fixed`,
-          backgroundColor: "var(--black)",
-          backgroundSize: "cover"
+          backgroundImage: `url("./wp-content/themes/stadium8/images/background-page404.jpg")`
         }}
       >
         <div className="row h-100 align-items-center">
           <div className="col-12 col-lg-6 mx-auto">
-            <div className="bg-light rounded text-center py-5 px-3">
+            <div className="bg-dark text-white rounded text-center py-5 px-3">
               <div>
                 <h1 className="display-4">
                   <span className="text-red-pigment">404: </span>

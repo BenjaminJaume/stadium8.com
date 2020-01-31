@@ -12,10 +12,14 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import "./NavigationBar.css";
 
+const changeLanguage = lng => {
+  alert(lng);
+};
+
 const NavigationBar = () => {
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-dark fixed-top">
+      <nav className="navbar navbar-expand-lg navbar-dark fixed-top font-brand-2">
         <IndexLinkContainer
           to="/"
           href="/"
@@ -162,6 +166,70 @@ const NavigationBar = () => {
                   Contact
                 </span>
               </IndexLinkContainer>
+            </li>
+
+            <li className="nav-item dropdown">
+              <a
+                className="nav-link dropdown-toggle"
+                href="/"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <img
+                  //
+                  src="./wp-content/themes/stadium8/images/country-flags/france.png"
+                  alt="FR"
+                  className="d-inline-block mr-2"
+                  height="15"
+                />
+                Français
+              </a>
+
+              <div
+                className="dropdown-menu navbar-dropdown-menu w-25 dropdown-menu-right mx-auto"
+                aria-labelledby="navbarDropdownMenuLink"
+              >
+                <IndexLinkContainer
+                  to="/:lg"
+                  href="/"
+                  data-toggle="collapse"
+                  data-target=".navbar-collapse.show"
+                  className="dropdown-item navbar-dropdown-item text-center text-white"
+                  onClick={() => changeLanguage("de")}
+                >
+                  <span>
+                    <img
+                      // /wp-content/themes/stadium8
+                      src="./wp-content/themes/stadium8/images/country-flags/costa-rica.png"
+                      alt="ES"
+                      className="d-inline-block mr-2"
+                      height="15"
+                    />
+                    Español
+                  </span>
+                </IndexLinkContainer>
+                <IndexLinkContainer
+                  to="/:lg"
+                  href="/"
+                  data-toggle="collapse"
+                  data-target=".navbar-collapse.show"
+                  className="dropdown-item navbar-dropdown-item text-center text-white"
+                  onClick={() => changeLanguage("de")}
+                >
+                  <span>
+                    <img
+                      // /wp-content/themes/stadium8
+                      src="./wp-content/themes/stadium8/images/country-flags/usa.png"
+                      alt="US"
+                      className="d-inline-block mr-2"
+                      height="15"
+                    />
+                    English
+                  </span>
+                </IndexLinkContainer>
+              </div>
             </li>
           </ul>
         </div>

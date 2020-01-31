@@ -1,12 +1,24 @@
 /* Extending the orginal class from Bootstrap */
 .navbar {
-  border-bottom: 1px solid var(--brand-color);
+  border-bottom: 2px solid var(--brand-color);
   background-color: var(--black);
-  font-family: "Gobold Thin", "Quicksand", Calibri, "Trebuchet MS", sans-serif,
-    cursive;
+  letter-spacing: -0.5px;
+}
+
+.navbar-dropdown-menu {
+  background-color: var(--black);
+}
+
+.navbar-dropdown-item:hover {
+  background-color: unset;
 }
 
 .nav-link:hover,
+.navbar-dropdown-menu .navbar-dropdown-item:hover {
+  color: var(--brand-link) !important;
+  cursor: pointer;
+}
+
 .navbar-nav .active {
   color: var(--brand-color) !important;
   cursor: pointer;
@@ -14,4 +26,5 @@
 
 .navbar-nav .nav-link {
   text-align: center;
+  color: white;
 }

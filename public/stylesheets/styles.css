@@ -27,11 +27,13 @@
   --facebook-color: #4267b2;
   --whatsapp-color: #00e676;
 
-  /* Other random colors */
-  --black: #2a2a2e;
+  /* Brand colors */
+  --black: #000000;
   --brand-color: #eeff05;
+  --brand-color-rgba: rgba(238, 255, 5, 0);
   --brand-link: rgba(238, 255, 5, 0.7);
 
+  /* Mesurement values */
   --navbar-height: 76px;
 }
 
@@ -60,8 +62,7 @@ html {
 }
 
 body {
-  font-family: "Gobold Light", "Gobold Thin", "Quicksand", Calibri,
-    "Trebuchet MS", sans-serif, cursive;
+  font-family: "Quicksand", Calibri, "Trebuchet MS", sans-serif, cursive;
   margin-top: var(--navbar-height);
 
   -webkit-font-smoothing: antialiased;
@@ -115,11 +116,12 @@ body {
 .link-brand:hover {
   color: var(--brand-link);
   cursor: pointer;
+  text-decoration: underline;
 }
 
-.diviseur {
-  margin: 3rem 0;
-  background-color: white;
+.divider {
+  margin: 1.5rem 0;
+  background-color: var(--brand-color);
   width: 50vw;
 }
 
@@ -127,9 +129,33 @@ body {
   max-height: 200px;
 }
 
-.opacity-75 {
-  opacity: 0.75;
-  filter: alpha(opacity=75);
+.opacity-black-75 {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.background-color-black {
+  background-color: var(--black);
+}
+
+.responsive-background {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.background-position-fixed {
+  background-attachment: fixed;
+}
+
+.color-brand-filter {
+  width: 100%;
+  height: 100%;
+
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0) 0%,
+    var(--brand-color) 200%
+  );
 }
 
 /* Extra small devices (portrait phones, less than 576px) */
@@ -156,6 +182,10 @@ body {
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
+  .container-100vh {
+    height: calc(100% - var(--navbar-height));
+    height: calc(100vh - var(--navbar-height));
+  }
 }
 
 /* Column management */

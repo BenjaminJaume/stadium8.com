@@ -1,7 +1,12 @@
 [class*="-brand-icon"] {
   font-size: 3em;
   text-decoration: none;
-  color: var(--silver);
+  /* color: var(--silver); */
+  filter: grayscale(100%);
+}
+
+[class*="-brand-icon"]:hover {
+  filter: grayscale(0%);
 }
 
 .whatsapp-brand-icon {

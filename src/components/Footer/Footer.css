@@ -1,4 +1,5 @@
 footer {
+  background-color: var(--black);
   color: var(--silver);
   text-align: center;
 }
@@ -11,8 +12,9 @@ footer {
 
 .wave-container {
   position: relative;
-  background: var(--black);
-  color: var(--silver);
+  background-color: #ffffff;
+  /* background: transparent; */
+  color: var(--black);
   text-align: center;
   overflow: hidden;
 }
@@ -23,12 +25,6 @@ footer {
 
 footer a:hover {
   text-decoration: none;
-}
-
-#message-bottom:hover {
-  -webkit-animation: heartBeat 1s;
-  animation: heartBeat 1s;
-  cursor: default;
 }
 
 .popover-footer {
