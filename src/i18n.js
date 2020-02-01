@@ -6,6 +6,7 @@ import { reactI18nextModule } from "react-i18next";
 i18n
   .use(detector)
   .use(backend)
+  // @ts-ignore
   .use(reactI18nextModule) // passes i18n down to react-i18next
   .init({
     lng: "en",

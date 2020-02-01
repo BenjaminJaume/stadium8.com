@@ -14,11 +14,14 @@ export class MapContainer extends Component {
       <Map
         google={this.props.google}
         zoom={14}
+        // @ts-ignore
         style={mapStyles}
         initialCenter={{
           lat: 9.8826942,
           lng: -85.5313173
         }}
+        fullscreenControl={false}
+        streetViewControl={false}
       >
         <Marker
           title={"STADIUM8"}

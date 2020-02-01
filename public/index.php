@@ -12,26 +12,27 @@
       name="description"
       content="Web site created using create-react-wptheme"
     />
-    <link rel="apple-touch-icon" href="<?php echo $TEMPLATE_PATH; ?>/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="<?php echo $TEMPLATE_PATH; ?>/manifest.json" />
-    <!--
-        If you're reading this from "view source" in your browser, it might not make sense as
-        these tokens have already been evaluated and replaced, even in this remark blurb.
 
-        Notice the use of "php echo $TEMPLATE_PATH;" and %PUBLIC_URL% in the tags above.
-        Both will be replaced with the URL of the `public` folder during the build (%PUBLIC_URL%) or
-        at render time (php echo $TEMPLATE_PATH;)
-        Only files inside the `public` folder can be referenced like this.
-
-        Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-        work correctly both with client-side routing and a non-root public URL.
-        Learn how to configure a non-root public URL by running `npm run wpbuild`.
-    -->
     <title>STADIUM 8</title>
+    
+    <link rel="apple-touch-icon" sizes="57x57" href="<?php echo $TEMPLATE_PATH; ?>/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="<?php echo $TEMPLATE_PATH; ?>/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="<?php echo $TEMPLATE_PATH; ?>/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="<?php echo $TEMPLATE_PATH; ?>/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="<?php echo $TEMPLATE_PATH; ?>/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="<?php echo $TEMPLATE_PATH; ?>/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="<?php echo $TEMPLATE_PATH; ?>/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="<?php echo $TEMPLATE_PATH; ?>/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo $TEMPLATE_PATH; ?>/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="<?php echo $TEMPLATE_PATH; ?>/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo $TEMPLATE_PATH; ?>/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="<?php echo $TEMPLATE_PATH; ?>/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo $TEMPLATE_PATH; ?>/favicon/favicon-16x16.png">
+    <link rel="manifest" href="<?php echo $TEMPLATE_PATH; ?>/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="<?php echo $TEMPLATE_PATH; ?>/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="manifest" href="<?php echo $TEMPLATE_PATH; ?>/manifest.json" />
 
      <!-- Bootstrap CSS -->
     <link
@@ -69,16 +70,6 @@
         You need to enable JavaScript to run this app.
     </noscript>
     <div id="root"></div>
-    <!--
-        This PHP file is a template.
-        If you open it directly in the browser, you will see an empty page.
-
-        You can add webfonts, meta tags, or analytics to this file.
-        The build step will place the bundled scripts into the <body> tag.
-
-        To begin the development, run `npm run wpstart` or `yarn wpstart`.
-        To create a production bundle, use `npm run wpbuild` or `yarn wpbuild`.
-    -->
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="%PUBLIC_URL%/scripts/librairies/jquery-3.4.1.js"></script>

@@ -49,25 +49,25 @@ export default class App extends Component {
               <Football5 absPath={absPath} lg={this.state.lg} />
             </Route>
             <Route path="/gym" component={Gym}>
-              <Gym absPath={absPath} lg={this.state.lg} />
+              <Gym absPath={absPath} />
             </Route>
             <Route path="/multisport" component={Multisport}>
-              <Multisport absPath={absPath} lg={this.state.lg} />
+              <Multisport absPath={absPath} />
             </Route>
             <Route path="/events" component={Events}>
-              <Events absPath={absPath} lg={this.state.lg} />
+              <Events absPath={absPath} />
             </Route>
             <Route path="/spa" component={Spa}>
-              <Spa absPath={absPath} lg={this.state.lg} />
+              <Spa absPath={absPath} />
             </Route>
             <Route path="/contact" component={Contact}>
-              <Contact absPath={absPath} lg={this.state.lg} />
+              <Contact absPath={absPath} />
             </Route>
             <Route path="/" component={Home} exact>
               <Home absPath={absPath} lg={this.state.lg} />
             </Route>
             <Route component={Page404}>
-              <Page404 absPath={absPath} lg={this.state.lg} />
+              <Page404 absPath={absPath} />
             </Route>
           </Switch>
 
