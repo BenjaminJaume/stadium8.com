@@ -5,13 +5,13 @@ import { faArrowAltCircleLeft } from "@fortawesome/free-solid-svg-icons";
 
 import "./Page404.css";
 
-const Page404 = props => {
+const Page404 = ({ absPath }) => {
   return (
     <>
       <div
         className="responsive-background background-position-fixed"
         style={{
-          backgroundImage: `url("./wp-content/themes/stadium8/images/background-page404.jpg")`
+          backgroundImage: `url(".${absPath}/images/background-page404.jpg")`
         }}
       >
         <div className="color-brand-filter">

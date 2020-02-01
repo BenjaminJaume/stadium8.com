@@ -6,20 +6,19 @@ import MapContainer from "../MapContainer/MapContainer";
 
 import "./Footer.css";
 
-const Footer = ({ phoneNumber }) => {
+const Footer = ({ phoneNumber, absPath }) => {
   return (
     <>
       <footer id="footer" className="pb-1">
         <div className="wave-container">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 200">
-            {/*
-            For future usage
+            {/* For future usage
             <defs>
               <linearGradient id="MyGradient">
                 <stop offset="5%" stop-color="#c33764" />
                 <stop offset="95%" stop-color="#1d2671" />
               </linearGradient>
-            </defs> */}
+            </defs>  */}
             <path
               id="wave-footer"
               fill="var(--black)"
@@ -27,16 +26,13 @@ const Footer = ({ phoneNumber }) => {
               d="M0,128L120,133.3C240,139,480,149,720,144C960,139,1200,117,1320,106.7L1440,96L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"
             ></path>
           </svg>
+
+          {/* <img src="./images/footer.png" className="m-0 p-0" alt="" /> */}
         </div>
         <div className="container-fluid mt-3 mt-lg-0">
           <div className="row">
-            <div className="col-12 col-lg-4">
-              <div
-                className="pb-5"
-                style={{
-                  minHeight: "250px"
-                }}
-              >
+            <div className="col-12 col-lg-4 p-0 m-0">
+              <div className="map-container pl-lg-2">
                 <MapContainer />
               </div>
             </div>
@@ -59,18 +55,13 @@ const Footer = ({ phoneNumber }) => {
             <div className="col-12 col-lg-4">
               <div className="mb-4">
                 <p className="mb-0 text-brand">STADIUM8 sur les réseaux</p>
-                <ContactItems phoneNumber={phoneNumber} />
+                <ContactItems phoneNumber={phoneNumber} absPath={absPath} />
               </div>
 
               <p className="text-silver">
                 <FontAwesomeIcon icon={faCopyright} className="mr-1" />
                 STADIUM8 - Tous droits réservés
               </p>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-12">
-              <hr className="divider mx-auto" />
 
               <p className="font-brand-2 font-smaller">
                 Développeur Web: Benjamin Jaume

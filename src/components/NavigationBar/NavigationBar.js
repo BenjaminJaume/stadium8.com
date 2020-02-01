@@ -1,22 +1,13 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IndexLinkContainer } from "react-router-bootstrap";
-import {
-  faFutbol,
-  faHome,
-  faDumbbell,
-  faBasketballBall,
-  faCalendarAlt,
-  faHotTub,
-  faComment
-} from "@fortawesome/free-solid-svg-icons";
+
 import "./NavigationBar.css";
 
 const changeLanguage = lng => {
   alert(lng);
 };
 
-const NavigationBar = () => {
+const NavigationBar = ({ absPath }) => {
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-dark fixed-top font-brand-2">
@@ -28,7 +19,7 @@ const NavigationBar = () => {
           data-target=".navbar-collapse.show"
         >
           <img
-            src="./wp-content/themes/stadium8/images/logo-white-xl.png"
+            src={`.${absPath}/images/logo-white-xl.png`}
             alt="STADIUM8"
             className="d-inline-block mr-2"
             height="60"
@@ -56,13 +47,7 @@ const NavigationBar = () => {
                 data-toggle="collapse"
                 data-target=".navbar-collapse.show"
               >
-                <span>
-                  <FontAwesomeIcon
-                    icon={faHome}
-                    className="align-baseline mr-2"
-                  />
-                  Accueil
-                </span>
+                <span>Accueil</span>
               </IndexLinkContainer>
             </li>
             <li className="nav-item">
@@ -73,13 +58,7 @@ const NavigationBar = () => {
                 data-toggle="collapse"
                 data-target=".navbar-collapse.show"
               >
-                <span>
-                  <FontAwesomeIcon
-                    icon={faFutbol}
-                    className="align-baseline mr-2"
-                  />
-                  Football5
-                </span>
+                <span>Football5</span>
               </IndexLinkContainer>
             </li>
             <li className="nav-item">
@@ -90,13 +69,7 @@ const NavigationBar = () => {
                 data-toggle="collapse"
                 data-target=".navbar-collapse.show"
               >
-                <span>
-                  <FontAwesomeIcon
-                    icon={faDumbbell}
-                    className="align-baseline mr-2"
-                  />
-                  Gymnase
-                </span>
+                <span>Gymnase</span>
               </IndexLinkContainer>
             </li>
             <li className="nav-item">
@@ -107,13 +80,7 @@ const NavigationBar = () => {
                 data-toggle="collapse"
                 data-target=".navbar-collapse.show"
               >
-                <span>
-                  <FontAwesomeIcon
-                    icon={faBasketballBall}
-                    className="align-baseline mr-2"
-                  />
-                  Multisport
-                </span>
+                <span>Multisport</span>
               </IndexLinkContainer>
             </li>
             <li className="nav-item">
@@ -124,13 +91,7 @@ const NavigationBar = () => {
                 data-toggle="collapse"
                 data-target=".navbar-collapse.show"
               >
-                <span>
-                  <FontAwesomeIcon
-                    icon={faCalendarAlt}
-                    className="align-baseline mr-2"
-                  />
-                  Évènements
-                </span>
+                <span>Évènements</span>
               </IndexLinkContainer>
             </li>
             <li className="nav-item">
@@ -141,13 +102,7 @@ const NavigationBar = () => {
                 data-toggle="collapse"
                 data-target=".navbar-collapse.show"
               >
-                <span>
-                  <FontAwesomeIcon
-                    icon={faHotTub}
-                    className="align-baseline mr-2"
-                  />
-                  SPA
-                </span>
+                <span>SPA</span>
               </IndexLinkContainer>
             </li>
             <li className="nav-item">
@@ -158,13 +113,7 @@ const NavigationBar = () => {
                 data-toggle="collapse"
                 data-target=".navbar-collapse.show"
               >
-                <span>
-                  <FontAwesomeIcon
-                    icon={faComment}
-                    className="align-baseline mr-2"
-                  />
-                  Contact
-                </span>
+                <span>Contact</span>
               </IndexLinkContainer>
             </li>
 
@@ -178,8 +127,7 @@ const NavigationBar = () => {
                 aria-expanded="false"
               >
                 <img
-                  //
-                  src="./wp-content/themes/stadium8/images/country-flags/france.png"
+                  src={`.${absPath}/images/country-flags/france.png`}
                   alt="FR"
                   className="d-inline-block mr-2"
                   height="15"
@@ -192,17 +140,16 @@ const NavigationBar = () => {
                 aria-labelledby="navbarDropdownMenuLink"
               >
                 <IndexLinkContainer
-                  to="/:lg"
+                  to="/"
                   href="/"
                   data-toggle="collapse"
                   data-target=".navbar-collapse.show"
-                  className="dropdown-item navbar-dropdown-item text-center text-white"
+                  className="navbar-dropdown-item dropdown-item text-center text-white"
                   onClick={() => changeLanguage("de")}
                 >
                   <span>
                     <img
-                      // /wp-content/themes/stadium8
-                      src="./wp-content/themes/stadium8/images/country-flags/costa-rica.png"
+                      src={`.${absPath}/images/country-flags/costa-rica.png`}
                       alt="ES"
                       className="d-inline-block mr-2"
                       height="15"
@@ -211,7 +158,7 @@ const NavigationBar = () => {
                   </span>
                 </IndexLinkContainer>
                 <IndexLinkContainer
-                  to="/:lg"
+                  to="/"
                   href="/"
                   data-toggle="collapse"
                   data-target=".navbar-collapse.show"
@@ -220,8 +167,7 @@ const NavigationBar = () => {
                 >
                   <span>
                     <img
-                      // /wp-content/themes/stadium8
-                      src="./wp-content/themes/stadium8/images/country-flags/usa.png"
+                      src={`.${absPath}/images/country-flags/usa.png`}
                       alt="US"
                       className="d-inline-block mr-2"
                       height="15"

@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import axios from "axios";
 import { HollowDotsSpinner } from "react-epic-spinners";
 import CarouselQuotes from "../../components/CarouselQuotes/CarouselQuotes";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faClock } from "@fortawesome/free-regular-svg-icons";
 
 import "./Home.css";
 
@@ -9,37 +11,40 @@ class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      citations: [],
+      quotes: [],
       posts: [],
-      isLoadingCitations: false,
+      isLoadingQuotes: false,
       isLoadingPosts: false,
-      errorCitations: null,
+      errorQuotes: null,
       errorPosts: null
     };
-    this.createMarkup = this.createMarkup.bind(this);
+    this.createMarkupPost = this.createMarkupPost.bind(this);
+    this.createMarkupQuote = this.createMarkupQuote.bind(this);
   }
 
   componentDidMount() {
-    this.setState({ isLoadingCitations: true, isLoadingPosts: true });
+    this.setState({ isLoadingQuotes: true, isLoadingPosts: true });
 
     axios
-      .get("https://stadium8.com/wp-json/wp/v2/posts?categories=47&per_page=5")
+      .get("shttps://stadium8.com/wp-json/wp/v2/posts?categories=47&per_page=5")
       .then(response => {
         if (response.status === 200) {
           this.setState({
-            citations: response.data,
-            isLoadingCitations: false
+            quotes: response.data,
+            isLoadingQuotes: false
           });
         } else {
-          throw new Error("Something went wrong with Citations");
+          throw new Error("Something went wrong with Quotes");
         }
       })
       .catch(error =>
-        this.setState({ errorCitations: error, isLoadingCitations: false })
+        this.setState({ errorQuotes: error, isLoadingQuotes: false })
       );
 
     axios
-      .get("https://stadium8.com/wp-json/wp/v2/posts/?categories=48")
+      .get(
+        "shttps://stadium8.com/wp-json/wp/v2/posts/?categories=48&per_page=3"
+      )
       .then(response => {
         if (response.status === 200) {
           this.setState({
@@ -55,7 +60,13 @@ class Home extends Component {
       );
   }
 
-  createMarkup(html) {
+  createMarkupPost(html) {
+    return {
+      __html: html
+    };
+  }
+
+  createMarkupQuote(html) {
     return {
       __html: html.replace("<p>", "&ldquo; ").replace("</p>", " &bdquo;")
     };
@@ -63,19 +74,21 @@ class Home extends Component {
 
   render() {
     const {
-      citations,
+      quotes,
       posts,
-      isLoadingCitations,
+      isLoadingQuotes,
       isLoadingPosts,
-      errorCitations,
+      errorQuotes,
       errorPosts
     } = this.state;
+
+    const { absPath } = this.props;
 
     return (
       <div
         className="responsive-background background-position-fixed"
         style={{
-          backgroundImage: `url("./wp-content/themes/stadium8/images/background-home.jpg")`
+          backgroundImage: `url(".${absPath}/images/background-home.jpg")`
         }}
       >
         <div className="color-brand-filter">
@@ -84,36 +97,34 @@ class Home extends Component {
               <div className="col-12 col-lg-6 text-white mb-3 mb-lg-0">
                 <div className="d-flex flex-column justify-content-center text-center h-100">
                   <div className="font-brand-bold font-italic h1 mb-0">
-                    {errorCitations ? (
+                    {errorQuotes ? (
                       <div>
-                        &rdquo;Si vous pensez que vous allez échouer, alors vous
-                        allez probablement échouer.&bdquo; - Kobe Bryant
+                        &ldquo; La plus grande victoire de l'existence ne
+                        consiste pas à ne jamais tomber, mais à se relever après
+                        chaque chute. &bdquo; - Nelson Mandela
                       </div>
                     ) : (
                       ""
                     )}
 
-                    {isLoadingCitations ? (
+                    {isLoadingQuotes ? (
                       <h2 className="loading-text text-center mb-5">
                         <HollowDotsSpinner color="white" className="mx-auto" />
                       </h2>
                     ) : (
                       <CarouselQuotes
-                        citations={citations}
-                        createMarkup={this.createMarkup}
+                        quotes={quotes}
+                        createMarkup={this.createMarkupQuote}
                       />
                     )}
                   </div>
                 </div>
               </div>
               <div className="col-12 col-lg-6 text-white text-center">
-                {errorPosts ? (
-                  <div>
-                    Désolé, il n'y a pas d'actualités disponible pour le moment.
-                  </div>
-                ) : (
-                  ""
-                )}
+                {errorPosts
+                  ? /* Error loading posts */
+                    ""
+                  : ""}
 
                 {isLoadingPosts ? (
                   <h2 className="loading-text mb-5">
@@ -126,12 +137,16 @@ class Home extends Component {
                       className="opacity-black-75 rounded border border-secondary pt-4 mb-4 mx-3"
                     >
                       <h3 className="text-brand w-75 mx-auto font-weight-bold">
-                        {post.modified.slice(8, 10)}/{post.modified.slice(5, 7)}
-                        /{post.modified.slice(0, 4)} - {post.title.rendered}
+                        {post.title.rendered}
                       </h3>
+                      <p className="text-white font-weight-bold mb-0">
+                        <FontAwesomeIcon icon={faClock} className="mr-1" />
+                        {post.modified.slice(8, 10)}/{post.modified.slice(5, 7)}
+                        /{post.modified.slice(0, 4)}
+                      </p>
                       <div
                         className="font-brand-2 text-white mx-2 p-1 px-lg-4 pb-lg-3"
-                        dangerouslySetInnerHTML={this.createMarkup(
+                        dangerouslySetInnerHTML={this.createMarkupPost(
                           post.excerpt.rendered
                         )}
                       />

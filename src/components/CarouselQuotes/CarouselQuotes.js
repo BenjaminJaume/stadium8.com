@@ -1,92 +1,94 @@
 import React from "react";
-
 // import "./CarouselQuotes.css";
 
 const CarouselQuotes = props => {
-  const { citations } = props;
+  const { quotes } = props;
+
+  // Time (in ms) that each quote will be displayed
+  const dataInterval = 10000;
 
   return (
     <div id="carousel-home" className="carousel slide" data-ride="carousel">
       <div className="carousel-inner">
-        {citations[0] ? (
-          <div className="carousel-item active" data-interval="5000">
+        {quotes[0] ? (
+          <div className="carousel-item active" data-interval={dataInterval}>
             <span
               dangerouslySetInnerHTML={props.createMarkup(
-                citations[0].content.rendered
+                quotes[0].content.rendered
               )}
             />{" "}
             -{" "}
             <span
               dangerouslySetInnerHTML={props.createMarkup(
-                citations[0].title.rendered
+                quotes[0].title.rendered
               )}
             />
           </div>
         ) : (
           ""
         )}
-        {citations[1] ? (
-          <div className="carousel-item" data-interval="5000">
+        {quotes[1] ? (
+          <div className="carousel-item" data-interval={dataInterval}>
             <span
               dangerouslySetInnerHTML={props.createMarkup(
-                citations[1].content.rendered
+                quotes[1].content.rendered
               )}
             />{" "}
             -{" "}
             <span
               dangerouslySetInnerHTML={props.createMarkup(
-                citations[1].title.rendered
+                quotes[1].title.rendered
               )}
             />
           </div>
         ) : (
           ""
         )}
-        {citations[2] ? (
-          <div className="carousel-item" data-interval="5000">
+        {quotes[2] ? (
+          <div className="carousel-item" data-interval={dataInterval}>
             <span
               dangerouslySetInnerHTML={props.createMarkup(
-                citations[2].content.rendered
+                quotes[2].content.rendered
               )}
             />{" "}
             -{" "}
             <span
               dangerouslySetInnerHTML={props.createMarkup(
-                citations[2].title.rendered
+                quotes[2].title.rendered
               )}
             />
           </div>
         ) : (
           ""
         )}
-        {citations[3] ? (
-          <div className="carousel-item" data-interval="5000">
+        {quotes[3] ? (
+          <div className="carousel-item" data-interval={dataInterval}>
             <span
               dangerouslySetInnerHTML={props.createMarkup(
-                citations[3].content.rendered
+                quotes[3].content.rendered
               )}
             />{" "}
             -{" "}
             <span
               dangerouslySetInnerHTML={props.createMarkup(
-                citations[3].title.rendered
+                quotes[3].title.rendered
               )}
             />
           </div>
         ) : (
           ""
         )}
-        {citations[4] ? (
-          <div className="carousel-item" data-interval="5000">
+        {quotes[4] ? (
+          <div className="carousel-item" data-interval={dataInterval}>
             <span
               dangerouslySetInnerHTML={props.createMarkup(
-                citations[4].content.rendered
+                quotes[4].content.rendered
               )}
             />{" "}
             -{" "}
             <span
               dangerouslySetInnerHTML={props.createMarkup(
-                citations[4].title.rendered
+                quotes[4].title.rendered
               )}
             />
           </div>

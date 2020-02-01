@@ -19,6 +19,8 @@ class ContactItems extends Component {
   }
 
   render() {
+    const { absPath } = this.props;
+
     return (
       <>
         <a
@@ -28,7 +30,7 @@ class ContactItems extends Component {
           rel="noopener noreferrer"
         >
           <img
-            src="./wp-content/themes/stadium8/images/brand-icons/instagram.png"
+            src={`.${this.props.absPath}/images/brand-icons/instagram.png`}
             alt=""
             height="32"
           />
@@ -41,7 +43,20 @@ class ContactItems extends Component {
           rel="noopener noreferrer"
         >
           <img
-            src="./wp-content/themes/stadium8/images/brand-icons/facebook.png"
+            src={`.${absPath}/images/brand-icons/facebook.png`}
+            alt=""
+            height="32"
+          />
+        </a>
+
+        <a
+          href="https://urlgeni.us/fb_messenger/tN2D"
+          className="messenger-brand-icon px-1"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src={`.${absPath}/images/brand-icons/messenger.png`}
             alt=""
             height="32"
           />
@@ -94,7 +109,7 @@ class ContactItems extends Component {
             }
           >
             <img
-              src="./wp-content/themes/stadium8/images/brand-icons/whatsapp.png"
+              src={`.${absPath}/images/brand-icons/whatsapp.png`}
               alt=""
               height="32"
             />
@@ -108,7 +123,7 @@ class ContactItems extends Component {
           rel="noopener noreferrer"
         >
           <img
-            src="./wp-content/themes/stadium8/images/brand-icons/mail.png"
+            src={`.${absPath}/images/brand-icons/mail.png`}
             alt=""
             height="32"
           />
@@ -121,7 +136,7 @@ class ContactItems extends Component {
           rel="noopener noreferrer"
         >
           <img
-            src="./wp-content/themes/stadium8/images/brand-icons/youtube.png"
+            src={`.${absPath}/images/brand-icons/youtube.png`}
             alt=""
             height="32"
           />

@@ -10,6 +10,12 @@
 }
 
 .navbar-dropdown-item:hover {
+  color: var(--brand-link) !important;
+  background-color: var(--black);
+}
+
+.navbar-dropdown-item:active {
+  color: unset;
   background-color: unset;
 }
 
@@ -26,5 +32,32 @@
 
 .navbar-nav .nav-link {
   text-align: center;
-  color: white;
+  color: var(--white);
+}
+
+.navbar-nav > li {
+  float: left;
+  position: relative;
+}
+
+.nav-item:hover::after,
+.navbar-nav .active::after {
+  border-bottom: 2px solid var(--brand-link);
+  bottom: -2px;
+  content: " ";
+  left: 0;
+  position: absolute;
+  right: 0;
+  max-width: 100px;
+  text-align: center;
+  margin: auto;
+}
+
+.navbar-nav .active::after {
+  border-bottom: 2px solid var(--brand-color);
+}
+
+.dropdown-item.active {
+  background-color: var(--black);
+  color: var(--white) !important;
 }

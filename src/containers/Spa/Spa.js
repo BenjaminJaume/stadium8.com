@@ -1,12 +1,12 @@
 import React from "react";
 import "./Spa.css";
 
-const Spa = props => {
+const Spa = ({ absPath }) => {
   return (
     <div
       className="responsive-background background-position-fixed"
       style={{
-        backgroundImage: `url("./wp-content/themes/stadium8/images/background-spa.jpg")`
+        backgroundImage: `url(".${absPath}/images/background-spa.jpg")`
       }}
     >
       <div className="color-brand-filter">
@@ -17,7 +17,7 @@ const Spa = props => {
                 <h1>SPA</h1>
                 <h3 className="mb-4">Cette page est en construction</h3>
                 <img
-                  src="./wp-content/themes/stadium8/images/construction.svg"
+                  src={`.${absPath}/images/construction.svg`}
                   alt="Cone"
                   title="Désolé pour la gêne occasionnée"
                   className="img-fluid rounded cone"

@@ -1,7 +1,7 @@
 import React from "react";
 import "./Contact.css";
 
-const Contact = props => {
+const Contact = ({ absPath }) => {
   return (
     <div className="container-fluid container-100vh">
       <div className="row h-100 align-items-center">
@@ -10,7 +10,7 @@ const Contact = props => {
             <h1>Contact</h1>
             <h3 className="mb-4">Cette page est en construction</h3>
             <img
-              src="./wp-content/themes/stadium8/images/construction.svg"
+              src={`.${absPath}/images/construction.svg`}
               alt="Cone"
               title="Désolé pour la gêne occasionnée"
               className="img-fluid rounded cone"
