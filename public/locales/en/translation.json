@@ -1,4 +1,29 @@
 {
-  "title": "Welcome onto the STADIUM8 website"
+  "navbar": {
+    "home": "Home",
+    "football5": "Football5",
+    "gymnasium": "Gymnasium",
+    "multisport": "Multisport",
+    "events": "Events",
+    "contact": "Contact"
+  },
+  "footer": {
+    "column-middle": {
+      "title": "Opening hours",
+      "gymnasium": {
+        "title": "Gymnasium",
+        "info-1": "Monday to Friday: from 6am to 10pm",
+        "info-2": "Saturday & Sunday: from 8am to 10pm"
+      },
+      "football-field": {
+        "title": "Football Field",
+        "info-1": "Monday to Sunday: from 8am to 10pm"
+      }
+    },
+    "column-right": {
+      "title": "on social medias",
+      "copyright": "All right reserved",
+      "web-developer": "Web Designer"
+    }
   }
 }

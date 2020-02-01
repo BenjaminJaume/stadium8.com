@@ -159,6 +159,11 @@ body {
   );
 }
 
+.container-100vh {
+  min-height: calc(100% - var(--navbar-height));
+  min-height: calc(100vh - var(--navbar-height));
+}
+
 /* Extra small devices (portrait phones, less than 576px) */
 /* @media (max-width: 575px) {
 } */
@@ -183,10 +188,6 @@ body {
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-  .container-100vh {
-    min-height: calc(100% - var(--navbar-height));
-    min-height: calc(100vh - var(--navbar-height));
-  }
 }
 
 /* Column management */

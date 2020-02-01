@@ -1,13 +1,11 @@
 import React from "react";
+import { withNamespaces } from "react-i18next";
 import { IndexLinkContainer } from "react-router-bootstrap";
+import DropdownLanguage from "../DropdownLanguage/DropdownLanguage";
 
 import "./NavigationBar.css";
 
-const changeLanguage = lng => {
-  alert(lng);
-};
-
-const NavigationBar = ({ absPath }) => {
+const NavigationBar = ({ absPath, onClick, lg, t }) => {
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-dark fixed-top font-brand-2">
@@ -47,7 +45,7 @@ const NavigationBar = ({ absPath }) => {
                 data-toggle="collapse"
                 data-target=".navbar-collapse.show"
               >
-                <span>Accueil</span>
+                <span>{t("navbar.home")}</span>
               </IndexLinkContainer>
             </li>
             <li className="nav-item">
@@ -58,7 +56,7 @@ const NavigationBar = ({ absPath }) => {
                 data-toggle="collapse"
                 data-target=".navbar-collapse.show"
               >
-                <span>Football5</span>
+                <span>{t("navbar.football5")}</span>
               </IndexLinkContainer>
             </li>
             <li className="nav-item">
@@ -69,7 +67,7 @@ const NavigationBar = ({ absPath }) => {
                 data-toggle="collapse"
                 data-target=".navbar-collapse.show"
               >
-                <span>Gymnase</span>
+                <span>{t("navbar.gymnasium")}</span>
               </IndexLinkContainer>
             </li>
             <li className="nav-item">
@@ -80,7 +78,7 @@ const NavigationBar = ({ absPath }) => {
                 data-toggle="collapse"
                 data-target=".navbar-collapse.show"
               >
-                <span>Multisport</span>
+                <span>{t("navbar.multisport")}</span>
               </IndexLinkContainer>
             </li>
             <li className="nav-item">
@@ -91,7 +89,7 @@ const NavigationBar = ({ absPath }) => {
                 data-toggle="collapse"
                 data-target=".navbar-collapse.show"
               >
-                <span>Évènements</span>
+                <span>{t("navbar.events")}</span>
               </IndexLinkContainer>
             </li>
             <li className="nav-item">
@@ -113,70 +111,11 @@ const NavigationBar = ({ absPath }) => {
                 data-toggle="collapse"
                 data-target=".navbar-collapse.show"
               >
-                <span>Contact</span>
+                <span>{t("navbar.contact")}</span>
               </IndexLinkContainer>
             </li>
 
-            <li className="nav-item dropdown">
-              <a
-                className="nav-link dropdown-toggle"
-                href="/"
-                role="button"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                <img
-                  src={`.${absPath}/images/country-flags/france.png`}
-                  alt="FR"
-                  className="d-inline-block mr-2"
-                  height="15"
-                />
-                Français
-              </a>
-
-              <div
-                className="dropdown-menu navbar-dropdown-menu w-25 dropdown-menu-right mx-auto"
-                aria-labelledby="navbarDropdownMenuLink"
-              >
-                <IndexLinkContainer
-                  to="/"
-                  href="/"
-                  data-toggle="collapse"
-                  data-target=".navbar-collapse.show"
-                  className="navbar-dropdown-item dropdown-item text-center text-white"
-                  onClick={() => changeLanguage("de")}
-                >
-                  <span>
-                    <img
-                      src={`.${absPath}/images/country-flags/costa-rica.png`}
-                      alt="ES"
-                      className="d-inline-block mr-2"
-                      height="15"
-                    />
-                    Español
-                  </span>
-                </IndexLinkContainer>
-                <IndexLinkContainer
-                  to="/"
-                  href="/"
-                  data-toggle="collapse"
-                  data-target=".navbar-collapse.show"
-                  className="dropdown-item navbar-dropdown-item text-center text-white"
-                  onClick={() => changeLanguage("de")}
-                >
-                  <span>
-                    <img
-                      src={`.${absPath}/images/country-flags/usa.png`}
-                      alt="US"
-                      className="d-inline-block mr-2"
-                      height="15"
-                    />
-                    English
-                  </span>
-                </IndexLinkContainer>
-              </div>
-            </li>
+            <DropdownLanguage absPath={absPath} onClick={onClick} lg={lg} />
           </ul>
         </div>
       </nav>
@@ -184,4 +123,5 @@ const NavigationBar = ({ absPath }) => {
   );
 };
 
-export default NavigationBar;
+// @ts-ignore
+export default withNamespaces()(NavigationBar);

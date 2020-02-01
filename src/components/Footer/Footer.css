@@ -4,25 +4,6 @@ footer {
   text-align: center;
 }
 
-/* #wave-footer {
-  cursor: pointer;
-  shape-rendering: crispEdges;
-  fill: url(#MyGradient);
-} */
-
-.wave-container {
-  position: relative;
-  background-color: #ffffff;
-  /* background: transparent; */
-  color: var(--black);
-  text-align: center;
-  overflow: hidden;
-}
-
-.wave-container > svg {
-  display: block;
-}
-
 footer a:hover {
   text-decoration: none;
 }

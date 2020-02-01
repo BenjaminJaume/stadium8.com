@@ -1,7 +1,8 @@
 import React from "react";
+import { withNamespaces } from "react-i18next";
 import "./Football5.css";
 
-const Football5 = ({ absPath }) => {
+const Football5 = ({ absPath, t }) => {
   return (
     <div
       className="responsive-background background-position-fixed"
@@ -31,4 +32,5 @@ const Football5 = ({ absPath }) => {
   );
 };
 
-export default Football5;
+// @ts-ignore
+export default withNamespaces()(Football5);

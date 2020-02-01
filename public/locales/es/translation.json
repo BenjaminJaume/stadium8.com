@@ -1,0 +1,29 @@
+{
+  "navbar": {
+    "home": "Home",
+    "football5": "Fútball5",
+    "gymnasium": "Gimnasio",
+    "multisport": "Multideporte",
+    "events": "Eventos",
+    "contact": "Contacto"
+  },
+  "footer": {
+    "column-middle": {
+      "title": "Horario de apertura",
+      "gymnasium": {
+        "title": "Gimnasio",
+        "info-1": "Lunes a Viernes: de las 06h a las 22h",
+        "info-2": "Sabado & Domingo: de las 08h a las 22h"
+      },
+      "football-field": {
+        "title": "Cancha de fútbol",
+        "info-1": "Lunes a Domingo: de las 08h a las 22h"
+      }
+    },
+    "column-right": {
+      "title": "en los redes sociales",
+      "copyright": "Todos los derechos reservados",
+      "web-developer": "Desarrollador Web"
+    }
+  }
+}

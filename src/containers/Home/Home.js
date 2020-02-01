@@ -26,7 +26,7 @@ class Home extends Component {
     this.setState({ isLoadingQuotes: true, isLoadingPosts: true });
 
     axios
-      .get("shttps://stadium8.com/wp-json/wp/v2/posts?categories=47&per_page=5")
+      .get("https://stadium8.com/wp-json/wp/v2/posts?categories=47&per_page=5")
       .then(response => {
         if (response.status === 200) {
           this.setState({
@@ -42,9 +42,7 @@ class Home extends Component {
       );
 
     axios
-      .get(
-        "shttps://stadium8.com/wp-json/wp/v2/posts/?categories=48&per_page=3"
-      )
+      .get("https://stadium8.com/wp-json/wp/v2/posts/?categories=48&per_page=3")
       .then(response => {
         if (response.status === 200) {
           this.setState({
@@ -134,7 +132,7 @@ class Home extends Component {
                   posts.map(post => (
                     <div
                       key={post.id}
-                      className="opacity-black-75 rounded border border-secondary pt-4 mb-4 mx-3"
+                      className="opacity-black-75 rounded border border-secondary pt-4 mb-4"
                     >
                       <h3 className="text-brand w-75 mx-auto font-weight-bold">
                         {post.title.rendered}
