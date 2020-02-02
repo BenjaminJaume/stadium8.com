@@ -1,0 +1,13 @@
+.navbar-dropdown-menu {
+  background-color: var(--black);
+}
+
+.navbar-dropdown-item:hover {
+  color: var(--brand-link) !important;
+  background-color: var(--black);
+}
+
+.navbar-dropdown-item:active {
+  color: unset;
+  background-color: unset;
+}

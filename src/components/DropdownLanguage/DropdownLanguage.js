@@ -1,4 +1,5 @@
 import React from "react";
+import "./DropdownLanguage.css";
 
 const DropdownLanguage = ({ absPath, onClick, lg }) => {
   switch (lg) {

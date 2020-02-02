@@ -5,20 +5,6 @@
   letter-spacing: -0.5px;
 }
 
-.navbar-dropdown-menu {
-  background-color: var(--black);
-}
-
-.navbar-dropdown-item:hover {
-  color: var(--brand-link) !important;
-  background-color: var(--black);
-}
-
-.navbar-dropdown-item:active {
-  color: unset;
-  background-color: unset;
-}
-
 .nav-link:hover,
 .navbar-dropdown-menu .navbar-dropdown-item:hover {
   color: var(--brand-link) !important;
@@ -60,4 +46,8 @@
 .dropdown-item.active {
   background-color: var(--black);
   color: var(--white) !important;
+}
+
+.navbar-brand:hover {
+  cursor: pointer;
 }
