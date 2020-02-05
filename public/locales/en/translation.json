@@ -15,11 +15,51 @@
     },
     "prices": {
       "title": "Prices",
-      "content": "To fill up"
+      "buttonContact": "Book your spot",
+      "morning": {
+        "title": "Morning"
+      },
+      "afternoon": {
+        "title": "Afternoon"
+      },
+      "night": {
+        "title": "Night"
+      }
     },
     "rules": {
       "title": "Rules",
       "content": "To write"
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "form": {
+      "success": {
+        "title": "Successfully sent, thank you!",
+        "reply": "We will reply shortly"
+      },
+      "error": {
+        "title": "Sorry, an error has occured",
+        "sendEmail": {
+          "text": "Please send us an",
+          "email": "email"
+        }
+      },
+      "name": {
+        "title": "Name",
+        "error": "A name is required"
+      },
+      "email": {
+        "title": "Email",
+        "error": "A valid email is required"
+      },
+      "message": {
+        "title": "Message",
+        "error": "Please, leave a message"
+      },
+      "button": {
+        "title": "Submit"
+      }
     }
   },
   "footer": {

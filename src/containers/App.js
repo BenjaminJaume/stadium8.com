@@ -15,9 +15,36 @@ import Spa from "./Spa/Spa";
 import Contact from "./Contact/Contact";
 import Page404 from "./Page404/Page404";
 
-const phoneNumber = "+506 8580 8585";
-
 const absPath = Config.ABS_PATH;
+const phoneNumber = "+506 8580 8585";
+const email = "stadiumrc@gmail.com";
+
+const footballDetails = {
+  morning: {
+    price: {
+      colones: "10,000",
+      dollars: "20"
+    },
+    hourFrom: "8",
+    hourTo: "12"
+  },
+  afternoon: {
+    price: {
+      colones: "15,000",
+      dollars: "30"
+    },
+    hourFrom: "12",
+    hourTo: "17"
+  },
+  night: {
+    price: {
+      colones: "20,000",
+      dollars: "40"
+    },
+    hourFrom: "17",
+    hourTo: "22"
+  }
+};
 
 export default class App extends Component {
   constructor(props) {
@@ -46,7 +73,7 @@ export default class App extends Component {
 
           <Switch>
             <Route path="/football5" component={Football5}>
-              <Football5 absPath={absPath} lg={this.state.lg} />
+              <Football5 absPath={absPath} footballDetails={footballDetails} />
             </Route>
             <Route path="/gym" component={Gym}>
               <Gym absPath={absPath} />
@@ -61,7 +88,7 @@ export default class App extends Component {
               <Spa absPath={absPath} />
             </Route>
             <Route path="/contact" component={Contact}>
-              <Contact absPath={absPath} />
+              <Contact absPath={absPath} email={email} />
             </Route>
             <Route path="/" component={Home} exact>
               <Home absPath={absPath} lg={this.state.lg} />

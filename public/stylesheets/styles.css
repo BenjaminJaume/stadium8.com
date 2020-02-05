@@ -108,6 +108,10 @@ body {
   color: var(--silver);
 }
 
+. {
+  color: var(--emerald);
+}
+
 /* Link color classes */
 .link-brand {
   color: var(--brand-color);

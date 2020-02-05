@@ -15,7 +15,16 @@
     },
     "prices": {
       "title": "Precios",
-      "content": "Para ser completado"
+      "buttonContact": "Reserva tu lugar",
+      "morning": {
+        "title": "Mañana"
+      },
+      "afternoon": {
+        "title": "Tarde"
+      },
+      "night": {
+        "title": "Noche"
+      }
     },
     "rules": {
       "title": "Reglas",
