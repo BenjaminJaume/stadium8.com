@@ -7,6 +7,21 @@
     "events": "Évènements",
     "contact": "Contact"
   },
+  "football5": {
+    "title": "Football5",
+    "calendar": {
+      "title": "Calendrier",
+      "content": ""
+    },
+    "prices": {
+      "title": "Prix",
+      "content": "À remplir"
+    },
+    "rules": {
+      "title": "Règles",
+      "content": "À écrire"
+    }
+  },
   "footer": {
     "column-middle": {
       "title": "Horaires d'ouverture",

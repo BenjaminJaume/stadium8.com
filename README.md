@@ -10,3 +10,4 @@ Website for the sport building is Samara, Costa Rica
 - [Using Development and Production Variables for React apps](https://medium.com/@a.carreras.c/development-and-production-variables-for-react-apps-c04af8b430a5)
 - [Underline active navbar links in bootstrap 4](https://stackoverflow.com/questions/45833358/underline-active-navbar-links-in-bootstrap-4)
 - [`react-i18next` Step by Step Guide](https://react.i18next.com/legacy-v9/step-by-step-guide)
+- [React Calendar with Google Calendar as CMS — tutorial](https://blog.daftcode.pl/react-calendar-with-google-calendar-as-cms-tutorial-5f5d81e425a9)
