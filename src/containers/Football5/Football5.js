@@ -33,13 +33,21 @@ class Football5 extends Component {
                   <h1 className="mb-4">{t("football5.title")}</h1>
                   <Tabs>
                     <TabList>
-                      <Tab>{t("football5.calendar.title")}</Tab>
-                      <Tab>{t("football5.prices.title")}</Tab>
-                      <Tab>{t("football5.rules.title")}</Tab>
+                      <Tab>
+                        <h4 className="mb-0">
+                          {t("football5.calendar.title")}
+                        </h4>
+                      </Tab>
+                      <Tab>
+                        <h4 className="mb-0">{t("football5.prices.title")}</h4>
+                      </Tab>
+                      <Tab>
+                        <h4 className="mb-0">{t("football5.rules.title")}</h4>
+                      </Tab>
                     </TabList>
 
                     <TabPanel>
-                      <GoogleCalendar />
+                      <GoogleCalendar footballDetails={footballDetails} />
                     </TabPanel>
 
                     <TabPanel>
@@ -51,8 +59,7 @@ class Football5 extends Component {
                                 {t("football5.prices.morning.title")}
                               </h3>
                               <h3>
-                                {footballDetails.morning.hourFrom}h -{" "}
-                                {footballDetails.morning.hourTo}h
+                                {`${footballDetails.morning.hourFrom}h${footballDetails.morning.minuteFrom} - ${footballDetails.morning.hourTo}h${footballDetails.morning.minuteTo}`}
                               </h3>
                             </div>
                             <h1>
@@ -70,8 +77,7 @@ class Football5 extends Component {
                                 {t("football5.prices.afternoon.title")}
                               </h3>
                               <h3>
-                                {footballDetails.afternoon.hourFrom}h -{" "}
-                                {footballDetails.afternoon.hourTo}h
+                                {`${footballDetails.afternoon.hourFrom}h${footballDetails.afternoon.minuteFrom} - ${footballDetails.afternoon.hourTo}h${footballDetails.afternoon.minuteTo}`}
                               </h3>
                             </div>
                             <h1>
@@ -89,8 +95,7 @@ class Football5 extends Component {
                                 {t("football5.prices.night.title")}
                               </h3>
                               <h3>
-                                {footballDetails.night.hourFrom}h -{" "}
-                                {footballDetails.night.hourTo}h
+                                {`${footballDetails.night.hourFrom}h${footballDetails.night.minuteFrom} - ${footballDetails.night.hourTo}h${footballDetails.night.minuteTo}`}
                               </h3>
                             </div>
                             <h1>

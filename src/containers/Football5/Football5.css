@@ -1,1 +1,7 @@
+.react-tabs__tab--selected {
+  background-color: var(--brand-color);
+}
 
+.react-tabs__tab:focus:after {
+  background: none;
+}

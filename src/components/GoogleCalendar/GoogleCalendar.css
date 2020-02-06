@@ -13,6 +13,14 @@
   background-color: var(--brand-link);
 }
 
+.rbc-header {
+  border-bottom: none;
+}
+
+.rbc-time-content {
+  border-top: 1px solid white;
+}
+
 .rbc-header.rbc-today {
   color: var(--black);
 }
@@ -25,13 +33,15 @@
   background-color: var(--brand-color);
   border: none;
   color: var(--black);
-}
-
-.rbc-event {
   border-radius: 0;
   cursor: unset;
 }
 
 .rbc-label {
   padding: 0 3px;
+}
+
+.rbc-event-label,
+.rbc-allday-cell {
+  display: none;
 }

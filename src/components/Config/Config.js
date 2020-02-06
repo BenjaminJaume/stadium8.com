@@ -10,8 +10,8 @@ const prod = {
 const dev = {
   ABS_PATH: "",
   MAPS_API_KEY: "",
-  CALENDAR_API_KEY: "",
-  // CALENDAR_API_KEY: "AIzaSyAqmMLXWJ9CpdFok66CVp0viRRsQZuO4K8",
+  // CALENDAR_API_KEY: "",
+  CALENDAR_API_KEY: "AIzaSyAqmMLXWJ9CpdFok66CVp0viRRsQZuO4K8",
   CALENDAR_URL: "vqfi8t5t8q28tqtae32l3rnl40@group.calendar.google.com",
   FB_API_KEY: "844108232681291",
   status: "DEV"

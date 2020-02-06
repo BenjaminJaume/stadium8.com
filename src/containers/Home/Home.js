@@ -24,15 +24,20 @@ class Home extends Component {
     };
     this.createMarkupPost = this.createMarkupPost.bind(this);
     this.createMarkupQuote = this.createMarkupQuote.bind(this);
+    this.extractPictureSrc = this.extractPictureSrc.bind(this);
   }
 
   componentDidMount() {
     this.setState({ isLoadingQuotes: true, isLoadingPosts: true });
 
+    const { quotesPerPage, postsPerPage } = this.props;
+
     // English
     // Quotes
     axios
-      .get("https://stadium8.com/wp-json/wp/v2/posts?categories=51&per_page=5")
+      .get(
+        `https://stadium8.com/wp-json/wp/v2/posts?categories=51&per_page=${quotesPerPage}`
+      )
       .then(response => {
         if (response.status === 200) {
           this.setState({
@@ -48,7 +53,9 @@ class Home extends Component {
       );
     // Posts
     axios
-      .get("https://stadium8.com/wp-json/wp/v2/posts/?categories=53&per_page=3")
+      .get(
+        `https://stadium8.com/wp-json/wp/v2/posts/?categories=53&per_page=${postsPerPage}`
+      )
       .then(response => {
         if (response.status === 200) {
           this.setState({
@@ -66,7 +73,9 @@ class Home extends Component {
     // French
     // Quotes
     axios
-      .get("https://stadium8.com/wp-json/wp/v2/posts?categories=47&per_page=5")
+      .get(
+        `https://stadium8.com/wp-json/wp/v2/posts?categories=47&per_page=${quotesPerPage}`
+      )
       .then(response => {
         if (response.status === 200) {
           this.setState({
@@ -83,7 +92,9 @@ class Home extends Component {
 
     // Posts
     axios
-      .get("https://stadium8.com/wp-json/wp/v2/posts/?categories=48&per_page=3")
+      .get(
+        `https://stadium8.com/wp-json/wp/v2/posts/?categories=48&per_page=${postsPerPage}`
+      )
       .then(response => {
         if (response.status === 200) {
           this.setState({
@@ -101,7 +112,9 @@ class Home extends Component {
     // Spanish
     // Quotes
     axios
-      .get("https://stadium8.com/wp-json/wp/v2/posts?categories=52&per_page=5")
+      .get(
+        `https://stadium8.com/wp-json/wp/v2/posts?categories=52&per_page=${quotesPerPage}`
+      )
       .then(response => {
         if (response.status === 200) {
           this.setState({
@@ -118,7 +131,9 @@ class Home extends Component {
 
     // Posts
     axios
-      .get("https://stadium8.com/wp-json/wp/v2/posts/?categories=54&per_page=3")
+      .get(
+        `https://stadium8.com/wp-json/wp/v2/posts/?categories=54&per_page=${postsPerPage}`
+      )
       .then(response => {
         if (response.status === 200) {
           this.setState({
@@ -144,6 +159,16 @@ class Home extends Component {
     return {
       __html: html.replace("<p>", "&ldquo; ").replace("</p>", " &bdquo;")
     };
+  }
+
+  extractPictureSrc(data) {
+    const srcStart = data.indexOf('<img src="') + 10;
+    const srcEnd = data.indexOf('alt=""') - 6;
+
+    const srcSetStart = data.indexOf("srcset=") + 8;
+    const srcSetEnd = data.indexOf('" sizes=') - 5;
+
+    return [data.slice(srcStart, srcEnd), data.slice(srcSetStart, srcSetEnd)];
   }
 
   render() {
@@ -196,12 +221,11 @@ class Home extends Component {
             <div className="row h-100 align-items-center">
               <div className="col-12 col-lg-6 text-white mb-3 mb-lg-0">
                 <div className="d-flex flex-column justify-content-center text-center h-100">
-                  <div className="font-brand-bold font-italic h1 mb-0">
-                    {errorQuotes ? (
-                      <div>{/* Pas de citations aujourd'hui */}</div>
-                    ) : (
-                      ""
-                    )}
+                  <div className="font-italic h1 mb-0">
+                    {errorQuotes
+                      ? /* Error loading quotes */
+                        ""
+                      : ""}
 
                     {isLoadingQuotes ? (
                       <h2 className="loading-text text-center mb-5">
@@ -230,16 +254,40 @@ class Home extends Component {
                   posts.map(post => (
                     <div
                       key={post.id}
-                      className="opacity-black-75 rounded border border-secondary pt-4 mb-4"
+                      className="opacity-black-75 rounded border border-black pt-4 mb-4"
                     >
-                      <h3 className="text-brand w-75 mx-auto font-weight-bold">
-                        {post.title.rendered}
-                      </h3>
-                      <p className="text-white font-weight-bold mb-0">
-                        <FontAwesomeIcon icon={faClock} className="mr-1" />
-                        {post.modified.slice(8, 10)}/{post.modified.slice(5, 7)}
-                        /{post.modified.slice(0, 4)}
-                      </p>
+                      <div className="mb-2">
+                        <span className="text-white font-weight-bold align-text-bottom mb-0 mx-3">
+                          <FontAwesomeIcon icon={faClock} className="mr-1" />
+                          {`${post.modified.slice(8, 10)}/${post.modified.slice(
+                            5,
+                            7
+                          )}/${post.modified.slice(0, 4)}`}
+                        </span>
+                        <span className="text-brand font-weight-bold h3 mb-0">
+                          {post.title.rendered}
+                        </span>
+                      </div>
+
+                      {post.content.rendered.indexOf('<img src="') !== -1 ? (
+                        <span>
+                          <img
+                            src={
+                              this.extractPictureSrc(post.content.rendered)[0]
+                            }
+                            alt=""
+                            className="img-fluid"
+                            style={{ maxHeight: "300px" }}
+                            srcSet={
+                              this.extractPictureSrc(post.content.rendered)[1]
+                            }
+                            sizes="(max-width: 300px) 100vw, 600px"
+                          />
+                        </span>
+                      ) : (
+                        ""
+                      )}
+
                       <div
                         className="font-brand-2 text-white mx-2 p-1 px-lg-4 pb-lg-3"
                         dangerouslySetInnerHTML={this.createMarkupPost(

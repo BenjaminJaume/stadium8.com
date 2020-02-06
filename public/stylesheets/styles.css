@@ -179,6 +179,10 @@ body {
   min-height: calc(100vh - var(--navbar-height));
 }
 
+.border-black {
+  border-color: var(--black) !important;
+}
+
 /* Extra small devices (portrait phones, less than 576px) */
 /* @media (max-width: 575px) {
 } */

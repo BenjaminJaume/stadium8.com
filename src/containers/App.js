@@ -25,8 +25,10 @@ const footballDetails = {
       colones: "10,000",
       dollars: "20"
     },
-    hourFrom: "8",
-    hourTo: "12"
+    hourFrom: "08",
+    minuteFrom: "00",
+    hourTo: "12",
+    minuteTo: "00"
   },
   afternoon: {
     price: {
@@ -34,7 +36,9 @@ const footballDetails = {
       dollars: "30"
     },
     hourFrom: "12",
-    hourTo: "17"
+    minuteFrom: "00",
+    hourTo: "17",
+    minuteTo: "00"
   },
   night: {
     price: {
@@ -42,9 +46,14 @@ const footballDetails = {
       dollars: "40"
     },
     hourFrom: "17",
-    hourTo: "22"
+    minuteFrom: "00",
+    hourTo: "22",
+    minuteTo: "00"
   }
 };
+
+const quotesPerPage = 5;
+const postsPerPage = 3;
 
 export default class App extends Component {
   constructor(props) {
@@ -93,7 +102,12 @@ export default class App extends Component {
               <Contact absPath={absPath} email={email} />
             </Route>
             <Route path="/" component={Home} exact>
-              <Home absPath={absPath} lg={lg} />
+              <Home
+                absPath={absPath}
+                lg={lg}
+                quotesPerPage={quotesPerPage}
+                postsPerPage={postsPerPage}
+              />
             </Route>
             <Route component={Page404}>
               <Page404 absPath={absPath} />
