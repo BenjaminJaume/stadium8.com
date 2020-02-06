@@ -1,6 +1,6 @@
 {
   "navbar": {
-    "home": "Home",
+    "home": "Inicio",
     "football5": "Fútball5",
     "gymnasium": "Gimnasio",
     "multisport": "Multideporte",
@@ -31,8 +31,40 @@
       "content": "Para ser escribe"
     }
   },
+  "contact": {
+    "title": "Contacto",
+    "content": "Por favor, póngase en contacto para cualquier consulta general",
+    "form": {
+      "success": {
+        "title": "Enviado con éxito, ¡Gracias!",
+        "reply": "Responderemos en breve."
+      },
+      "error": {
+        "title": "Lo siento, ha ocurrido un error",
+        "sendEmail": {
+          "text": "Por favor, envíenos un",
+          "email": "correo electrónico"
+        }
+      },
+      "name": {
+        "title": "Nombre",
+        "error": "Se requiere un nombre"
+      },
+      "email": {
+        "title": "Correo electrónico",
+        "error": "Se requiere un correo electrónico válido"
+      },
+      "message": {
+        "title": "Mensaje",
+        "error": "Por favor, deje un mensaje"
+      },
+      "button": {
+        "title": "Envíe"
+      }
+    }
+  },
   "footer": {
-    "column-middle": {
+    "openingHours": {
       "title": "Horario de apertura",
       "gymnasium": {
         "title": "Gimnasio",
@@ -44,10 +76,22 @@
         "info-1": "Lunes a Domingo: de las 08h a las 22h"
       }
     },
-    "column-right": {
+    "socialNetworks": {
       "title": "en los redes sociales",
       "copyright": "Todos los derechos reservados",
-      "web-developer": "Desarrollador Web"
+      "web-developer": "Desarrollador Web",
+      "whatsappPopover": {
+        "title": "Contáctenos",
+        "content": "Abra WhatsApp o copie",
+        "or": "o",
+        "copied": "¡Copiado!"
+      }
+    }
+  },
+  "other": {
+    "construction": {
+      "title": "Este lado de la página web no se ha abierto todavía",
+      "hover": "Siento las molestias"
     }
   }
 }

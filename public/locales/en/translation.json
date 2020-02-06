@@ -1,7 +1,7 @@
 {
   "navbar": {
     "home": "Home",
-    "football5": "Football5",
+    "football5": "Soccer5",
     "gymnasium": "Gymnasium",
     "multisport": "Multisport",
     "events": "Events",
@@ -33,6 +33,7 @@
   },
   "contact": {
     "title": "Contact",
+    "content": "Please contact us for any general enquiry",
     "form": {
       "success": {
         "title": "Successfully sent, thank you!",
@@ -59,11 +60,12 @@
       },
       "button": {
         "title": "Submit"
-      }
+      },
+      "back": "Go back to the home page"
     }
   },
   "footer": {
-    "column-middle": {
+    "openingHours": {
       "title": "Opening hours",
       "gymnasium": {
         "title": "Gymnasium",
@@ -75,10 +77,22 @@
         "info-1": "Monday to Sunday: from 8am to 10pm"
       }
     },
-    "column-right": {
+    "socialNetworks": {
       "title": "on social medias",
       "copyright": "All right reserved",
-      "web-developer": "Web Designer"
+      "web-developer": "Web Designer",
+      "whatsappPopover": {
+        "title": "Contact us",
+        "content": "Open WhatsApp or copy",
+        "or": "or",
+        "copied": "Copied!"
+      }
+    }
+  },
+  "other": {
+    "construction": {
+      "title": "This side of the website hasn't opened yet",
+      "hover": "Sorry for the inconvenience"
     }
   }
 }

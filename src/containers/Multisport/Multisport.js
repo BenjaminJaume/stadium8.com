@@ -1,7 +1,8 @@
 import React from "react";
+import { withNamespaces } from "react-i18next";
 import "./Multisport.css";
 
-const Multisport = ({ absPath }) => {
+const Multisport = ({ absPath, t }) => {
   return (
     <div
       className="responsive-background background-position-fixed"
@@ -14,12 +15,12 @@ const Multisport = ({ absPath }) => {
           <div className="row h-100 align-items-center">
             <div className="col-12 col-lg-10 mx-auto py-5">
               <div className="opacity-black-75 text-white rounded text-center p-5">
-                <h1>Multisport</h1>
-                <h3 className="mb-4">Cette page est en construction</h3>
+                <h1 className="mb-4 text-brand">{t("navbar.multisport")}</h1>
+                <h3 className="mb-5">{t("other.construction.title")}</h3>
                 <img
                   src={`.${absPath}/images/construction.svg`}
                   alt="Cone"
-                  title="Désolé pour la gêne occasionnée"
+                  title={t("other.construction.hover")}
                   className="img-fluid rounded cone"
                 />
               </div>
@@ -31,4 +32,5 @@ const Multisport = ({ absPath }) => {
   );
 };
 
-export default Multisport;
+// @ts-ignore
+export default withNamespaces()(Multisport);

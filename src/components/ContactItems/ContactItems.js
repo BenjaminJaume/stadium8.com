@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { withNamespaces } from "react-i18next";
 import Popover from "react-bootstrap/Popover";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -19,7 +20,7 @@ class ContactItems extends Component {
   }
 
   render() {
-    const { absPath } = this.props;
+    const { absPath, t } = this.props;
 
     return (
       <>
@@ -71,13 +72,17 @@ class ContactItems extends Component {
               <Popover id="popoverContactPhone">
                 <Popover.Title as="h3">
                   <FontAwesomeIcon icon={faPhoneAlt} className="mr-1" />{" "}
-                  Contactez nous
+                  {t("footer.socialNetworks.whatsappPopover.title")}
                 </Popover.Title>
                 <Popover.Content className="text-center">
                   {this.state.copied ? (
-                    <span className="text-emerald">Copié!</span>
+                    <span className="text-emerald">
+                      {t("footer.socialNetworks.whatsappPopover.copied")}
+                    </span>
                   ) : (
-                    <span>Ouvrir WhatsApp or copier</span>
+                    <span>
+                      {t("footer.socialNetworks.whatsappPopover.content")}
+                    </span>
                   )}
                   <br />
                   <a
@@ -90,7 +95,7 @@ class ContactItems extends Component {
                   >
                     {this.props.phoneNumber}
                   </a>
-                  <span> ou </span>
+                  <span> {t("footer.socialNetworks.whatsappPopover.or")} </span>
                   <CopyToClipboard
                     text={this.props.phoneNumber.replace(/ /g, "")}
                     onCopy={() => this.setState({ copied: true })}
@@ -130,7 +135,7 @@ class ContactItems extends Component {
         </a>
 
         <a
-          href="https://www.youtube.com/watch?v=Tds61VW3wyI"
+          href="https://urlgeni.us/youtube/channel/N3NZ"
           className="youtube-brand-icon px-1"
           target="_blank"
           rel="noopener noreferrer"
@@ -146,4 +151,4 @@ class ContactItems extends Component {
   }
 }
 
-export default ContactItems;
+export default withNamespaces()(ContactItems);

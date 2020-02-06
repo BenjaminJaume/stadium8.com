@@ -35,7 +35,7 @@
   --brand-link: rgba(238, 255, 5, 0.7);
 
   /* Mesurement values */
-  --navbar-height: 76px;
+  --navbar-height: 74px;
 }
 
 @font-face {
@@ -108,7 +108,7 @@ body {
   color: var(--silver);
 }
 
-. {
+.text-emerald {
   color: var(--emerald);
 }
 
@@ -120,6 +120,17 @@ body {
 
 .link-brand:hover {
   color: var(--brand-link);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.link-emerald {
+  color: var(--emerald);
+  text-decoration: underline;
+}
+
+.link-emerald:hover {
+  color: var(--emerald-link);
   cursor: pointer;
   text-decoration: underline;
 }

@@ -10,7 +10,7 @@
 }
 
 .rbc-today {
-  background-color: var(--concrete);
+  background-color: var(--brand-link);
 }
 
 .rbc-header.rbc-today {
@@ -30,4 +30,8 @@
 .rbc-event {
   border-radius: 0;
   cursor: unset;
+}
+
+.rbc-label {
+  padding: 0 3px;
 }

@@ -3,6 +3,7 @@ import { withNamespaces } from "react-i18next";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheckCircle } from "@fortawesome/free-regular-svg-icons";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
+import { IndexLinkContainer } from "react-router-bootstrap";
 
 class ContactForm extends Component {
   constructor(props) {
@@ -13,8 +14,7 @@ class ContactForm extends Component {
       message: "",
       isSent: false,
       status: "",
-      errorMessage: "",
-      isMessageAppearing: false
+      errorMessage: ""
     };
     this.handleNameChange = this.handleNameChange.bind(this);
     this.handleEmailChange = this.handleEmailChange.bind(this);
@@ -23,33 +23,25 @@ class ContactForm extends Component {
   }
 
   render() {
-    var {
-      name,
-      emailInput,
-      message,
-      isSent,
-      status,
-      isMessageAppearing
-    } = this.state;
+    var { name, emailInput, message, isSent, status } = this.state;
     var { t, email } = this.props;
 
     return (
       <>
         {isSent ? (
           status === "success" ? (
-            isMessageAppearing ? (
-              <div className="text-center">
-                <span className="text-emerald h6">
-                  <p className="mb-0">
-                    <FontAwesomeIcon icon={faCheckCircle} className="mr-2" />
-                    {t("contact.form.success.title")}
-                  </p>
-                  <p>{t("contact.form.success.reply")}</p>
-                </span>
-              </div>
-            ) : (
-              ""
-            )
+            <div className="text-center text-emerald ">
+              <span className="h6">
+                <p className="mb-0">
+                  <FontAwesomeIcon icon={faCheckCircle} className="mr-2" />
+                  {t("contact.form.success.title")}
+                </p>
+                <p className="mb-0">{t("contact.form.success.reply")}</p>
+              </span>
+              <IndexLinkContainer to="/" href="/" className="link-emerald">
+                <p>{t("contact.form.back")}</p>
+              </IndexLinkContainer>
+            </div>
           ) : status === "error" ? (
             <div className="text-center">
               <span className="text-danger h6">
@@ -57,10 +49,15 @@ class ContactForm extends Component {
                 {t("contact.form.error.title")}
               </span>
               <br />
-              {t("contact.form.error.sendEmail.text")}{" "}
-              <a href={`mailto:${email}`} className="link-emerald">
-                {t("contact.form.error.sendEmail.email")}
-              </a>
+              <p className="mb-0">
+                {t("contact.form.error.sendEmail.text")}{" "}
+                <a href={`mailto:${email}`} className="link-emerald">
+                  {t("contact.form.error.sendEmail.email")}
+                </a>
+              </p>
+              <IndexLinkContainer to="/" href="/" className="link-emerald">
+                <p>{t("contact.form.back")}</p>
+              </IndexLinkContainer>
             </div>
           ) : (
             ""
@@ -140,21 +137,11 @@ class ContactForm extends Component {
   }
 
   handleSubmit(event) {
-    this.setState({
-      isMessageAppearing: true
-    });
-
-    setTimeout(() => {
-      this.setState({
-        isMessageAppearing: false
-      });
-    }, 10000);
-
-    const templateId = "new_message_temlate";
+    const templateId = "new_message_template";
 
     this.sendMessage(templateId, {
       name: this.state.name,
-      email: this.state.email,
+      email: this.state.emailInput,
       message: this.state.message
     });
   }

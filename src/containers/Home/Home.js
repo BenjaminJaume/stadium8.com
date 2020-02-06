@@ -11,8 +11,12 @@ class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      quotes: [],
-      posts: [],
+      quotesES: [],
+      quotesEN: [],
+      quotesFR: [],
+      postsES: [],
+      postsEN: [],
+      postsFR: [],
       isLoadingQuotes: false,
       isLoadingPosts: false,
       errorQuotes: null,
@@ -25,12 +29,48 @@ class Home extends Component {
   componentDidMount() {
     this.setState({ isLoadingQuotes: true, isLoadingPosts: true });
 
+    // English
+    // Quotes
+    axios
+      .get("https://stadium8.com/wp-json/wp/v2/posts?categories=51&per_page=5")
+      .then(response => {
+        if (response.status === 200) {
+          this.setState({
+            quotesEN: response.data,
+            isLoadingQuotes: false
+          });
+        } else {
+          throw new Error("Something went wrong with Quotes");
+        }
+      })
+      .catch(error =>
+        this.setState({ errorQuotes: error, isLoadingQuotes: false })
+      );
+    // Posts
+    axios
+      .get("https://stadium8.com/wp-json/wp/v2/posts/?categories=53&per_page=3")
+      .then(response => {
+        if (response.status === 200) {
+          this.setState({
+            postsEN: response.data,
+            isLoadingPosts: false
+          });
+        } else {
+          throw new Error("Something went wrong with Posts");
+        }
+      })
+      .catch(error =>
+        this.setState({ errorPosts: error, isLoadingPosts: false })
+      );
+
+    // French
+    // Quotes
     axios
       .get("https://stadium8.com/wp-json/wp/v2/posts?categories=47&per_page=5")
       .then(response => {
         if (response.status === 200) {
           this.setState({
-            quotes: response.data,
+            quotesFR: response.data,
             isLoadingQuotes: false
           });
         } else {
@@ -41,12 +81,48 @@ class Home extends Component {
         this.setState({ errorQuotes: error, isLoadingQuotes: false })
       );
 
+    // Posts
     axios
       .get("https://stadium8.com/wp-json/wp/v2/posts/?categories=48&per_page=3")
       .then(response => {
         if (response.status === 200) {
           this.setState({
-            posts: response.data,
+            postsFR: response.data,
+            isLoadingPosts: false
+          });
+        } else {
+          throw new Error("Something went wrong with Posts");
+        }
+      })
+      .catch(error =>
+        this.setState({ errorPosts: error, isLoadingPosts: false })
+      );
+
+    // Spanish
+    // Quotes
+    axios
+      .get("https://stadium8.com/wp-json/wp/v2/posts?categories=52&per_page=5")
+      .then(response => {
+        if (response.status === 200) {
+          this.setState({
+            quotesES: response.data,
+            isLoadingQuotes: false
+          });
+        } else {
+          throw new Error("Something went wrong with Quotes");
+        }
+      })
+      .catch(error =>
+        this.setState({ errorQuotes: error, isLoadingQuotes: false })
+      );
+
+    // Posts
+    axios
+      .get("https://stadium8.com/wp-json/wp/v2/posts/?categories=54&per_page=3")
+      .then(response => {
+        if (response.status === 200) {
+          this.setState({
+            postsES: response.data,
             isLoadingPosts: false
           });
         } else {
@@ -72,15 +148,41 @@ class Home extends Component {
 
   render() {
     const {
-      quotes,
-      posts,
+      quotesES,
+      quotesEN,
+      quotesFR,
+      postsES,
+      postsEN,
+      postsFR,
       isLoadingQuotes,
       isLoadingPosts,
       errorQuotes,
       errorPosts
     } = this.state;
 
-    const { absPath } = this.props;
+    const { absPath, lg } = this.props;
+
+    var quotes = [];
+    var posts = [];
+
+    switch (lg) {
+      case "es":
+        posts = postsES;
+        quotes = quotesES;
+        break;
+      case "en":
+        posts = postsEN;
+        quotes = quotesEN;
+        break;
+      case "fr":
+        posts = postsFR;
+        quotes = quotesFR;
+        break;
+      default:
+        posts = postsEN;
+        quotes = quotesEN;
+        break;
+    }
 
     return (
       <div
@@ -96,11 +198,7 @@ class Home extends Component {
                 <div className="d-flex flex-column justify-content-center text-center h-100">
                   <div className="font-brand-bold font-italic h1 mb-0">
                     {errorQuotes ? (
-                      <div>
-                        &ldquo; La plus grande victoire de l'existence ne
-                        consiste pas à ne jamais tomber, mais à se relever après
-                        chaque chute. &bdquo; - Nelson Mandela
-                      </div>
+                      <div>{/* Pas de citations aujourd'hui */}</div>
                     ) : (
                       ""
                     )}

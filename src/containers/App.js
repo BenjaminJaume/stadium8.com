@@ -62,13 +62,15 @@ export default class App extends Component {
   };
 
   render() {
+    const { lg } = this.state;
+
     return (
       <div>
         <Router>
           <NavigationBar
             absPath={absPath}
             onClick={this.changeLanguage}
-            lg={this.state.lg}
+            lg={lg}
           />
 
           <Switch>
@@ -91,18 +93,14 @@ export default class App extends Component {
               <Contact absPath={absPath} email={email} />
             </Route>
             <Route path="/" component={Home} exact>
-              <Home absPath={absPath} lg={this.state.lg} />
+              <Home absPath={absPath} lg={lg} />
             </Route>
             <Route component={Page404}>
               <Page404 absPath={absPath} />
             </Route>
           </Switch>
 
-          <Footer
-            phoneNumber={phoneNumber}
-            absPath={absPath}
-            lg={this.state.lg}
-          />
+          <Footer phoneNumber={phoneNumber} absPath={absPath} lg={lg} />
         </Router>
       </div>
     );

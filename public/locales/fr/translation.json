@@ -31,8 +31,40 @@
       "content": "À écrire"
     }
   },
+  "contact": {
+    "title": "Contact",
+    "content": "Veuillez nous contacter si vous voulez en savoir plus",
+    "form": {
+      "success": {
+        "title": "Message envoyé avec succès, merci!",
+        "reply": "Nous répondrons sous peu"
+      },
+      "error": {
+        "title": "Désolé, une erreur s'est produite",
+        "sendEmail": {
+          "text": "Envoyez nous un",
+          "email": "email"
+        }
+      },
+      "name": {
+        "title": "Nom",
+        "error": "Un nom est requis"
+      },
+      "email": {
+        "title": "Email",
+        "error": "Un email est requis"
+      },
+      "message": {
+        "title": "Message",
+        "error": "Veuillez saisir votre message"
+      },
+      "button": {
+        "title": "Envoyer"
+      }
+    }
+  },
   "footer": {
-    "column-middle": {
+    "openingHours": {
       "title": "Horaires d'ouverture",
       "gymnasium": {
         "title": "Gymnase",
@@ -44,10 +76,22 @@
         "info-1": "Lundi au Dimanche: de 08h à 22h"
       }
     },
-    "column-right": {
+    "socialNetworks": {
       "title": "sur les réseaux",
       "copyright": "Tous droits réservés",
-      "web-developer": "Développeur Web"
+      "web-developer": "Développeur Web",
+      "whatsappPopover": {
+        "title": "Contactez nous",
+        "content": "Ouvrir WhatsApp ou copier",
+        "or": "ou",
+        "copied": "Copié!"
+      }
+    }
+  },
+  "other": {
+    "construction": {
+      "title": "Cette partie du site n'a pas encore ouverte",
+      "hover": "Désolé pour la gêne occasionnée"
     }
   }
 }

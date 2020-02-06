@@ -51,3 +51,16 @@
 .navbar-brand:hover {
   cursor: pointer;
 }
+
+.hidden-link,
+.hidden-link:active,
+.hidden-link:focus,
+.hidden-link:hover {
+  text-decoration: none;
+  color: var(--brand-color) !important;
+  margin-bottom: -2px;
+}
+
+.dropdown-toggle::after {
+  display: none;
+}

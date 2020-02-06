@@ -8,21 +8,36 @@ import "./NavigationBar.css";
 const NavigationBar = ({ absPath, onClick, lg, t }) => {
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-dark fixed-top font-brand-2">
-        <IndexLinkContainer
-          to="/"
-          href="/"
-          className="navbar-brand"
-          data-toggle="collapse"
-          data-target=".navbar-collapse.show"
-        >
-          <img
+      <nav className="navbar navbar-expand-lg navbar-dark fixed-top font-brand-2 py-3">
+        <span>
+          <IndexLinkContainer
+            to="/"
+            href="/"
+            className="navbar-brand"
+            data-toggle="collapse"
+            data-target=".navbar-collapse.show"
+          >
+            {/* <img
             src={`.${absPath}/images/logo-white-xl.png`}
             alt="STADIUM8"
             className="d-inline-block mr-2"
             height="60"
-          />
-        </IndexLinkContainer>
+          /> */}
+            <span className="m-0 p-0 font-brand-bold h3">
+              <span className="h3">STADIUM</span>
+            </span>
+          </IndexLinkContainer>
+          <span className="p-0 m-0">
+            <a
+              href="http://stadium8.com/wp-login.php"
+              className="hidden-link font-brand-cuts align-baseline h4"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              8
+            </a>
+          </span>
+        </span>
         <button
           className="navbar-toggler"
           type="button"
@@ -100,7 +115,7 @@ const NavigationBar = ({ absPath, onClick, lg, t }) => {
                 data-toggle="collapse"
                 data-target=".navbar-collapse.show"
               >
-                <span>SPA</span>
+                <span>Spa</span>
               </IndexLinkContainer>
             </li>
             <li className="nav-item">
