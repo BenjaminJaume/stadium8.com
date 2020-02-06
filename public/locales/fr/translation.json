@@ -60,6 +60,17 @@
       },
       "button": {
         "title": "Envoyer"
+      },
+      "back": "Revenir à l'accueil",
+      "errorMessage": {
+        "nameEmpty": "Le nom ne peut pas être vide",
+        "nameLonger": "Le nom doit comporter au moins 5 caractères",
+        "emailEmpty": "L'e-mail ne peut pas être vide",
+        "emailAtMissing": "L'e-mail doit contenir un @",
+        "emailDotMissing": "L'e-mail doit contenir au moins un point",
+        "emailInvalidFormat": "Le format de l'e-mail n'est pas valide",
+        "messageEmpty": "Le message ne peut pas être vide",
+        "messageLonger": "Le message doit être un peu plus long"
       }
     }
   },

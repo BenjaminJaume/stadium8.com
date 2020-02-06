@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import NavigationBar from "../components/NavigationBar/NavigationBar";
 import Footer from "../components/Footer/Footer";
 import { Config } from "../components/Config/Config";
+import ScrollToTop from "../components/ScrollToTop/ScrollToTop";
 
 import Home from "./Home/Home";
 import Football5 from "./Football5/Football5";
@@ -76,6 +77,8 @@ export default class App extends Component {
     return (
       <div>
         <Router>
+          <ScrollToTop />
+
           <NavigationBar
             absPath={absPath}
             onClick={this.changeLanguage}

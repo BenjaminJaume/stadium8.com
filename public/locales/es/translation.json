@@ -60,6 +60,17 @@
       },
       "button": {
         "title": "Envíe"
+      },
+      "back": "Vuelve a la página de inicio",
+      "errorMessage": {
+        "nameEmpty": "El nombre no puede estar vacío",
+        "nameLonger": "El nombre debe tener al menos 5 caracteres de longitud",
+        "emailEmpty": "El correo electrónico no puede estar vacío",
+        "emailAtMissing": "El correo electrónico debe contener una @",
+        "emailDotMissing": "El correo electrónico debe contener al menos un punto",
+        "emailInvalidFormat": "El formato del correo electrónico no es válido",
+        "messageEmpty": "El mensaje no puede estar vacío",
+        "messageLonger": "El mensaje tiene que ser un poco más largo"
       }
     }
   },

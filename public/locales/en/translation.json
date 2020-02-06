@@ -61,7 +61,17 @@
       "button": {
         "title": "Submit"
       },
-      "back": "Go back to the home page"
+      "back": "Go back to the home page",
+      "errorMessage": {
+        "nameEmpty": "The name cannot be empty",
+        "nameLonger": "The name must be at least 5 caracters long",
+        "emailEmpty": "The email address cannot be empty",
+        "emailAtMissing": "The email must contain one @",
+        "emailDotMissing": "The email must contain at least one dot",
+        "emailInvalidFormat": "The email format is invalid",
+        "messageEmpty": "The message cannot be empty",
+        "messageLonger": "The message must be at least 5 caracters long"
+      }
     }
   },
   "footer": {
