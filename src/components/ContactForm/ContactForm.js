@@ -32,8 +32,8 @@ class ContactForm extends Component {
       isClicked,
       status,
       formError,
-      formErrorMessage,
-      sendingErrorMessage
+      formErrorMessage
+      // sendingErrorMessage
     } = this.state;
     var { t, email } = this.props;
 

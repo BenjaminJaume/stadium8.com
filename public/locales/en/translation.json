@@ -2,13 +2,13 @@
   "navbar": {
     "home": "Home",
     "football5": "Soccer5",
-    "gymnasium": "Gymnasium",
+    "gymnasium": "Gym",
     "multisport": "Multisport",
     "events": "Events",
     "contact": "Contact"
   },
   "football5": {
-    "title": "Football5",
+    "title": "Soccer5",
     "calendar": {
       "title": "Calendar",
       "content": ""
@@ -76,9 +76,9 @@
   },
   "footer": {
     "openingHours": {
-      "title": "Opening hours",
+      "title": "OPEN DAILY",
       "gymnasium": {
-        "title": "Gymnasium",
+        "title": "Gym",
         "info-1": "Monday to Friday: from 6am to 10pm",
         "info-2": "Saturday & Sunday: from 8am to 10pm"
       },

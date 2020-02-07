@@ -30,14 +30,26 @@
   /* Brand colors */
   --black: #000000;
   --brand-color: #eeff05;
-  --black-0-75: rgba(0, 0, 0, 0.75);
-  --brand-color-rgba: rgba(238, 255, 5, 0);
   --brand-link: rgba(238, 255, 5, 0.7);
+  --black-0-75: rgba(0, 0, 0, 0.75);
 
   /* Mesurement values */
   --navbar-height: 74px;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Quicksand", Calibri, "Trebuchet MS", sans-serif, cursive;
+  margin-top: var(--navbar-height);
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* FONTS */
 @font-face {
   font-family: "Gobold";
   src: url("../fonts/gobold.woff2") format("woff2");
@@ -56,18 +68,6 @@
 @font-face {
   font-family: "Gobold Light";
   src: url("../fonts/gobold-light.woff2") format("woff2");
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: "Quicksand", Calibri, "Trebuchet MS", sans-serif, cursive;
-  margin-top: var(--navbar-height);
-
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 .font-brand {
@@ -99,7 +99,8 @@ body {
   border-radius: 40px;
 }
 
-/* Text color classes */
+/* COLORS */
+/* TEXT COLORS */
 .text-brand {
   color: var(--brand-color);
 }
@@ -112,7 +113,7 @@ body {
   color: var(--emerald);
 }
 
-/* Link color classes */
+/* LINK COLORS */
 .link-brand {
   color: var(--brand-color);
   text-decoration: underline;
@@ -135,34 +136,7 @@ body {
   text-decoration: underline;
 }
 
-.divider {
-  margin: 1.5rem 0;
-  background-color: var(--brand-color);
-  width: 50vw;
-}
-
-.cone {
-  max-height: 200px;
-}
-
-.opacity-black-75 {
-  background-color: var(--black-0-75);
-}
-
-.background-color-black {
-  background-color: var(--black);
-}
-
-.responsive-background {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-
-.background-position-fixed {
-  background-attachment: fixed;
-}
-
+/* BACKGROUND COLORS */
 .color-brand-filter {
   width: 100%;
   height: 100%;
@@ -174,13 +148,46 @@ body {
   );
 }
 
+/* BACKGROUNDS */
+
+.opacity-black-75 {
+  background-color: var(--black-0-75);
+}
+
+.background-color-black {
+  background-color: var(--black);
+}
+
+.background-position-fixed {
+  background-attachment: fixed;
+}
+
+.responsive-background {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
 .container-100vh {
   min-height: calc(100% - var(--navbar-height));
   min-height: calc(100vh - var(--navbar-height));
 }
 
+/* BORDERS */
 .border-black {
   border-color: var(--black) !important;
+}
+
+/* OTHER */
+
+.divider {
+  margin: 1.5rem 0;
+  background-color: var(--brand-color);
+  width: 50vw;
+}
+
+.cone {
+  max-height: 200px;
 }
 
 /* Extra small devices (portrait phones, less than 576px) */

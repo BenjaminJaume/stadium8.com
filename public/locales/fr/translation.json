@@ -37,7 +37,7 @@
     "form": {
       "success": {
         "title": "Message envoyé avec succès, merci!",
-        "reply": "Nous répondrons sous peu"
+        "reply": "Nous vous répondrons dans les plus brefs d�lais"
       },
       "error": {
         "title": "Désolé, une erreur s'est produite",

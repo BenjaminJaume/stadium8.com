@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import axios from "axios";
 import { HollowDotsSpinner } from "react-epic-spinners";
 import CarouselQuotes from "../../components/CarouselQuotes/CarouselQuotes";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -28,125 +27,121 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    this.setState({ isLoadingQuotes: true, isLoadingPosts: true });
-
-    const { quotesPerPage, postsPerPage } = this.props;
-
-    // English
-    // Quotes
-    axios
-      .get(
-        `https://stadium8.com/wp-json/wp/v2/posts?categories=51&per_page=${quotesPerPage}`
-      )
-      .then(response => {
-        if (response.status === 200) {
-          this.setState({
-            quotesEN: response.data,
-            isLoadingQuotes: false
-          });
-        } else {
-          throw new Error("Something went wrong with Quotes");
-        }
-      })
-      .catch(error =>
-        this.setState({ errorQuotes: error, isLoadingQuotes: false })
-      );
-    // Posts
-    axios
-      .get(
-        `https://stadium8.com/wp-json/wp/v2/posts/?categories=53&per_page=${postsPerPage}`
-      )
-      .then(response => {
-        if (response.status === 200) {
-          this.setState({
-            postsEN: response.data,
-            isLoadingPosts: false
-          });
-        } else {
-          throw new Error("Something went wrong with Posts");
-        }
-      })
-      .catch(error =>
-        this.setState({ errorPosts: error, isLoadingPosts: false })
-      );
-
-    // French
-    // Quotes
-    axios
-      .get(
-        `https://stadium8.com/wp-json/wp/v2/posts?categories=47&per_page=${quotesPerPage}`
-      )
-      .then(response => {
-        if (response.status === 200) {
-          this.setState({
-            quotesFR: response.data,
-            isLoadingQuotes: false
-          });
-        } else {
-          throw new Error("Something went wrong with Quotes");
-        }
-      })
-      .catch(error =>
-        this.setState({ errorQuotes: error, isLoadingQuotes: false })
-      );
-
-    // Posts
-    axios
-      .get(
-        `https://stadium8.com/wp-json/wp/v2/posts/?categories=48&per_page=${postsPerPage}`
-      )
-      .then(response => {
-        if (response.status === 200) {
-          this.setState({
-            postsFR: response.data,
-            isLoadingPosts: false
-          });
-        } else {
-          throw new Error("Something went wrong with Posts");
-        }
-      })
-      .catch(error =>
-        this.setState({ errorPosts: error, isLoadingPosts: false })
-      );
-
-    // Spanish
-    // Quotes
-    axios
-      .get(
-        `https://stadium8.com/wp-json/wp/v2/posts?categories=52&per_page=${quotesPerPage}`
-      )
-      .then(response => {
-        if (response.status === 200) {
-          this.setState({
-            quotesES: response.data,
-            isLoadingQuotes: false
-          });
-        } else {
-          throw new Error("Something went wrong with Quotes");
-        }
-      })
-      .catch(error =>
-        this.setState({ errorQuotes: error, isLoadingQuotes: false })
-      );
-
-    // Posts
-    axios
-      .get(
-        `https://stadium8.com/wp-json/wp/v2/posts/?categories=54&per_page=${postsPerPage}`
-      )
-      .then(response => {
-        if (response.status === 200) {
-          this.setState({
-            postsES: response.data,
-            isLoadingPosts: false
-          });
-        } else {
-          throw new Error("Something went wrong with Posts");
-        }
-      })
-      .catch(error =>
-        this.setState({ errorPosts: error, isLoadingPosts: false })
-      );
+    // const { quotesPerPage, postsPerPage } = this.props;
+    // this.setState({ isLoadingQuotes: true, isLoadingPosts: true });
+    // // English
+    // // Quotes
+    // axios
+    //   .get(
+    //     `https://stadium8.com/wp-json/wp/v2/posts?categories=51&per_page=${quotesPerPage}`
+    //   )
+    //   .then(response => {
+    //     if (response.status === 200) {
+    //       this.setState({
+    //         quotesEN: response.data,
+    //         isLoadingQuotes: false
+    //       });
+    //     } else {
+    //       throw new Error("Something went wrong with Quotes");
+    //     }
+    //   })
+    //   .catch(error =>
+    //     this.setState({ errorQuotes: error, isLoadingQuotes: false })
+    //   );
+    // // Posts
+    // axios
+    //   .get(
+    //     `https://stadium8.com/wp-json/wp/v2/posts/?categories=53&per_page=${postsPerPage}`
+    //   )
+    //   .then(response => {
+    //     if (response.status === 200) {
+    //       this.setState({
+    //         postsEN: response.data,
+    //         isLoadingPosts: false
+    //       });
+    //     } else {
+    //       throw new Error("Something went wrong with Posts");
+    //     }
+    //   })
+    //   .catch(error =>
+    //     this.setState({ errorPosts: error, isLoadingPosts: false })
+    //   );
+    // this.setState({ isLoadingQuotes: true, isLoadingPosts: true });
+    // // French
+    // // Quotes
+    // axios
+    //   .get(
+    //     `https://stadium8.com/wp-json/wp/v2/posts?categories=47&per_page=${quotesPerPage}`
+    //   )
+    //   .then(response => {
+    //     if (response.status === 200) {
+    //       this.setState({
+    //         quotesFR: response.data,
+    //         isLoadingQuotes: false
+    //       });
+    //     } else {
+    //       throw new Error("Something went wrong with Quotes");
+    //     }
+    //   })
+    //   .catch(error =>
+    //     this.setState({ errorQuotes: error, isLoadingQuotes: false })
+    //   );
+    // // Posts
+    // axios
+    //   .get(
+    //     `https://stadium8.com/wp-json/wp/v2/posts/?categories=48&per_page=${postsPerPage}`
+    //   )
+    //   .then(response => {
+    //     if (response.status === 200) {
+    //       this.setState({
+    //         postsFR: response.data,
+    //         isLoadingPosts: false
+    //       });
+    //     } else {
+    //       throw new Error("Something went wrong with Posts");
+    //     }
+    //   })
+    //   .catch(error =>
+    //     this.setState({ errorPosts: error, isLoadingPosts: false })
+    //   );
+    // this.setState({ isLoadingQuotes: true, isLoadingPosts: true });
+    // // Spanish
+    // // Quotes
+    // axios
+    //   .get(
+    //     `https://stadium8.com/wp-json/wp/v2/posts?categories=52&per_page=${quotesPerPage}`
+    //   )
+    //   .then(response => {
+    //     if (response.status === 200) {
+    //       this.setState({
+    //         quotesES: response.data,
+    //         isLoadingQuotes: false
+    //       });
+    //     } else {
+    //       throw new Error("Something went wrong with Quotes");
+    //     }
+    //   })
+    //   .catch(error =>
+    //     this.setState({ errorQuotes: error, isLoadingQuotes: false })
+    //   );
+    // // Posts
+    // axios
+    //   .get(
+    //     `https://stadium8.com/wp-json/wp/v2/posts/?categories=54&per_page=${postsPerPage}`
+    //   )
+    //   .then(response => {
+    //     if (response.status === 200) {
+    //       this.setState({
+    //         postsES: response.data,
+    //         isLoadingPosts: false
+    //       });
+    //     } else {
+    //       throw new Error("Something went wrong with Posts");
+    //     }
+    //   })
+    //   .catch(error =>
+    //     this.setState({ errorPosts: error, isLoadingPosts: false })
+    //   );
   }
 
   createMarkupPost(html) {
@@ -173,6 +168,8 @@ class Home extends Component {
 
   render() {
     const {
+      absPath,
+      lg,
       quotesES,
       quotesEN,
       quotesFR,
@@ -183,9 +180,7 @@ class Home extends Component {
       isLoadingPosts,
       errorQuotes,
       errorPosts
-    } = this.state;
-
-    const { absPath, lg } = this.props;
+    } = this.props;
 
     var quotes = [];
     var posts = [];

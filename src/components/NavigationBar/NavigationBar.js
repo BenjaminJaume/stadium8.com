@@ -17,12 +17,6 @@ const NavigationBar = ({ absPath, onClick, lg, t }) => {
             data-toggle="collapse"
             data-target=".navbar-collapse.show"
           >
-            {/* <img
-            src={`.${absPath}/images/logo-white-xl.png`}
-            alt="STADIUM8"
-            className="d-inline-block mr-2"
-            height="60"
-          /> */}
             <span className="m-0 p-0 font-brand-bold h3">
               <span className="h3">STADIUM</span>
             </span>

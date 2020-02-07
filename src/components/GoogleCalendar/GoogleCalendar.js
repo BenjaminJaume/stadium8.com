@@ -1,7 +1,6 @@
-import React, { Component } from "react";
+import React from "react";
 import BigCalendar from "react-big-calendar";
 import moment from "moment";
-import { getEvents } from "./fetch";
 
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import "./GoogleCalendar.css";
@@ -13,67 +12,54 @@ moment.locale("ko", {
   }
 });
 
-const localizer = BigCalendar.momentLocalizer(moment); // or globalizeLocalizer
+const localizer = BigCalendar.momentLocalizer(moment);
 
-export default class GoogleCalendar extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      events: []
-    };
-  }
+const GoogleCalendar = props => {
+  const { footballDetails, events } = props;
 
-  componentDidMount() {
-    getEvents(events => {
-      this.setState({ events });
-    });
-  }
+  const startDay = new Date();
+  startDay.setHours(
+    footballDetails.morning.hourFrom,
+    footballDetails.morning.minuteFrom,
+    0
+  );
+  const endDay = new Date();
+  endDay.setHours(
+    footballDetails.night.hourTo,
+    footballDetails.night.minuteTo,
+    0
+  );
 
-  render() {
-    const { footballDetails } = this.props;
+  const formats = {
+    dayFormat: function(date, culture, localizer) {
+      return localizer.format(date, "DD/MM", culture);
+    },
+    dayRangeHeaderFormat: function({ start, end }, culture, localizer) {
+      return (
+        localizer.format(start, "DD/MM/YY", culture) +
+        " - " +
+        localizer.format(end, "DD/MM/YY", culture)
+      );
+    },
+    timeGutterFormat: function(date, culture, localizer) {
+      return localizer.format(date, "HH:mm", culture);
+    }
+  };
 
-    const startDay = new Date();
-    startDay.setHours(
-      footballDetails.morning.hourFrom,
-      footballDetails.morning.minuteFrom,
-      0
-    );
-    const endDay = new Date();
-    endDay.setHours(
-      footballDetails.night.hourTo,
-      footballDetails.night.minuteTo,
-      0
-    );
+  return (
+    // @ts-ignore
+    <BigCalendar
+      localizer={localizer}
+      events={events}
+      startAccessor="start"
+      endAccessor="end"
+      defaultView="week"
+      min={startDay}
+      max={endDay}
+      views={["week", "agenda"]}
+      formats={formats}
+    />
+  );
+};
 
-    const formats = {
-      dayFormat: function(date, culture, localizer) {
-        return localizer.format(date, "DD/MM", culture);
-      },
-      dayRangeHeaderFormat: function({ start, end }, culture, localizer) {
-        return (
-          localizer.format(start, "DD/MM/YY", culture) +
-          " - " +
-          localizer.format(end, "DD/MM/YY", culture)
-        );
-      },
-      timeGutterFormat: function(date, culture, localizer) {
-        return localizer.format(date, "HH:mm", culture);
-      }
-    };
-
-    return (
-      // @ts-ignore
-      <BigCalendar
-        localizer={localizer}
-        events={this.state.events}
-        startAccessor="start"
-        endAccessor="end"
-        defaultView="week"
-        min={startDay}
-        max={endDay}
-        views={["week", "agenda"]}
-        formats={formats}
-      />
-    );
-  }
-}
+export default GoogleCalendar;

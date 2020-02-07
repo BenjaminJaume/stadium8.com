@@ -1,14 +1,14 @@
 {
   "navbar": {
     "home": "Inicio",
-    "football5": "Fútball5",
+    "football5": "Fútbol5",
     "gymnasium": "Gimnasio",
     "multisport": "Multideporte",
     "events": "Eventos",
     "contact": "Contacto"
   },
   "football5": {
-    "title": "Fútball5",
+    "title": "Fútbol5",
     "calendar": {
       "title": "Calendario",
       "content": ""
@@ -37,7 +37,7 @@
     "form": {
       "success": {
         "title": "Enviado con éxito, ¡Gracias!",
-        "reply": "Responderemos en breve."
+        "reply": "Responderemos el mas rapido posible."
       },
       "error": {
         "title": "Lo siento, ha ocurrido un error",
@@ -76,7 +76,7 @@
   },
   "footer": {
     "openingHours": {
-      "title": "Horario de apertura",
+      "title": "Abierto diariamente",
       "gymnasium": {
         "title": "Gimnasio",
         "info-1": "Lunes a Viernes: de las 06h a las 22h",
