@@ -3,11 +3,12 @@ import { useTranslation } from "react-i18next";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import GoogleCalendar from "../../components/GoogleCalendar/GoogleCalendar";
 import { IndexLinkContainer } from "react-router-bootstrap";
+import { Helmet } from "react-helmet";
 
 import "react-tabs/style/react-tabs.css";
-import "./Football5.css";
+import "./Soccer5.css";
 
-const Football5 = props => {
+const Soccer5 = props => {
   const { absPath, footballDetails, events } = props;
   const { t } = useTranslation();
 
@@ -18,24 +19,30 @@ const Football5 = props => {
         backgroundImage: `url(".${absPath}/images/background-football.jpg")`
       }}
     >
+      <Helmet>
+        <title>Soccer5</title>
+        <meta
+          name="description"
+          content="We have a dedicated soccer field here. Check out the schedule, the prices, the rules and book your sport here"
+        />
+      </Helmet>
+
       <div className="color-brand-filter">
         <div className="container-fluid container-100vh">
           <div className="row h-100 align-items-center">
             <div className="col-12 col-lg-10 mx-auto py-5">
               <div className="opacity-black-75 rounded text-white text-center py-5 px-1 p-lg-5">
-                <h1 className="mb-4">{t("football5.title")}</h1>
+                <h1 className="mb-4">{t("soccer5.title")}</h1>
                 <Tabs>
                   <TabList>
                     <Tab>
-                      <span className="h4">
-                        {t("football5.calendar.title")}
-                      </span>
+                      <span className="h4">{t("soccer5.calendar.title")}</span>
                     </Tab>
                     <Tab>
-                      <span className="h4">{t("football5.prices.title")}</span>
+                      <span className="h4">{t("soccer5.prices.title")}</span>
                     </Tab>
                     <Tab>
-                      <span className="h4">{t("football5.rules.title")}</span>
+                      <span className="h4">{t("soccer5.rules.title")}</span>
                     </Tab>
                   </TabList>
 
@@ -52,7 +59,7 @@ const Football5 = props => {
                         <div className="col-12 col-lg-4 mb-4 mb-lg-0">
                           <div className="mb-4">
                             <h3 className="text-brand">
-                              {t("football5.prices.morning.title")}
+                              {t("soccer5.prices.morning.title")}
                             </h3>
                             <h3>
                               {`${footballDetails.morning.hourFrom}h${footballDetails.morning.minuteFrom} - ${footballDetails.morning.hourTo}h${footballDetails.morning.minuteTo}`}
@@ -70,7 +77,7 @@ const Football5 = props => {
                         <div className="col-12 col-lg-4 mb-4 mb-lg-0">
                           <div className="mb-4">
                             <h3 className="text-brand">
-                              {t("football5.prices.afternoon.title")}
+                              {t("soccer5.prices.afternoon.title")}
                             </h3>
                             <h3>
                               {`${footballDetails.afternoon.hourFrom}h${footballDetails.afternoon.minuteFrom} - ${footballDetails.afternoon.hourTo}h${footballDetails.afternoon.minuteTo}`}
@@ -88,7 +95,7 @@ const Football5 = props => {
                         <div className="col-12 col-lg-4">
                           <div className="mb-4">
                             <h3 className="text-brand">
-                              {t("football5.prices.night.title")}
+                              {t("soccer5.prices.night.title")}
                             </h3>
                             <h3>
                               {`${footballDetails.night.hourFrom}h${footballDetails.night.minuteFrom} - ${footballDetails.night.hourTo}h${footballDetails.night.minuteTo}`}
@@ -111,14 +118,14 @@ const Football5 = props => {
                             href="/contact"
                             className="btn btn-success text-uppercase"
                           >
-                            <span>{t("football5.prices.buttonContact")}</span>
+                            <span>{t("soccer5.prices.buttonContact")}</span>
                           </IndexLinkContainer>
                         </div>
                       </div>
                     </div>
                   </TabPanel>
 
-                  <TabPanel>{t("football5.rules.content")}</TabPanel>
+                  <TabPanel>{t("soccer5.rules.content")}</TabPanel>
                 </Tabs>
               </div>
             </div>
@@ -129,4 +136,4 @@ const Football5 = props => {
   );
 };
 
-export default Football5;
+export default Soccer5;

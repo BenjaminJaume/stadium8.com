@@ -1,5 +1,6 @@
 import React, { Component, Suspense } from "react";
 import i18n from "../i18n";
+import { BrowserRouter } from "react-router-dom";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import axios from "axios";
@@ -11,7 +12,7 @@ import ScrollToTop from "../components/ScrollToTop/ScrollToTop";
 import { getEvents } from "../components/GoogleCalendar/fetch";
 
 import Home from "./Home/Home";
-import Football5 from "./Football5/Football5";
+import Soccer5 from "./Soccer5/Soccer5";
 import Gym from "./Gym/Gym";
 import Multisport from "./Multisport/Multisport";
 import Events from "./Events/Events";
@@ -234,61 +235,63 @@ export default class App extends Component {
 
     return (
       <div>
-        <Router>
-          <Suspense fallback={""}>
-            <ScrollToTop />
-            <NavigationBar
-              absPath={absPath}
-              onClick={this.changeLanguage}
-              lg={lg}
-            />
-            <Switch>
-              <Route path="/football5" component={Football5}>
-                <Football5
-                  absPath={absPath}
-                  footballDetails={footballDetails}
-                  events={events}
-                  errorEvents={errorEvents}
-                />
-              </Route>
-              <Route path="/gym" component={Gym}>
-                <Gym absPath={absPath} />
-              </Route>
-              <Route path="/multisport" component={Multisport}>
-                <Multisport absPath={absPath} />
-              </Route>
-              <Route path="/events" component={Events}>
-                <Events absPath={absPath} />
-              </Route>
-              <Route path="/spa" component={Spa}>
-                <Spa absPath={absPath} />
-              </Route>
-              <Route path="/contact" component={Contact}>
-                <Contact absPath={absPath} email={email} />
-              </Route>
-              <Route path="/" component={Home} exact>
-                <Home
-                  absPath={absPath}
-                  lg={lg}
-                  quotesES={quotesES}
-                  quotesEN={quotesEN}
-                  quotesFR={quotesFR}
-                  postsES={postsES}
-                  postsEN={postsEN}
-                  postsFR={postsFR}
-                  isLoadingPosts={isLoadingPosts}
-                  isLoadingQuotes={isLoadingQuotes}
-                  errorPosts={errorPosts}
-                  errorQuotes={errorQuotes}
-                />
-              </Route>
-              <Route component={Page404}>
-                <Page404 absPath={absPath} />
-              </Route>
-            </Switch>
-            <Footer phoneNumber={phoneNumber} absPath={absPath} />
-          </Suspense>
-        </Router>
+        <BrowserRouter>
+          <Router>
+            <Suspense fallback={""}>
+              <ScrollToTop />
+              <NavigationBar
+                absPath={absPath}
+                onClick={this.changeLanguage}
+                lg={lg}
+              />
+              <Switch>
+                <Route path="/soccer5" component={Soccer5}>
+                  <Soccer5
+                    absPath={absPath}
+                    footballDetails={footballDetails}
+                    events={events}
+                    errorEvents={errorEvents}
+                  />
+                </Route>
+                <Route path="/gym" component={Gym}>
+                  <Gym absPath={absPath} />
+                </Route>
+                <Route path="/multisport" component={Multisport}>
+                  <Multisport absPath={absPath} />
+                </Route>
+                <Route path="/events" component={Events}>
+                  <Events absPath={absPath} />
+                </Route>
+                <Route path="/spa" component={Spa}>
+                  <Spa absPath={absPath} />
+                </Route>
+                <Route path="/contact" component={Contact}>
+                  <Contact absPath={absPath} email={email} />
+                </Route>
+                <Route path="/" component={Home} exact>
+                  <Home
+                    absPath={absPath}
+                    lg={lg}
+                    quotesES={quotesES}
+                    quotesEN={quotesEN}
+                    quotesFR={quotesFR}
+                    postsES={postsES}
+                    postsEN={postsEN}
+                    postsFR={postsFR}
+                    isLoadingPosts={isLoadingPosts}
+                    isLoadingQuotes={isLoadingQuotes}
+                    errorPosts={errorPosts}
+                    errorQuotes={errorQuotes}
+                  />
+                </Route>
+                <Route component={Page404}>
+                  <Page404 absPath={absPath} />
+                </Route>
+              </Switch>
+              <Footer phoneNumber={phoneNumber} absPath={absPath} />
+            </Suspense>
+          </Router>
+        </BrowserRouter>
       </div>
     );
   }

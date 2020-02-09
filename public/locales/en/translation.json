@@ -1,108 +1,109 @@
 {
-  "navbar": {
-    "home": "Home",
-    "football5": "Soccer5",
-    "gymnasium": "Gym",
-    "multisport": "Multisport",
-    "events": "Events",
-    "contact": "Contact"
+  "contact": {
+    "content": "Please contact us for any general inquiry",
+    "form": {
+      "back": "Go back to the home page",
+      "button": {
+        "content": "It would be awesome if it'd worked",
+        "title": "Submit"
+      },
+      "email": {
+        "error": "A valid email is required",
+        "title": "Email"
+      },
+      "error": {
+        "sendEmail": {
+          "email": "email",
+          "text": "Please send us an"
+        },
+        "title": "Sorry, an error has occurred"
+      },
+      "errorMessage": {
+        "emailAtMissing": "The email must contain one @",
+        "emailDotMissing": "The email must contain at least one dot",
+        "emailEmpty": "The email address cannot be empty",
+        "emailInvalidFormat": "The email format is invalid",
+        "messageEmpty": "The message cannot be empty",
+        "messageLonger": "The message must be at least 5 caracters long",
+        "nameEmpty": "The name cannot be empty",
+        "nameLonger": "The name must be at least 5 caracters long"
+      },
+      "message": {
+        "error": "Please, leave a message",
+        "title": "Message"
+      },
+      "name": {
+        "error": "A name is required",
+        "title": "Name"
+      },
+      "success": {
+        "reply": "We will reply shortly",
+        "title": "Successfully sent, thank you!"
+      }
+    },
+    "title": "Contact"
   },
-  "football5": {
-    "title": "Soccer5",
+  "soccer5": {
     "calendar": {
-      "title": "Calendar",
-      "content": ""
+      "content": "",
+      "title": "Calendar"
     },
     "prices": {
-      "title": "Prices",
+      "afternoon": {
+        "title": "Afternoon"
+      },
       "buttonContact": "Book your spot",
       "morning": {
         "title": "Morning"
       },
-      "afternoon": {
-        "title": "Afternoon"
-      },
       "night": {
         "title": "Night"
-      }
+      },
+      "title": "Prices"
     },
     "rules": {
-      "title": "Rules",
-      "content": "To write"
-    }
-  },
-  "contact": {
-    "title": "Contact",
-    "content": "Please contact us for any general enquiry",
-    "form": {
-      "success": {
-        "title": "Successfully sent, thank you!",
-        "reply": "We will reply shortly"
-      },
-      "error": {
-        "title": "Sorry, an error has occured",
-        "sendEmail": {
-          "text": "Please send us an",
-          "email": "email"
-        }
-      },
-      "name": {
-        "title": "Name",
-        "error": "A name is required"
-      },
-      "email": {
-        "title": "Email",
-        "error": "A valid email is required"
-      },
-      "message": {
-        "title": "Message",
-        "error": "Please, leave a message"
-      },
-      "button": {
-        "title": "Submit"
-      },
-      "back": "Go back to the home page",
-      "errorMessage": {
-        "nameEmpty": "The name cannot be empty",
-        "nameLonger": "The name must be at least 5 caracters long",
-        "emailEmpty": "The email address cannot be empty",
-        "emailAtMissing": "The email must contain one @",
-        "emailDotMissing": "The email must contain at least one dot",
-        "emailInvalidFormat": "The email format is invalid",
-        "messageEmpty": "The message cannot be empty",
-        "messageLonger": "The message must be at least 5 caracters long"
-      }
-    }
+      "content": "To write",
+      "title": "Rules"
+    },
+    "title": "Soccer5"
   },
   "footer": {
     "openingHours": {
-      "title": "OPEN DAILY",
-      "gymnasium": {
-        "title": "Gym",
-        "info-1": "Monday to Friday: from 6am to 10pm",
-        "info-2": "Saturday & Sunday: from 8am to 10pm"
-      },
       "football-field": {
-        "title": "Football Field",
-        "info-1": "Monday to Sunday: from 8am to 10pm"
-      }
+        "info-1": "Monday to Sunday: from 8am to 10pm",
+        "title": "Football Field"
+      },
+      "gymnasium": {
+        "info-1": "Monday to Friday: from 6am to 10pm",
+        "info-2": "Saturday & Sunday: from 8am to 10pm",
+        "title": "Gym"
+      },
+      "title": "OPEN DAILY"
     },
     "socialNetworks": {
-      "title": "on social medias",
       "copyright": "All right reserved",
+      "title": "on social medias",
       "web-developer": "Web Designer",
       "whatsappPopover": {
-        "title": "Contact us",
         "content": "Open WhatsApp or copy",
+        "copied": "Copied!",
         "or": "or",
-        "copied": "Copied!"
+        "title": "Contact us"
       }
     }
   },
+  "navbar": {
+    "contact": "Contact",
+    "events": "Events",
+    "soccer5": "Soccer5",
+    "gymnasium": "Gym",
+    "home": "Home",
+    "multisport": "Multisport"
+  },
   "other": {
     "construction": {
-      "title": "This side of the website hasn't opened yet",
-      "hover": "Sorry for the inconvenience"
+      "hover": "Sorry for the inconvenience",
+      "title": "This side of the website hasn't opened yet"
     }
   }
 }

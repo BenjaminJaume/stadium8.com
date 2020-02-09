@@ -1,108 +1,109 @@
 {
-  "navbar": {
-    "home": "Inicio",
-    "football5": "Fútbol5",
-    "gymnasium": "Gimnasio",
-    "multisport": "Multideporte",
-    "events": "Eventos",
-    "contact": "Contacto"
+  "contact": {
+    "content": "Por favor, póngase en contacto para cualquier consulta general",
+    "form": {
+      "back": "Vuelve a la página de inicio",
+      "button": {
+        "content": "Sería increíble si hubiera funcionado",
+        "title": "Envíe"
+      },
+      "email": {
+        "error": "Se requiere un correo electrónico válido",
+        "title": "Correo electrónico"
+      },
+      "error": {
+        "sendEmail": {
+          "email": "correo electrónico",
+          "text": "Por favor, envíenos un"
+        },
+        "title": "Lo siento, ha ocurrido un error"
+      },
+      "errorMessage": {
+        "emailAtMissing": "El correo electrónico debe contener una @",
+        "emailDotMissing": "El correo electrónico debe contener al menos un punto",
+        "emailEmpty": "El correo electrónico no puede estar vacío",
+        "emailInvalidFormat": "El formato del correo electrónico no es válido",
+        "messageEmpty": "El mensaje no puede estar vacío",
+        "messageLonger": "El mensaje tiene que ser un poco más largo",
+        "nameEmpty": "El nombre no puede estar vacío",
+        "nameLonger": "El nombre debe tener al menos 5 caracteres de longitud"
+      },
+      "message": {
+        "error": "Por favor, deje un mensaje",
+        "title": "Mensaje"
+      },
+      "name": {
+        "error": "Se requiere un nombre",
+        "title": "Nombre"
+      },
+      "success": {
+        "reply": "Responderemos el mas rapido posible.",
+        "title": "Enviado con éxito, ¡Gracias!"
+      }
+    },
+    "title": "Contacto"
   },
-  "football5": {
-    "title": "Fútbol5",
+  "soccer5": {
     "calendar": {
-      "title": "Calendario",
-      "content": ""
+      "content": "",
+      "title": "Calendario"
     },
     "prices": {
-      "title": "Precios",
+      "afternoon": {
+        "title": "Tarde"
+      },
       "buttonContact": "Reserva tu lugar",
       "morning": {
         "title": "Mañana"
       },
-      "afternoon": {
-        "title": "Tarde"
-      },
       "night": {
         "title": "Noche"
-      }
+      },
+      "title": "Precios"
     },
     "rules": {
-      "title": "Reglas",
-      "content": "Para ser escribe"
-    }
-  },
-  "contact": {
-    "title": "Contacto",
-    "content": "Por favor, póngase en contacto para cualquier consulta general",
-    "form": {
-      "success": {
-        "title": "Enviado con éxito, ¡Gracias!",
-        "reply": "Responderemos el mas rapido posible."
-      },
-      "error": {
-        "title": "Lo siento, ha ocurrido un error",
-        "sendEmail": {
-          "text": "Por favor, envíenos un",
-          "email": "correo electrónico"
-        }
-      },
-      "name": {
-        "title": "Nombre",
-        "error": "Se requiere un nombre"
-      },
-      "email": {
-        "title": "Correo electrónico",
-        "error": "Se requiere un correo electrónico válido"
-      },
-      "message": {
-        "title": "Mensaje",
-        "error": "Por favor, deje un mensaje"
-      },
-      "button": {
-        "title": "Envíe"
-      },
-      "back": "Vuelve a la página de inicio",
-      "errorMessage": {
-        "nameEmpty": "El nombre no puede estar vacío",
-        "nameLonger": "El nombre debe tener al menos 5 caracteres de longitud",
-        "emailEmpty": "El correo electrónico no puede estar vacío",
-        "emailAtMissing": "El correo electrónico debe contener una @",
-        "emailDotMissing": "El correo electrónico debe contener al menos un punto",
-        "emailInvalidFormat": "El formato del correo electrónico no es válido",
-        "messageEmpty": "El mensaje no puede estar vacío",
-        "messageLonger": "El mensaje tiene que ser un poco más largo"
-      }
-    }
+      "content": "Para ser escribe",
+      "title": "Reglas"
+    },
+    "title": "Fútbol5"
   },
   "footer": {
     "openingHours": {
-      "title": "Abierto diariamente",
-      "gymnasium": {
-        "title": "Gimnasio",
-        "info-1": "Lunes a Viernes: de las 06h a las 22h",
-        "info-2": "Sabado & Domingo: de las 08h a las 22h"
-      },
       "football-field": {
-        "title": "Cancha de fútbol",
-        "info-1": "Lunes a Domingo: de las 08h a las 22h"
-      }
+        "info-1": "Lunes a Domingo: de las 08h a las 22h",
+        "title": "Cancha de fútbol"
+      },
+      "gymnasium": {
+        "info-1": "Lunes a Viernes: de las 06h a las 22h",
+        "info-2": "Sabado & Domingo: de las 08h a las 22h",
+        "title": "Gimnasio"
+      },
+      "title": "Abierto diariamente"
     },
     "socialNetworks": {
-      "title": "en los redes sociales",
       "copyright": "Todos los derechos reservados",
+      "title": "en los redes sociales",
       "web-developer": "Desarrollador Web",
       "whatsappPopover": {
-        "title": "Contáctenos",
         "content": "Abra WhatsApp o copie",
+        "copied": "¡Copiado!",
         "or": "o",
-        "copied": "¡Copiado!"
+        "title": "Contáctenos"
       }
     }
   },
+  "navbar": {
+    "contact": "Contacto",
+    "events": "Eventos",
+    "soccer5": "Fútbol5",
+    "gymnasium": "Gimnasio",
+    "home": "Inicio",
+    "multisport": "Multideporte"
+  },
   "other": {
     "construction": {
-      "title": "Este lado de la página web no se ha abierto todavía",
-      "hover": "Siento las molestias"
+      "hover": "Siento las molestias",
+      "title": "Este lado de la página web no se ha abierto todavía"
     }
   }
 }

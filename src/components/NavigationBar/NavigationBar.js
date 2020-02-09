@@ -60,13 +60,13 @@ const NavigationBar = ({ absPath, onClick, lg }) => {
             </li>
             <li className="nav-item">
               <IndexLinkContainer
-                to="/football5"
-                href="/football5"
+                to="/soccer5"
+                href="/soccer5"
                 className="nav-link"
                 data-toggle="collapse"
                 data-target=".navbar-collapse.show"
               >
-                <span>{t("navbar.football5")}</span>
+                <span>{t("navbar.soccer5")}</span>
               </IndexLinkContainer>
             </li>
             <li className="nav-item">
