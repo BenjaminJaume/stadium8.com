@@ -1,8 +1,15 @@
 {
+  "navbar": {
+    "contact": "Contact",
+    "events": "Évènements",
+    "soccer5": "Football5",
+    "gymnasium": "Gymnase",
+    "home": "Accueil",
+    "multisport": "Multisport"
+  },
   "contact": {
     "content": "Veuillez nous contacter si vous voulez en savoir plus",
     "form": {
-      "back": "Revenir à l'accueil",
       "button": {
         "content": "Ce serait génial si ça avait marché",
         "title": "Envoyer"
@@ -44,11 +51,13 @@
     "title": "Contact"
   },
   "soccer5": {
+    "title": "Football5",
     "calendar": {
       "content": "",
       "title": "Calendrier"
     },
     "prices": {
+      "hour": "heure",
       "afternoon": {
         "title": "Midi"
       },
@@ -64,21 +73,20 @@
     "rules": {
       "content": "À écrire",
       "title": "Règles"
-    },
-    "title": "Football5"
+    }
   },
   "footer": {
     "openingHours": {
-      "football-field": {
-        "info-1": "Lundi au Dimanche: de 08h à 22h",
-        "title": "Terrain de Football"
-      },
-      "gymnasium": {
-        "info-1": "Lundi au Vendredi: de 06h à 22h",
-        "info-2": "Samedi & Dimanche: de 08h à 22h",
-        "title": "Gymnase"
-      },
-      "title": "Horaires d'ouverture"
+      "title": "Horaires d'ouverture",
+      "monday": "Lun",
+      "tuesday": "Mar",
+      "wednesday": "Mer",
+      "thursday": "Jeu",
+      "friday": "Ven",
+      "saturday": "Sam",
+      "sunday": "Dim",
+      "from": "de",
+      "to": "à"
     },
     "socialNetworks": {
       "copyright": "Tous droits réservés",
@@ -88,19 +96,18 @@
         "content": "Ouvrir WhatsApp ou copier",
         "copied": "Copié!",
         "or": "ou",
-        "title": "Contactez nous"
+        "title": "Contactez nous",
+        "openLink": "Ouvrir le lien avec",
+        "copy": "Copier le numéro de téléphone"
       }
     }
   },
-  "navbar": {
-    "contact": "Contact",
-    "events": "Évènements",
-    "soccer5": "Football5",
-    "gymnasium": "Gymnase",
-    "home": "Accueil",
-    "multisport": "Multisport"
+  "page404": {
+    "title": "Page non trouvée",
+    "message": "C'est un coup dur... mais ne perdez pas de vu votre objectif!"
   },
   "other": {
+    "homepageMessage": "Revenir à l'accueil",
     "construction": {
       "hover": "Désolé pour la gêne occasionnée",
       "title": "Cette partie du site n'a pas encore ouverte"

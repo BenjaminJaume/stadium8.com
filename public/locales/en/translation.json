@@ -1,8 +1,18 @@
 {
+  "navbar": {
+    "contact": "Contact",
+    "events": "Events",
+    "soccer5": "Soccer5",
+    "gymnasium": "Gym",
+    "home": "Home",
+    "multisport": "Multisport"
+  },
+  "home": {
+    "makeBooking": "To make a booking"
+  },
   "contact": {
     "content": "Please contact us for any general inquiry",
     "form": {
-      "back": "Go back to the home page",
       "button": {
         "content": "It would be awesome if it'd worked",
         "title": "Submit"
@@ -44,11 +54,12 @@
     "title": "Contact"
   },
   "soccer5": {
+    "title": "Soccer5",
     "calendar": {
-      "content": "",
       "title": "Calendar"
     },
     "prices": {
+      "hour": "hour",
       "afternoon": {
         "title": "Afternoon"
       },
@@ -64,21 +75,19 @@
     "rules": {
       "content": "To write",
       "title": "Rules"
-    },
-    "title": "Soccer5"
+    }
   },
   "footer": {
     "openingHours": {
-      "football-field": {
-        "info-1": "Monday to Sunday: from 8am to 10pm",
-        "title": "Football Field"
-      },
-      "gymnasium": {
-        "info-1": "Monday to Friday: from 6am to 10pm",
-        "info-2": "Saturday & Sunday: from 8am to 10pm",
-        "title": "Gym"
-      },
-      "title": "OPEN DAILY"
+      "title": "OPEN DAILY",
+      "monday": "Mon",
+      "tuesday": "Tue",
+      "wednesday": "Wed",
+      "thursday": "Thu",
+      "friday": "Fri",
+      "saturday": "Sat",
+      "sunday": "Sun",
+      "to": "to"
     },
     "socialNetworks": {
       "copyright": "All right reserved",
@@ -88,19 +97,18 @@
         "content": "Open WhatsApp or copy",
         "copied": "Copied!",
         "or": "or",
-        "title": "Contact us"
+        "title": "Contact us",
+        "openLink": "Open link with",
+        "copy": "Copy phone number"
       }
     }
   },
-  "navbar": {
-    "contact": "Contact",
-    "events": "Events",
-    "soccer5": "Soccer5",
-    "gymnasium": "Gym",
-    "home": "Home",
-    "multisport": "Multisport"
+  "page404": {
+    "title": "Page not found",
+    "message": "Sometimes you fall... but you should rise every time you do!"
   },
   "other": {
+    "homepageMessage": "Go back to the home page",
     "construction": {
       "hover": "Sorry for the inconvenience",
       "title": "This side of the website hasn't opened yet"

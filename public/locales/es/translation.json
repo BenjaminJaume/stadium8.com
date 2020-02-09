@@ -1,8 +1,15 @@
 {
+  "navbar": {
+    "contact": "Contacto",
+    "events": "Eventos",
+    "soccer5": "Fútbol5",
+    "gymnasium": "Gimnasio",
+    "home": "Inicio",
+    "multisport": "Multideporte"
+  },
   "contact": {
     "content": "Por favor, póngase en contacto para cualquier consulta general",
     "form": {
-      "back": "Vuelve a la página de inicio",
       "button": {
         "content": "Sería increíble si hubiera funcionado",
         "title": "Envíe"
@@ -44,11 +51,13 @@
     "title": "Contacto"
   },
   "soccer5": {
+    "title": "Fútbol5",
     "calendar": {
       "content": "",
       "title": "Calendario"
     },
     "prices": {
+      "hour": "hora",
       "afternoon": {
         "title": "Tarde"
       },
@@ -64,21 +73,20 @@
     "rules": {
       "content": "Para ser escribe",
       "title": "Reglas"
-    },
-    "title": "Fútbol5"
+    }
   },
   "footer": {
     "openingHours": {
-      "football-field": {
-        "info-1": "Lunes a Domingo: de las 08h a las 22h",
-        "title": "Cancha de fútbol"
-      },
-      "gymnasium": {
-        "info-1": "Lunes a Viernes: de las 06h a las 22h",
-        "info-2": "Sabado & Domingo: de las 08h a las 22h",
-        "title": "Gimnasio"
-      },
-      "title": "Abierto diariamente"
+      "title": "Abierto diariamente",
+      "monday": "Lun",
+      "tuesday": "Mar",
+      "wednesday": "Mie",
+      "thursday": "Jue",
+      "friday": "Vie",
+      "saturday": "Sab",
+      "sunday": "Dom",
+      "from": "de",
+      "to": "a las"
     },
     "socialNetworks": {
       "copyright": "Todos los derechos reservados",
@@ -88,19 +96,18 @@
         "content": "Abra WhatsApp o copie",
         "copied": "¡Copiado!",
         "or": "o",
-        "title": "Contáctenos"
+        "title": "Contáctenos",
+        "openLink": "Abrir enlace con",
+        "copy": "Copia el número de teléfono"
       }
     }
   },
-  "navbar": {
-    "contact": "Contacto",
-    "events": "Eventos",
-    "soccer5": "Fútbol5",
-    "gymnasium": "Gimnasio",
-    "home": "Inicio",
-    "multisport": "Multideporte"
+  "page404": {
+    "title": "Página no encontrada",
+    "message": "Lo siento, pero la página que está buscando no está aquí...!"
   },
   "other": {
+    "homepageMessage": "Vuelve a la página de inicio",
     "construction": {
       "hover": "Siento las molestias",
       "title": "Este lado de la página web no se ha abierto todavía"

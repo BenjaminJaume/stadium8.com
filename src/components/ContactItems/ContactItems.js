@@ -20,12 +20,12 @@ class ContactItems extends Component {
   }
 
   render() {
-    const { absPath } = this.props;
+    const { absPath, email } = this.props;
 
     return (
       <>
         <a
-          href="https://urlgeni.us/instagram/2civ"
+          href="https://urlgeni.us/instagram/uSRT"
           className="instagram-brand-icon px-1"
           target="_blank"
           rel="noopener noreferrer"
@@ -91,7 +91,9 @@ class ContactItems extends Component {
                       .replace(/ /g, "")}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    title="Open link with WhatsApp"
+                    title={`${i18n.t(
+                      "footer.socialNetworks.whatsappPopover.openLink"
+                    )} WhatsApp`}
                   >
                     {this.props.phoneNumber}
                   </a>
@@ -107,7 +109,9 @@ class ContactItems extends Component {
                       <FontAwesomeIcon
                         icon={faClipboard}
                         className="clipboard-icon text-good-night"
-                        title="Copy phone number"
+                        title={i18n.t(
+                          "footer.socialNetworks.whatsappPopover.copy"
+                        )}
                       />
                     </span>
                   </CopyToClipboard>
@@ -125,7 +129,7 @@ class ContactItems extends Component {
         </span>
 
         <a
-          href="mailto:stadiumcr@gmail.com"
+          href={`mailto:${email}`}
           className="mail-brand-icon px-1"
           target="_blank"
           rel="noopener noreferrer"

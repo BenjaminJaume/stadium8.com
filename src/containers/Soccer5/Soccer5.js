@@ -67,11 +67,15 @@ const Soccer5 = props => {
                           </div>
                           <h1>
                             &#8353;{footballDetails.morning.price.colones}
-                            <small className="text-muted">/1h</small>
+                            <small className="text-muted">
+                              /{t("soccer5.prices.hour")}
+                            </small>
                           </h1>
                           <h3>
                             &#36;{footballDetails.morning.price.dollars}
-                            <small className="text-muted">/1h</small>
+                            <small className="text-muted">
+                              /{t("soccer5.prices.hour")}
+                            </small>
                           </h3>
                         </div>
                         <div className="col-12 col-lg-4 mb-4 mb-lg-0">
@@ -85,11 +89,15 @@ const Soccer5 = props => {
                           </div>
                           <h1>
                             &#8353;{footballDetails.afternoon.price.colones}
-                            <small className="text-muted">/1h</small>
+                            <small className="text-muted">
+                              /{t("soccer5.prices.hour")}
+                            </small>
                           </h1>
                           <h3>
                             &#36;{footballDetails.afternoon.price.dollars}
-                            <small className="text-muted">/1h</small>
+                            <small className="text-muted">
+                              /{t("soccer5.prices.hour")}
+                            </small>
                           </h3>
                         </div>
                         <div className="col-12 col-lg-4">
@@ -103,11 +111,15 @@ const Soccer5 = props => {
                           </div>
                           <h1>
                             &#8353;{footballDetails.night.price.colones}
-                            <small className="text-muted">/1h</small>
+                            <small className="text-muted">
+                              /{t("soccer5.prices.hour")}
+                            </small>
                           </h1>
                           <h3>
                             &#36;{footballDetails.night.price.dollars}
-                            <small className="text-muted">/1h</small>
+                            <small className="text-muted">
+                              /{t("soccer5.prices.hour")}
+                            </small>
                           </h3>
                         </div>
                       </div>
@@ -116,7 +128,7 @@ const Soccer5 = props => {
                           <IndexLinkContainer
                             to="/contact"
                             href="/contact"
-                            className="btn btn-success text-uppercase"
+                            className="btn btn-brand text-uppercase"
                           >
                             <span>{t("soccer5.prices.buttonContact")}</span>
                           </IndexLinkContainer>

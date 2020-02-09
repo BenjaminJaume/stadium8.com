@@ -22,7 +22,30 @@ import Page404 from "./Page404/Page404";
 
 const absPath = Config.ABS_PATH;
 const phoneNumber = "+506 8580 8585";
-const email = "stadiumrc@gmail.com";
+const email = "contact@stadium8.com";
+
+const openingHours = {
+  weekDay: {
+    open: {
+      hours: "6",
+      minutes: "00"
+    },
+    close: {
+      hours: "22",
+      minutes: "00"
+    }
+  },
+  weekEnd: {
+    open: {
+      hours: "8",
+      minutes: "00"
+    },
+    close: {
+      hours: "22",
+      minutes: "00"
+    }
+  }
+};
 
 const footballDetails = {
   morning: {
@@ -282,13 +305,19 @@ export default class App extends Component {
                     isLoadingQuotes={isLoadingQuotes}
                     errorPosts={errorPosts}
                     errorQuotes={errorQuotes}
+                    phoneNumber={phoneNumber}
                   />
                 </Route>
                 <Route component={Page404}>
                   <Page404 absPath={absPath} />
                 </Route>
               </Switch>
-              <Footer phoneNumber={phoneNumber} absPath={absPath} />
+              <Footer
+                phoneNumber={phoneNumber}
+                absPath={absPath}
+                openingHours={openingHours}
+                email={email}
+              />
             </Suspense>
           </Router>
         </BrowserRouter>

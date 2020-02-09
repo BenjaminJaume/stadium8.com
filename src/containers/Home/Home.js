@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import i18n from "i18next";
 import { HollowDotsSpinner } from "react-epic-spinners";
 import CarouselQuotes from "../../components/CarouselQuotes/CarouselQuotes";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -67,7 +68,8 @@ class Home extends Component {
       isLoadingQuotes,
       isLoadingPosts,
       errorQuotes,
-      errorPosts
+      errorPosts,
+      phoneNumber
     } = this.props;
 
     var quotes = [];
@@ -113,39 +115,45 @@ class Home extends Component {
             draggable
           /> */}
           <div className="container-fluid container-100vh py-5 px-lg-5">
-            <div className="row h-100 align-items-center">
-              <div className="col-12 col-lg-6 text-white mb-3 mb-lg-0">
-                <div className="d-flex flex-column justify-content-center text-center h-100">
-                  <div className="font-italic h1 mb-0">
-                    {errorQuotes
-                      ? /* Error loading quotes */
-                        ""
-                      : ""}
-
-                    {isLoadingQuotes ? (
-                      <h2 className="loading-text text-center mb-5">
-                        <HollowDotsSpinner color="white" className="mx-auto" />
-                      </h2>
-                    ) : (
-                      <CarouselQuotes
-                        quotes={quotes}
-                        createMarkup={this.createMarkupQuote}
-                      />
-                    )}
-                  </div>
+            <div className="row h-100">
+              <div className="col-12 col-lg-6 text-white text-center mb-5 mb-lg-0">
+                <div className="animated jackInTheBox delay-2s">
+                  <p className="mb-0">{i18n.t("home.makeBooking")}</p>
+                  <p className="animated pulse infinite delay-3s slower">
+                    <a
+                      href={`tel:${phoneNumber.replace(/ /g, "")}`}
+                      className="display-4 link-brand link-no-underline"
+                    >
+                      {phoneNumber}
+                    </a>
+                  </p>
                 </div>
-              </div>
-              <div className="col-12 col-lg-6 text-white text-center">
-                {errorPosts
-                  ? /* Error loading posts */
-                    ""
-                  : ""}
+                <div>
+                  <hr className="divider w-75 mx-auto" />
+                </div>
 
+                {isLoadingQuotes ? (
+                  <h2 className="loading-text text-center mb-5">
+                    <HollowDotsSpinner color="white" className="mx-auto" />
+                  </h2>
+                ) : !errorQuotes ? (
+                  <div className="font-italic h1 mb-0">
+                    <CarouselQuotes
+                      quotes={quotes}
+                      createMarkup={this.createMarkupQuote}
+                    />
+                  </div>
+                ) : (
+                  // Error loading Quotes
+                  ""
+                )}
+              </div>
+              <div className="col-12 col-lg-6 text-white text-center align-items-center">
                 {isLoadingPosts ? (
                   <h2 className="loading-text mb-5">
                     <HollowDotsSpinner color="white" className="mx-auto" />
                   </h2>
-                ) : (
+                ) : !errorPosts ? (
                   posts.map(post => (
                     <div
                       key={post.id}
@@ -191,6 +199,9 @@ class Home extends Component {
                       />
                     </div>
                   ))
+                ) : (
+                  // Error loading posts
+                  ""
                 )}
               </div>
             </div>

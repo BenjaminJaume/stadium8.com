@@ -55,7 +55,7 @@ class ContactForm extends Component {
                 <p className="mb-0">{i18n.t("contact.form.success.reply")}</p>
               </span>
               <IndexLinkContainer to="/" href="/" className="link-emerald">
-                <p>{i18n.t("contact.form.back")}</p>
+                <p>{i18n.t("other.homepageMessage")}</p>
               </IndexLinkContainer>
             </div>
           ) : status === "sendingError" ? (
@@ -73,7 +73,7 @@ class ContactForm extends Component {
               </p>
               {/* {console.log(sendingErrorMessage)} */}
               <IndexLinkContainer to="/" href="/" className="link-emerald">
-                <p>{i18n.t("contact.form.back")}</p>
+                <p>{i18n.t("other.homepageMessage")}</p>
               </IndexLinkContainer>
             </div>
           ) : (
@@ -130,10 +130,12 @@ class ContactForm extends Component {
               <button
                 type="button"
                 value="Submit"
-                className="btn btn-success mx-2"
+                className="btn btn-brand"
                 onClick={this.handleSubmit}
               >
-                {i18n.t("contact.form.button.title")}
+                <span className="mx-3">
+                  {i18n.t("contact.form.button.title")}
+                </span>
               </button>
             </div>
           </form>

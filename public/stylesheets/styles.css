@@ -136,6 +136,24 @@ body {
   text-decoration: underline;
 }
 
+.link-no-underline {
+  text-decoration: none;
+}
+
+/* Buttons colors */
+
+.btn-brand {
+  color: var(--black);
+  background-color: var(--brand-color);
+}
+
+.btn-brand:hover,
+.btn-brand:active,
+.btn-brand:focus {
+  color: var(--black);
+  background-color: var(--brand-link);
+}
+
 /* BACKGROUND COLORS */
 .color-brand-filter {
   width: 100%;
@@ -181,9 +199,8 @@ body {
 /* OTHER */
 
 .divider {
-  margin: 1.5rem 0;
+  margin: 3rem 0;
   background-color: var(--brand-color);
-  width: 50vw;
 }
 
 .cone {

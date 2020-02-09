@@ -3,45 +3,90 @@ import { useTranslation } from "react-i18next";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCopyright } from "@fortawesome/free-regular-svg-icons";
 import ContactItems from "../ContactItems/ContactItems";
-import MapContainer from "../MapContainer/MapContainer";
 
 import "./Footer.css";
 
-const Footer = ({ phoneNumber, absPath }) => {
+const Footer = ({ absPath, phoneNumber, email, openingHours }) => {
   const { t } = useTranslation();
 
   return (
     <>
-      <footer id="footer" className="pb-1">
+      <footer id="footer" className="py-5">
         <div className="container-fluid pt-4">
           <div className="row">
-            <div className="col-12 col-lg-4 p-0 m-0">
-              <div className="map-container pl-lg-2">
-                <MapContainer />
-              </div>
-            </div>
-            <div className="col-12 col-lg-4">
+            <div className="col-lg-3" />
+            <div className="col-12 col-lg-3">
               <p className="text-brand">{t("footer.openingHours.title")}</p>
               <p>
-                <u>{t("footer.openingHours.gymnasium.title")}</u>
+                {`${t("footer.openingHours.monday")}  ${
+                  openingHours.weekDay.open.hours
+                }h${openingHours.weekDay.open.minutes} ${t(
+                  "footer.openingHours.to"
+                )} ${openingHours.weekDay.close.hours}h${
+                  openingHours.weekDay.close.minutes
+                }`}
                 <br />
-                {t("footer.openingHours.gymnasium.info-1")}
+                {`${t("footer.openingHours.tuesday")}  ${
+                  openingHours.weekDay.open.hours
+                }h${openingHours.weekDay.open.minutes} ${t(
+                  "footer.openingHours.to"
+                )} ${openingHours.weekDay.close.hours}h${
+                  openingHours.weekDay.close.minutes
+                }`}
                 <br />
-                {t("footer.openingHours.gymnasium.info-2")}
-              </p>
-              <p>
-                <u>{t("footer.openingHours.football-field.title")}</u>
+                {`${t("footer.openingHours.wednesday")}  ${
+                  openingHours.weekDay.open.hours
+                }h${openingHours.weekDay.open.minutes} ${t(
+                  "footer.openingHours.to"
+                )} ${openingHours.weekDay.close.hours}h${
+                  openingHours.weekDay.close.minutes
+                }`}
                 <br />
-                {t("footer.openingHours.football-field.info-1")}
+                {`${t("footer.openingHours.thursday")}  ${
+                  openingHours.weekDay.open.hours
+                }h${openingHours.weekDay.open.minutes} ${t(
+                  "footer.openingHours.to"
+                )} ${openingHours.weekDay.close.hours}h${
+                  openingHours.weekDay.close.minutes
+                }`}
+                <br />
+                {`${t("footer.openingHours.friday")}  ${
+                  openingHours.weekDay.open.hours
+                }h${openingHours.weekDay.open.minutes} ${t(
+                  "footer.openingHours.to"
+                )} ${openingHours.weekDay.close.hours}h${
+                  openingHours.weekDay.close.minutes
+                }`}
+                <br />
+                {`${t("footer.openingHours.saturday")}  ${
+                  openingHours.weekEnd.open.hours
+                }h${openingHours.weekEnd.open.minutes} ${t(
+                  "footer.openingHours.to"
+                )} ${openingHours.weekEnd.close.hours}h${
+                  openingHours.weekEnd.close.minutes
+                }`}
+                <br />
+                {`${t("footer.openingHours.sunday")}  ${
+                  openingHours.weekEnd.open.hours
+                }h${openingHours.weekEnd.open.minutes} ${t(
+                  "footer.openingHours.to"
+                )} ${openingHours.weekEnd.close.hours}h${
+                  openingHours.weekEnd.close.minutes
+                }`}
+                <br />
               </p>
             </div>
 
-            <div className="col-12 col-lg-4">
+            <div className="col-12 col-lg-3">
               <div className="mb-4">
                 <p className="mb-0 text-brand">
                   STADIUM8 {t("footer.socialNetworks.title")}
                 </p>
-                <ContactItems phoneNumber={phoneNumber} absPath={absPath} />
+                <ContactItems
+                  absPath={absPath}
+                  phoneNumber={phoneNumber}
+                  email={email}
+                />
               </div>
 
               <p className="text-silver">
@@ -62,6 +107,7 @@ const Footer = ({ phoneNumber, absPath }) => {
                 </a>
               </p>
             </div>
+            <div className="col-lg-3" />
           </div>
         </div>
       </footer>
