@@ -1,8 +1,10 @@
 import React from "react";
-import { withNamespaces } from "react-i18next";
+import { useTranslation } from "react-i18next";
 import "./Multisport.css";
 
-const Multisport = ({ absPath, t }) => {
+const Multisport = ({ absPath }) => {
+  const { t } = useTranslation();
+
   return (
     <div
       className="responsive-background background-position-fixed"
@@ -33,4 +35,4 @@ const Multisport = ({ absPath, t }) => {
 };
 
 // @ts-ignore
-export default withNamespaces()(Multisport);
+export default Multisport;

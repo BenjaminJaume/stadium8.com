@@ -1,8 +1,10 @@
 import React from "react";
-import { withNamespaces } from "react-i18next";
+import { useTranslation } from "react-i18next";
 import "./Events.css";
 
-const Events = ({ absPath, t }) => {
+const Events = ({ absPath }) => {
+  const { t } = useTranslation();
+
   return (
     <div
       className="responsive-background background-position-fixed"
@@ -32,5 +34,4 @@ const Events = ({ absPath, t }) => {
   );
 };
 
-// @ts-ignore
-export default withNamespaces()(Events);
+export default Events;

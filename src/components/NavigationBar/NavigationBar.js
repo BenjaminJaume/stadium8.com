@@ -1,11 +1,12 @@
 import React from "react";
-import { withNamespaces } from "react-i18next";
+import { useTranslation } from "react-i18next";
 import { IndexLinkContainer } from "react-router-bootstrap";
 import DropdownLanguage from "../DropdownLanguage/DropdownLanguage";
-
 import "./NavigationBar.css";
 
-const NavigationBar = ({ absPath, onClick, lg, t }) => {
+const NavigationBar = ({ absPath, onClick, lg }) => {
+  const { t } = useTranslation();
+
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-dark fixed-top font-brand-2 py-3">
@@ -133,4 +134,4 @@ const NavigationBar = ({ absPath, onClick, lg, t }) => {
 };
 
 // @ts-ignore
-export default withNamespaces()(NavigationBar);
+export default NavigationBar;

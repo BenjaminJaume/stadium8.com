@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { withNamespaces } from "react-i18next";
+import i18n from "i18next";
 import Popover from "react-bootstrap/Popover";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -20,7 +20,7 @@ class ContactItems extends Component {
   }
 
   render() {
-    const { absPath, t } = this.props;
+    const { absPath } = this.props;
 
     return (
       <>
@@ -72,16 +72,16 @@ class ContactItems extends Component {
               <Popover id="popoverContactPhone">
                 <Popover.Title as="h3">
                   <FontAwesomeIcon icon={faPhoneAlt} className="mr-1" />{" "}
-                  {t("footer.socialNetworks.whatsappPopover.title")}
+                  {i18n.t("footer.socialNetworks.whatsappPopover.title")}
                 </Popover.Title>
                 <Popover.Content className="text-center">
                   {this.state.copied ? (
                     <span className="text-emerald">
-                      {t("footer.socialNetworks.whatsappPopover.copied")}
+                      {i18n.t("footer.socialNetworks.whatsappPopover.copied")}
                     </span>
                   ) : (
                     <span>
-                      {t("footer.socialNetworks.whatsappPopover.content")}
+                      {i18n.t("footer.socialNetworks.whatsappPopover.content")}
                     </span>
                   )}
                   <br />
@@ -95,7 +95,10 @@ class ContactItems extends Component {
                   >
                     {this.props.phoneNumber}
                   </a>
-                  <span> {t("footer.socialNetworks.whatsappPopover.or")} </span>
+                  <span>
+                    {" "}
+                    {i18n.t("footer.socialNetworks.whatsappPopover.or")}{" "}
+                  </span>
                   <CopyToClipboard
                     text={this.props.phoneNumber.replace(/ /g, "")}
                     onCopy={() => this.setState({ copied: true })}
@@ -151,4 +154,4 @@ class ContactItems extends Component {
   }
 }
 
-export default withNamespaces()(ContactItems);
+export default ContactItems;

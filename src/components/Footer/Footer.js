@@ -1,5 +1,5 @@
 import React from "react";
-import { withNamespaces } from "react-i18next";
+import { useTranslation } from "react-i18next";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCopyright } from "@fortawesome/free-regular-svg-icons";
 import ContactItems from "../ContactItems/ContactItems";
@@ -7,7 +7,9 @@ import MapContainer from "../MapContainer/MapContainer";
 
 import "./Footer.css";
 
-const Footer = ({ phoneNumber, absPath, t }) => {
+const Footer = ({ phoneNumber, absPath }) => {
+  const { t } = useTranslation();
+
   return (
     <>
       <footer id="footer" className="pb-1">
@@ -68,4 +70,4 @@ const Footer = ({ phoneNumber, absPath, t }) => {
 };
 
 // @ts-ignore
-export default withNamespaces()(Footer);
+export default Footer;

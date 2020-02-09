@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Suspense } from "react";
 import i18n from "../i18n";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -87,6 +87,10 @@ export default class App extends Component {
   };
 
   componentDidMount() {
+    setTimeout(() => {
+      this.changeLanguage(i18n.language);
+    }, 500);
+
     this.setState({ isLoadingQuotes: true, isLoadingPosts: true });
     // English
     // Quotes
@@ -231,62 +235,59 @@ export default class App extends Component {
     return (
       <div>
         <Router>
-          <ScrollToTop />
-
-          <NavigationBar
-            absPath={absPath}
-            onClick={this.changeLanguage}
-            lg={lg}
-          />
-
-          <Switch>
-            <Route path="/football5" component={Football5}>
-              <Football5
-                absPath={absPath}
-                footballDetails={footballDetails}
-                events={events}
-                errorEvents={errorEvents}
-              />
-            </Route>
-            <Route path="/gym" component={Gym}>
-              <Gym absPath={absPath} />
-            </Route>
-            <Route path="/multisport" component={Multisport}>
-              <Multisport absPath={absPath} />
-            </Route>
-            <Route path="/events" component={Events}>
-              <Events absPath={absPath} />
-            </Route>
-            <Route path="/spa" component={Spa}>
-              <Spa absPath={absPath} />
-            </Route>
-            <Route path="/contact" component={Contact}>
-              <Contact absPath={absPath} email={email} />
-            </Route>
-            <Route path="/" component={Home} exact>
-              <Home
-                absPath={absPath}
-                lg={lg}
-                // quotesPerPage={quotesPerPage}
-                // postsPerPage={postsPerPage}
-                quotesES={quotesES}
-                quotesEN={quotesEN}
-                quotesFR={quotesFR}
-                postsES={postsES}
-                postsEN={postsEN}
-                postsFR={postsFR}
-                isLoadingPosts={isLoadingPosts}
-                isLoadingQuotes={isLoadingQuotes}
-                errorPosts={errorPosts}
-                errorQuotes={errorQuotes}
-              />
-            </Route>
-            <Route component={Page404}>
-              <Page404 absPath={absPath} />
-            </Route>
-          </Switch>
-
-          <Footer phoneNumber={phoneNumber} absPath={absPath} lg={lg} />
+          <Suspense fallback={""}>
+            <ScrollToTop />
+            <NavigationBar
+              absPath={absPath}
+              onClick={this.changeLanguage}
+              lg={lg}
+            />
+            <Switch>
+              <Route path="/football5" component={Football5}>
+                <Football5
+                  absPath={absPath}
+                  footballDetails={footballDetails}
+                  events={events}
+                  errorEvents={errorEvents}
+                />
+              </Route>
+              <Route path="/gym" component={Gym}>
+                <Gym absPath={absPath} />
+              </Route>
+              <Route path="/multisport" component={Multisport}>
+                <Multisport absPath={absPath} />
+              </Route>
+              <Route path="/events" component={Events}>
+                <Events absPath={absPath} />
+              </Route>
+              <Route path="/spa" component={Spa}>
+                <Spa absPath={absPath} />
+              </Route>
+              <Route path="/contact" component={Contact}>
+                <Contact absPath={absPath} email={email} />
+              </Route>
+              <Route path="/" component={Home} exact>
+                <Home
+                  absPath={absPath}
+                  lg={lg}
+                  quotesES={quotesES}
+                  quotesEN={quotesEN}
+                  quotesFR={quotesFR}
+                  postsES={postsES}
+                  postsEN={postsEN}
+                  postsFR={postsFR}
+                  isLoadingPosts={isLoadingPosts}
+                  isLoadingQuotes={isLoadingQuotes}
+                  errorPosts={errorPosts}
+                  errorQuotes={errorQuotes}
+                />
+              </Route>
+              <Route component={Page404}>
+                <Page404 absPath={absPath} />
+              </Route>
+            </Switch>
+            <Footer phoneNumber={phoneNumber} absPath={absPath} />
+          </Suspense>
         </Router>
       </div>
     );

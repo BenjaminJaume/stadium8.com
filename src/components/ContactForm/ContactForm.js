@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { withNamespaces } from "react-i18next";
+import i18n from "i18next";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheckCircle } from "@fortawesome/free-regular-svg-icons";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
@@ -35,7 +35,7 @@ class ContactForm extends Component {
       formErrorMessage
       // sendingErrorMessage
     } = this.state;
-    var { t, email } = this.props;
+    var { email } = this.props;
 
     return (
       <>
@@ -50,30 +50,30 @@ class ContactForm extends Component {
               <span className="h6">
                 <p className="mb-0">
                   <FontAwesomeIcon icon={faCheckCircle} className="mr-2" />
-                  {t("contact.form.success.title")}
+                  {i18n.t("contact.form.success.title")}
                 </p>
-                <p className="mb-0">{t("contact.form.success.reply")}</p>
+                <p className="mb-0">{i18n.t("contact.form.success.reply")}</p>
               </span>
               <IndexLinkContainer to="/" href="/" className="link-emerald">
-                <p>{t("contact.form.back")}</p>
+                <p>{i18n.t("contact.form.back")}</p>
               </IndexLinkContainer>
             </div>
           ) : status === "sendingError" ? (
             <div className="text-center">
               <span className="text-danger h6">
                 <FontAwesomeIcon icon={faTimes} className="mr-2" />
-                {t("contact.form.error.title")}
+                {i18n.t("contact.form.error.title")}
               </span>
               <br />
               <p className="mb-0">
-                {t("contact.form.error.sendEmail.text")}{" "}
+                {i18n.t("contact.form.error.sendEmail.text")}{" "}
                 <a href={`mailto:${email}`} className="link-emerald">
-                  {t("contact.form.error.sendEmail.email")}
+                  {i18n.t("contact.form.error.sendEmail.email")}
                 </a>
               </p>
               {/* {console.log(sendingErrorMessage)} */}
               <IndexLinkContainer to="/" href="/" className="link-emerald">
-                <p>{t("contact.form.back")}</p>
+                <p>{i18n.t("contact.form.back")}</p>
               </IndexLinkContainer>
             </div>
           ) : (
@@ -91,8 +91,8 @@ class ContactForm extends Component {
                 type="text"
                 name="name"
                 className="form-control"
-                placeholder={t("contact.form.name.title") + "*"}
-                data-error={t("contact.form.name.error")}
+                placeholder={i18n.t("contact.form.name.title") + "*"}
+                data-error={i18n.t("contact.form.name.error")}
                 onChange={this.handleNameChange}
                 value={name}
                 required
@@ -104,8 +104,8 @@ class ContactForm extends Component {
                 type="email"
                 name="email"
                 className="form-control"
-                placeholder={t("contact.form.email.title") + "*"}
-                data-error={t("contact.form.email.error")}
+                placeholder={i18n.t("contact.form.email.title") + "*"}
+                data-error={i18n.t("contact.form.email.error")}
                 onChange={this.handleEmailChange}
                 value={emailInput}
                 title=""
@@ -118,8 +118,8 @@ class ContactForm extends Component {
                 id="form_message"
                 name="message"
                 className="form-control textarea-contact"
-                placeholder={t("contact.form.message.title") + "*"}
-                data-error={t("contact.form.message.error")}
+                placeholder={i18n.t("contact.form.message.title") + "*"}
+                data-error={i18n.t("contact.form.message.error")}
                 onChange={this.handleMessageChange}
                 value={message}
                 required
@@ -133,7 +133,7 @@ class ContactForm extends Component {
                 className="btn btn-success mx-2"
                 onClick={this.handleSubmit}
               >
-                {t("contact.form.button.title")}
+                {i18n.t("contact.form.button.title")}
               </button>
             </div>
           </form>
@@ -159,20 +159,20 @@ class ContactForm extends Component {
   }
 
   handleSubmit(event) {
-    const { t } = this.props;
-
     event.preventDefault();
     const templateId = "new_message_template";
     const { name, emailInput, emailInputTag, message } = this.state;
     const errorMessages = {
-      nameEmpty: t("contact.form.errorMessage.nameEmpty"),
-      nameLonger: t("contact.form.errorMessage.nameLonger"),
-      emailEmpty: t("contact.form.errorMessage.emailEmpty"),
-      emailAtMissing: t("contact.form.errorMessage.emailAtMissing"),
-      emailDotMissing: t("contact.form.errorMessage.emailDotMissing"),
-      emailInvalidFormat: t("contact.form.errorMessage.emailInvalidFormat"),
-      messageEmpty: t("contact.form.errorMessage.messageEmpty"),
-      messageLonger: t("contact.form.errorMessage.messageLonger")
+      nameEmpty: i18n.t("contact.form.errorMessage.nameEmpty"),
+      nameLonger: i18n.t("contact.form.errorMessage.nameLonger"),
+      emailEmpty: i18n.t("contact.form.errorMessage.emailEmpty"),
+      emailAtMissing: i18n.t("contact.form.errorMessage.emailAtMissing"),
+      emailDotMissing: i18n.t("contact.form.errorMessage.emailDotMissing"),
+      emailInvalidFormat: i18n.t(
+        "contact.form.errorMessage.emailInvalidFormat"
+      ),
+      messageEmpty: i18n.t("contact.form.errorMessage.messageEmpty"),
+      messageLonger: i18n.t("contact.form.errorMessage.messageLonger")
     };
     const validEmailRegex = RegExp(
       /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i
@@ -258,4 +258,4 @@ class ContactForm extends Component {
   }
 }
 
-export default withNamespaces()(ContactForm);
+export default ContactForm;

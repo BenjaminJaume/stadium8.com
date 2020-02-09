@@ -3,6 +3,8 @@ import { HollowDotsSpinner } from "react-epic-spinners";
 import CarouselQuotes from "../../components/CarouselQuotes/CarouselQuotes";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClock } from "@fortawesome/free-regular-svg-icons";
+// import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import "./Home.css";
 
@@ -24,124 +26,7 @@ class Home extends Component {
     this.createMarkupPost = this.createMarkupPost.bind(this);
     this.createMarkupQuote = this.createMarkupQuote.bind(this);
     this.extractPictureSrc = this.extractPictureSrc.bind(this);
-  }
-
-  componentDidMount() {
-    // const { quotesPerPage, postsPerPage } = this.props;
-    // this.setState({ isLoadingQuotes: true, isLoadingPosts: true });
-    // // English
-    // // Quotes
-    // axios
-    //   .get(
-    //     `https://stadium8.com/wp-json/wp/v2/posts?categories=51&per_page=${quotesPerPage}`
-    //   )
-    //   .then(response => {
-    //     if (response.status === 200) {
-    //       this.setState({
-    //         quotesEN: response.data,
-    //         isLoadingQuotes: false
-    //       });
-    //     } else {
-    //       throw new Error("Something went wrong with Quotes");
-    //     }
-    //   })
-    //   .catch(error =>
-    //     this.setState({ errorQuotes: error, isLoadingQuotes: false })
-    //   );
-    // // Posts
-    // axios
-    //   .get(
-    //     `https://stadium8.com/wp-json/wp/v2/posts/?categories=53&per_page=${postsPerPage}`
-    //   )
-    //   .then(response => {
-    //     if (response.status === 200) {
-    //       this.setState({
-    //         postsEN: response.data,
-    //         isLoadingPosts: false
-    //       });
-    //     } else {
-    //       throw new Error("Something went wrong with Posts");
-    //     }
-    //   })
-    //   .catch(error =>
-    //     this.setState({ errorPosts: error, isLoadingPosts: false })
-    //   );
-    // this.setState({ isLoadingQuotes: true, isLoadingPosts: true });
-    // // French
-    // // Quotes
-    // axios
-    //   .get(
-    //     `https://stadium8.com/wp-json/wp/v2/posts?categories=47&per_page=${quotesPerPage}`
-    //   )
-    //   .then(response => {
-    //     if (response.status === 200) {
-    //       this.setState({
-    //         quotesFR: response.data,
-    //         isLoadingQuotes: false
-    //       });
-    //     } else {
-    //       throw new Error("Something went wrong with Quotes");
-    //     }
-    //   })
-    //   .catch(error =>
-    //     this.setState({ errorQuotes: error, isLoadingQuotes: false })
-    //   );
-    // // Posts
-    // axios
-    //   .get(
-    //     `https://stadium8.com/wp-json/wp/v2/posts/?categories=48&per_page=${postsPerPage}`
-    //   )
-    //   .then(response => {
-    //     if (response.status === 200) {
-    //       this.setState({
-    //         postsFR: response.data,
-    //         isLoadingPosts: false
-    //       });
-    //     } else {
-    //       throw new Error("Something went wrong with Posts");
-    //     }
-    //   })
-    //   .catch(error =>
-    //     this.setState({ errorPosts: error, isLoadingPosts: false })
-    //   );
-    // this.setState({ isLoadingQuotes: true, isLoadingPosts: true });
-    // // Spanish
-    // // Quotes
-    // axios
-    //   .get(
-    //     `https://stadium8.com/wp-json/wp/v2/posts?categories=52&per_page=${quotesPerPage}`
-    //   )
-    //   .then(response => {
-    //     if (response.status === 200) {
-    //       this.setState({
-    //         quotesES: response.data,
-    //         isLoadingQuotes: false
-    //       });
-    //     } else {
-    //       throw new Error("Something went wrong with Quotes");
-    //     }
-    //   })
-    //   .catch(error =>
-    //     this.setState({ errorQuotes: error, isLoadingQuotes: false })
-    //   );
-    // // Posts
-    // axios
-    //   .get(
-    //     `https://stadium8.com/wp-json/wp/v2/posts/?categories=54&per_page=${postsPerPage}`
-    //   )
-    //   .then(response => {
-    //     if (response.status === 200) {
-    //       this.setState({
-    //         postsES: response.data,
-    //         isLoadingPosts: false
-    //       });
-    //     } else {
-    //       throw new Error("Something went wrong with Posts");
-    //     }
-    //   })
-    //   .catch(error =>
-    //     this.setState({ errorPosts: error, isLoadingPosts: false })
-    //   );
+    // this.notify = this.notify.bind(this);
   }
 
   createMarkupPost(html) {
@@ -165,6 +50,9 @@ class Home extends Component {
 
     return [data.slice(srcStart, srcEnd), data.slice(srcSetStart, srcSetEnd)];
   }
+
+  // notify = () =>
+  //   toast("If you continue, it means that you agreed with our cookie policy ");
 
   render() {
     const {
@@ -211,7 +99,19 @@ class Home extends Component {
           backgroundImage: `url(".${absPath}/images/background-home.jpg")`
         }}
       >
-        <div className="color-brand-filter">
+        <div
+          className="color-brand-filter"
+          // onLoad={this.notify}
+        >
+          {/* <ToastContainer
+            position="bottom-center"
+            autoClose={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnVisibilityChange
+            draggable
+          /> */}
           <div className="container-fluid container-100vh py-5 px-lg-5">
             <div className="row h-100 align-items-center">
               <div className="col-12 col-lg-6 text-white mb-3 mb-lg-0">

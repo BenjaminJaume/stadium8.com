@@ -1,8 +1,10 @@
 import React from "react";
-import { withNamespaces } from "react-i18next";
+import { useTranslation } from "react-i18next";
 import "./Gym.css";
 
-const Gym = ({ absPath, t }) => {
+const Gym = ({ absPath }) => {
+  const { t } = useTranslation();
+
   return (
     <div
       className="responsive-background background-position-fixed"
@@ -32,5 +34,4 @@ const Gym = ({ absPath, t }) => {
   );
 };
 
-// @ts-ignore
-export default withNamespaces()(Gym);
+export default Gym;

@@ -1,10 +1,12 @@
 import React from "react";
-import { withNamespaces } from "react-i18next";
+import { useTranslation } from "react-i18next";
 import ContactForm from "../../components/ContactForm/ContactForm";
 
 import "./Contact.css";
 
-const Contact = ({ absPath, t, email }) => {
+const Contact = ({ absPath, email }) => {
+  const { t } = useTranslation();
+
   return (
     <div
       className="responsive-background background-position-fixed"
@@ -35,5 +37,4 @@ const Contact = ({ absPath, t, email }) => {
   );
 };
 
-// @ts-ignore
-export default withNamespaces()(Contact);
+export default Contact;

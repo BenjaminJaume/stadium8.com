@@ -1,5 +1,5 @@
 import React from "react";
-import { withNamespaces } from "react-i18next";
+import { useTranslation } from "react-i18next";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import GoogleCalendar from "../../components/GoogleCalendar/GoogleCalendar";
 import { IndexLinkContainer } from "react-router-bootstrap";
@@ -8,7 +8,8 @@ import "react-tabs/style/react-tabs.css";
 import "./Football5.css";
 
 const Football5 = props => {
-  const { absPath, footballDetails, t, events } = props;
+  const { absPath, footballDetails, events } = props;
+  const { t } = useTranslation();
 
   return (
     <div
@@ -128,5 +129,4 @@ const Football5 = props => {
   );
 };
 
-// @ts-ignore
-export default withNamespaces()(Football5);
+export default Football5;

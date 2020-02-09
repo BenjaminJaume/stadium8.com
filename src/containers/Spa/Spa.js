@@ -1,8 +1,10 @@
 import React from "react";
-import { withNamespaces } from "react-i18next";
+import { useTranslation } from "react-i18next";
 import "./Spa.css";
 
-const Spa = ({ absPath, t }) => {
+const Spa = ({ absPath }) => {
+  const { t } = useTranslation();
+
   return (
     <div
       className="responsive-background background-position-fixed"
@@ -32,4 +34,4 @@ const Spa = ({ absPath, t }) => {
   );
 };
 
-export default withNamespaces()(Spa);
+export default Spa;
