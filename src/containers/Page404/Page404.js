@@ -3,10 +3,12 @@ import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowAltCircleLeft } from "@fortawesome/free-solid-svg-icons";
+import { Config } from "../../components/Config/Config";
 
 import "./Page404.css";
 
-const Page404 = ({ absPath }) => {
+const Page404 = props => {
+  const absPath = Config.ABS_PATH;
   const { t } = useTranslation();
 
   return (

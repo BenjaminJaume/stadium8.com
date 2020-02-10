@@ -4,7 +4,7 @@ import { IndexLinkContainer } from "react-router-bootstrap";
 import DropdownLanguage from "../DropdownLanguage/DropdownLanguage";
 import "./NavigationBar.css";
 
-const NavigationBar = ({ absPath, onClick, lg }) => {
+const NavigationBar = ({ onClick, lg }) => {
   const { t } = useTranslation();
 
   return (
@@ -125,7 +125,7 @@ const NavigationBar = ({ absPath, onClick, lg }) => {
               </IndexLinkContainer>
             </li>
 
-            <DropdownLanguage absPath={absPath} onClick={onClick} lg={lg} />
+            <DropdownLanguage onClick={onClick} lg={lg} />
           </ul>
         </div>
       </nav>

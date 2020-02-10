@@ -1,8 +1,10 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { Config } from "../../components/Config/Config";
 import "./Multisport.css";
 
-const Multisport = ({ absPath }) => {
+const Multisport = props => {
+  const absPath = Config.ABS_PATH;
   const { t } = useTranslation();
 
   return (

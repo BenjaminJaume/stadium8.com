@@ -3,10 +3,12 @@ import { useTranslation } from "react-i18next";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCopyright } from "@fortawesome/free-regular-svg-icons";
 import ContactItems from "../ContactItems/ContactItems";
+import { Config } from "../Config/Config";
 
 import "./Footer.css";
 
-const Footer = ({ absPath, phoneNumber, email, openingHours }) => {
+const Footer = ({ phoneNumber, email, openingHours }) => {
+  const absPath = Config.ABS_PATH;
   const { t } = useTranslation();
 
   return (

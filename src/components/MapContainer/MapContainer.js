@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import i18n from "i18next";
 import { Map, Marker, GoogleApiWrapper, InfoWindow } from "google-maps-react";
 import { Config } from "../Config/Config";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -40,8 +39,8 @@ export class MapContainer extends Component {
 
   render() {
     const mapStyles = {
-      width: "80%",
-      height: "90%",
+      width: "90%",
+      height: "100%",
       margin: "0 auto"
     };
 
@@ -58,6 +57,7 @@ export class MapContainer extends Component {
         }}
         fullscreenControl={false}
         streetViewControl={false}
+        mapTypeControl={false}
       >
         <Marker title={"STADIUM8"} onClick={this.onMarkerClick} />
         <InfoWindow
@@ -65,7 +65,7 @@ export class MapContainer extends Component {
           marker={this.state.activeMarker}
           visible={this.state.showingInfoWindow}
         >
-          <div>
+          <div className="mx-3">
             <p className="text-center text-black font-weight-bold mb-1">
               STADIUM8
             </p>
@@ -91,9 +91,9 @@ export class MapContainer extends Component {
                 Google Maps
               </a>
             </p>
-            <p className="mb-0">
+            <p className="mb-2">
               <a
-                href="https://www.waze.com/ul?ll.9.88425095%2C-85.53937912&navigate=yes"
+                href="https://www.waze.com/ul?ll=9.88425095%2C-85.53937912&navigate=yes"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-dark"

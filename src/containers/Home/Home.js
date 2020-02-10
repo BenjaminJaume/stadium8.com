@@ -4,6 +4,7 @@ import { HollowDotsSpinner } from "react-epic-spinners";
 import CarouselQuotes from "../../components/CarouselQuotes/CarouselQuotes";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClock } from "@fortawesome/free-regular-svg-icons";
+import { Config } from "../../components/Config/Config";
 // import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -56,8 +57,8 @@ class Home extends Component {
   //   toast("If you continue, it means that you agreed with our cookie policy ");
 
   render() {
+    const absPath = Config.ABS_PATH;
     const {
-      absPath,
       lg,
       quotesES,
       quotesEN,
@@ -117,9 +118,9 @@ class Home extends Component {
           <div className="container-fluid container-100vh py-5 px-lg-5">
             <div className="row h-100">
               <div className="col-12 col-lg-6 text-white text-center mb-5 mb-lg-0">
-                <div className="animated jackInTheBox delay-1s">
+                <div className="animated jackInTheBox delay-500ms">
                   <p className="mb-0 h3">{i18n.t("other.makeBooking")}</p>
-                  <p className="animated pulse infinite delay-2s slower">
+                  <p className="animated pulse infinite delay-1s slower">
                     <a
                       href={`tel:${phoneNumber.replace(/ /g, "")}`}
                       className="display-4 link-brand link-no-underline"

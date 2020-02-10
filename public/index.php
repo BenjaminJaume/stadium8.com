@@ -34,7 +34,7 @@
       sizes="16x16"
       href="%PUBLIC_URL%/favicon/favicon-16x16.png"
     />
-    <link rel="manifest" href="%PUBLIC_URL%/favicon/site.webmanifest" />
+    <link rel="manifest" href="%PUBLIC_URL%/images/favicon/site.webmanifest" />
 
      <!-- Bootstrap CSS -->
     <link

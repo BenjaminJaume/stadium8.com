@@ -53,21 +53,25 @@ body {
 @font-face {
   font-family: "Gobold";
   src: url("../fonts/gobold.woff2") format("woff2");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Gobold Thin";
   src: url("../fonts/gobol-thin.woff2") format("woff2");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Gobold Cuts";
   src: url("../fonts/gobold-cuts.woff2") format("woff2");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Gobold Light";
   src: url("../fonts/gobold-light.woff2") format("woff2");
+  font-display: swap;
 }
 
 .font-brand {
@@ -209,6 +213,11 @@ body {
 
 .cone {
   max-height: 200px;
+}
+
+.animated.delay-500ms {
+  -webkit-animation-delay: 0.5s;
+  animation-delay: 0.5s;
 }
 
 /* Extra small devices (portrait phones, less than 576px) */

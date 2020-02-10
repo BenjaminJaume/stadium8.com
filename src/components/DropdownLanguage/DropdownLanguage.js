@@ -1,8 +1,12 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
+import { Config } from "../Config/Config";
+
 import "./DropdownLanguage.css";
 
-const DropdownLanguage = ({ absPath, onClick, lg }) => {
+const DropdownLanguage = ({ onClick, lg }) => {
+  const absPath = Config.ABS_PATH;
+
   switch (lg) {
     case "en":
       return (
@@ -20,6 +24,7 @@ const DropdownLanguage = ({ absPath, onClick, lg }) => {
               alt="en"
               className="d-inline-block mr-2"
               height="15"
+              width="15"
             />
             English
           </a>
@@ -41,6 +46,7 @@ const DropdownLanguage = ({ absPath, onClick, lg }) => {
                   alt="ES"
                   className="d-inline-block mr-2"
                   height="15"
+                  width="15"
                 />
                 Español
               </span>
@@ -58,6 +64,7 @@ const DropdownLanguage = ({ absPath, onClick, lg }) => {
                   alt="fr"
                   className="d-inline-block mr-2"
                   height="15"
+                  width="15"
                 />
                 Français
               </span>
@@ -81,6 +88,7 @@ const DropdownLanguage = ({ absPath, onClick, lg }) => {
               alt="fr"
               className="d-inline-block mr-2"
               height="15"
+              width="15"
             />
             Français
           </a>
@@ -102,6 +110,7 @@ const DropdownLanguage = ({ absPath, onClick, lg }) => {
                   alt="ES"
                   className="d-inline-block mr-2"
                   height="15"
+                  width="15"
                 />
                 Español
               </span>
@@ -119,6 +128,7 @@ const DropdownLanguage = ({ absPath, onClick, lg }) => {
                   alt="us"
                   className="d-inline-block mr-2"
                   height="15"
+                  width="15"
                 />
                 English
               </span>
@@ -142,6 +152,7 @@ const DropdownLanguage = ({ absPath, onClick, lg }) => {
               alt="es"
               className="d-inline-block mr-2"
               height="15"
+              width="15"
             />
             Español
           </a>
@@ -163,6 +174,7 @@ const DropdownLanguage = ({ absPath, onClick, lg }) => {
                   alt="us"
                   className="d-inline-block mr-2"
                   height="15"
+                  width="15"
                 />
                 English
               </span>
@@ -180,6 +192,7 @@ const DropdownLanguage = ({ absPath, onClick, lg }) => {
                   alt="fr"
                   className="d-inline-block mr-2"
                   height="15"
+                  width="15"
                 />
                 Français
               </span>

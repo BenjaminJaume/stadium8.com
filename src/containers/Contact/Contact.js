@@ -2,10 +2,12 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import ContactForm from "../../components/ContactForm/ContactForm";
 import MapContainer from "../../components/MapContainer/MapContainer";
+import { Config } from "../../components/Config/Config";
 
 import "./Contact.css";
 
-const Contact = ({ absPath, email }) => {
+const Contact = ({ email }) => {
+  const absPath = Config.ABS_PATH;
   const { t } = useTranslation();
 
   return (

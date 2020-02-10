@@ -1,8 +1,10 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { Config } from "../../components/Config/Config";
 import "./Gym.css";
 
-const Gym = ({ absPath }) => {
+const Gym = props => {
+  const absPath = Config.ABS_PATH;
   const { t } = useTranslation();
 
   return (

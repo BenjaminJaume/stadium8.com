@@ -21,24 +21,7 @@
   cursor: pointer;
 }
 
-.whatsapp-brand-icon:focus {
-  /* border-color: #ccc; */
-  outline: 0;
-}
-
 .clipboard-icon:hover {
   cursor: pointer;
   color: var(--silver);
-}
-
-.instagram-brand-icon:hover {
-  color: var(--instagram-color);
-}
-
-.facebook-brand-icon:hover {
-  color: var(--facebook-color);
-}
-
-.mail-brand-icon:hover {
-  color: var(--sun-flower);
 }

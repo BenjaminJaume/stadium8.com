@@ -7,6 +7,7 @@ import { faClipboard } from "@fortawesome/free-regular-svg-icons";
 import { faPhoneAlt } from "@fortawesome/free-solid-svg-icons";
 // @ts-ignore
 import { CopyToClipboard } from "react-copy-to-clipboard";
+import { Config } from "../Config/Config";
 
 import "./ContactItems.css";
 
@@ -20,7 +21,8 @@ class ContactItems extends Component {
   }
 
   render() {
-    const { absPath, email } = this.props;
+    const absPath = Config.ABS_PATH;
+    const { email } = this.props;
 
     return (
       <>
@@ -34,6 +36,7 @@ class ContactItems extends Component {
             src={`.${this.props.absPath}/images/brand-icons/instagram.png`}
             alt=""
             height="32"
+            width="32"
           />
         </a>
 
@@ -47,6 +50,7 @@ class ContactItems extends Component {
             src={`.${absPath}/images/brand-icons/facebook.png`}
             alt=""
             height="32"
+            width="32"
           />
         </a>
 
@@ -60,6 +64,7 @@ class ContactItems extends Component {
             src={`.${absPath}/images/brand-icons/messenger.png`}
             alt=""
             height="32"
+            width="32"
           />
         </a>
 
@@ -124,6 +129,7 @@ class ContactItems extends Component {
               src={`.${absPath}/images/brand-icons/whatsapp.png`}
               alt=""
               height="32"
+              width="32"
             />
           </OverlayTrigger>
         </span>
@@ -138,6 +144,7 @@ class ContactItems extends Component {
             src={`.${absPath}/images/brand-icons/mail.png`}
             alt=""
             height="32"
+            width="32"
           />
         </a>
 
@@ -151,8 +158,37 @@ class ContactItems extends Component {
             src={`.${absPath}/images/brand-icons/youtube.png`}
             alt=""
             height="32"
+            width="32"
           />
         </a>
+
+        {/* <a
+          href="https://www.google.com/maps/dir/?api=1&destination=Stadium8&destination_place_id=ChIJyWTeJ86rn48RugB1_KzeHQU"
+          className="gMaps-brand-icon px-1"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src={`.${absPath}/images/brand-icons/gmaps.png`}
+            alt=""
+            height="32"
+            width="32"
+          />
+        </a>
+
+        <a
+          href="https://www.waze.com/ul?ll=9.88425095%2C-85.53937912&navigate=yes"
+          className="waze-brand-icon px-1"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src={`.${absPath}/images/brand-icons/waze.png`}
+            alt=""
+            height="32"
+            width="32"
+          />
+        </a> */}
       </>
     );
   }

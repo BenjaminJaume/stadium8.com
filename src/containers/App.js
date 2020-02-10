@@ -7,7 +7,6 @@ import axios from "axios";
 
 import NavigationBar from "../components/NavigationBar/NavigationBar";
 import Footer from "../components/Footer/Footer";
-import { Config } from "../components/Config/Config";
 import ScrollToTop from "../components/ScrollToTop/ScrollToTop";
 import { getEvents } from "../components/GoogleCalendar/fetch";
 
@@ -20,7 +19,6 @@ import Soccer5 from "./Soccer5/Soccer5";
 import Contact from "./Contact/Contact";
 import Page404 from "./Page404/Page404";
 
-const absPath = Config.ABS_PATH;
 const phoneNumber = "+506 8580 8585";
 const email = "contact@stadium8.com";
 
@@ -262,15 +260,10 @@ export default class App extends Component {
           <Router>
             <Suspense fallback={""}>
               <ScrollToTop />
-              <NavigationBar
-                absPath={absPath}
-                onClick={this.changeLanguage}
-                lg={lg}
-              />
+              <NavigationBar onClick={this.changeLanguage} lg={lg} />
               <Switch>
                 <Route path="/soccer5" component={Soccer5}>
                   <Soccer5
-                    absPath={absPath}
                     footballDetails={footballDetails}
                     events={events}
                     errorEvents={errorEvents}
@@ -278,23 +271,22 @@ export default class App extends Component {
                   />
                 </Route>
                 {/* <Route path="/gym" component={Gym}>
-                  <Gym absPath={absPath} />
+                  <Gym  />
                 </Route>
                 <Route path="/multisport" component={Multisport}>
-                  <Multisport absPath={absPath} />
+                  <Multisport  />
                 </Route>
                 <Route path="/events" component={Events}>
-                  <Events absPath={absPath} />
+                  <Events  />
                 </Route>
                 <Route path="/spa" component={Spa}>
-                  <Spa absPath={absPath} />
+                  <Spa  />
                 </Route> */}
                 <Route path="/contact" component={Contact}>
-                  <Contact absPath={absPath} email={email} />
+                  <Contact email={email} />
                 </Route>
                 <Route path="/" component={Home} exact>
                   <Home
-                    absPath={absPath}
                     lg={lg}
                     quotesES={quotesES}
                     quotesEN={quotesEN}
@@ -310,12 +302,11 @@ export default class App extends Component {
                   />
                 </Route>
                 <Route component={Page404}>
-                  <Page404 absPath={absPath} />
+                  <Page404 />
                 </Route>
               </Switch>
               <Footer
                 phoneNumber={phoneNumber}
-                absPath={absPath}
                 openingHours={openingHours}
                 email={email}
               />

@@ -3,12 +3,14 @@ import { useTranslation } from "react-i18next";
 import GoogleCalendar from "../../components/GoogleCalendar/GoogleCalendar";
 import { IndexLinkContainer } from "react-router-bootstrap";
 import { Helmet } from "react-helmet";
+import { Config } from "../../components/Config/Config";
 
 import "react-tabs/style/react-tabs.css";
 import "./Soccer5.css";
 
 const Soccer5 = props => {
-  const { absPath, footballDetails, events, phoneNumber } = props;
+  const absPath = Config.ABS_PATH;
+  const { footballDetails, events, phoneNumber } = props;
   const { t } = useTranslation();
 
   return (
