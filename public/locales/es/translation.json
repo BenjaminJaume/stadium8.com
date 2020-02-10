@@ -108,9 +108,10 @@
   },
   "other": {
     "homepageMessage": "Vuelve a la página de inicio",
+    "makeBooking": "Para hacer una reservación",
     "construction": {
       "hover": "Siento las molestias",
-      "title": "Este lado de la página web no se ha abierto todavía"
+      "message": "Este lado de la página web no se ha abierto todavía"
     }
   }
 }

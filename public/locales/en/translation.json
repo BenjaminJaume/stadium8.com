@@ -7,9 +7,6 @@
     "home": "Home",
     "multisport": "Multisport"
   },
-  "home": {
-    "makeBooking": "To make a booking"
-  },
   "contact": {
     "content": "Please contact us for any general inquiry",
     "form": {
@@ -109,9 +106,10 @@
   },
   "other": {
     "homepageMessage": "Go back to the home page",
+    "makeBooking": "To make a booking",
     "construction": {
       "hover": "Sorry for the inconvenience",
-      "title": "This side of the website hasn't opened yet"
+      "message": "This side of the website hasn't opened yet"
     }
   }
 }

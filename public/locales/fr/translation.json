@@ -108,9 +108,10 @@
   },
   "other": {
     "homepageMessage": "Revenir à l'accueil",
+    "makeBooking": "Pour faire une réservation",
     "construction": {
       "hover": "Désolé pour la gêne occasionnée",
-      "title": "Cette partie du site n'a pas encore ouverte"
+      "message": "Cette partie du site n'a pas encore ouverte"
     }
   }
 }

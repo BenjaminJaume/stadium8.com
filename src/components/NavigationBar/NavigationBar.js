@@ -69,44 +69,44 @@ const NavigationBar = ({ absPath, onClick, lg }) => {
                 <span>{t("navbar.soccer5")}</span>
               </IndexLinkContainer>
             </li>
-            <li className="nav-item">
+            <li className="nav-item" title={t("other.construction.message")}>
               <IndexLinkContainer
                 to="/gym"
                 href="/gym"
-                className="nav-link"
+                className="nav-link disabled"
                 data-toggle="collapse"
                 data-target=".navbar-collapse.show"
               >
                 <span>{t("navbar.gymnasium")}</span>
               </IndexLinkContainer>
             </li>
-            <li className="nav-item">
+            <li className="nav-item" title={t("other.construction.message")}>
               <IndexLinkContainer
                 to="/multisport"
                 href="/multisport"
-                className="nav-link"
+                className="nav-link disabled"
                 data-toggle="collapse"
                 data-target=".navbar-collapse.show"
               >
                 <span>{t("navbar.multisport")}</span>
               </IndexLinkContainer>
             </li>
-            <li className="nav-item">
+            <li className="nav-item" title={t("other.construction.message")}>
               <IndexLinkContainer
                 to="/events"
                 href="/events"
-                className="nav-link"
+                className="nav-link disabled"
                 data-toggle="collapse"
                 data-target=".navbar-collapse.show"
               >
                 <span>{t("navbar.events")}</span>
               </IndexLinkContainer>
             </li>
-            <li className="nav-item">
+            <li className="nav-item" title={t("other.construction.message")}>
               <IndexLinkContainer
                 to="/spa"
                 href="/spa"
-                className="nav-link"
+                className="nav-link disabled"
                 data-toggle="collapse"
                 data-target=".navbar-collapse.show"
               >

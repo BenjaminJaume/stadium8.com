@@ -117,9 +117,9 @@ class Home extends Component {
           <div className="container-fluid container-100vh py-5 px-lg-5">
             <div className="row h-100">
               <div className="col-12 col-lg-6 text-white text-center mb-5 mb-lg-0">
-                <div className="animated jackInTheBox delay-2s">
-                  <p className="mb-0">{i18n.t("home.makeBooking")}</p>
-                  <p className="animated pulse infinite delay-3s slower">
+                <div className="animated jackInTheBox delay-1s">
+                  <p className="mb-0 h3">{i18n.t("other.makeBooking")}</p>
+                  <p className="animated pulse infinite delay-2s slower">
                     <a
                       href={`tel:${phoneNumber.replace(/ /g, "")}`}
                       className="display-4 link-brand link-no-underline"

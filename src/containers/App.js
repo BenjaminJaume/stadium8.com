@@ -274,9 +274,10 @@ export default class App extends Component {
                     footballDetails={footballDetails}
                     events={events}
                     errorEvents={errorEvents}
+                    phoneNumber={phoneNumber}
                   />
                 </Route>
-                <Route path="/gym" component={Gym}>
+                {/* <Route path="/gym" component={Gym}>
                   <Gym absPath={absPath} />
                 </Route>
                 <Route path="/multisport" component={Multisport}>
@@ -287,7 +288,7 @@ export default class App extends Component {
                 </Route>
                 <Route path="/spa" component={Spa}>
                   <Spa absPath={absPath} />
-                </Route>
+                </Route> */}
                 <Route path="/contact" component={Contact}>
                   <Contact absPath={absPath} email={email} />
                 </Route>
