@@ -33,25 +33,20 @@ const Soccer5 = props => {
           <div className="row h-100 align-items-center">
             <div className="col-12 col-lg-10 mx-auto py-5">
               <div className="opacity-black-75 rounded text-white text-center py-5 px-1 p-lg-5">
-                <h1 className="text-brand mb-3">{t("soccer5.title")}</h1>
-                <div className="row mb-5">
+                <h1 className="text-brand font-weight-bold mb-3">
+                  {t("soccer5.title")}
+                </h1>
+                <div className="row">
                   <div className="col-12 mx-auto">
                     <p className="mb-0 h3">{t("other.makeBooking")}</p>
-                    <p className="animated pulse infinite delay-2s slower">
+                    <p className="animated pulse infinite slower">
                       <a
                         href={`tel:${phoneNumber.replace(/ /g, "")}`}
-                        className="display-4 link-brand link-no-underline"
+                        className="h2 link-brand link-no-underline"
                       >
                         {phoneNumber}
                       </a>
                     </p>
-                    <IndexLinkContainer
-                      to="/contact"
-                      href="/contact"
-                      className="btn btn-brand text-uppercase"
-                    >
-                      <span>{t("soccer5.prices.buttonContact")}</span>
-                    </IndexLinkContainer>
                   </div>
                 </div>
 

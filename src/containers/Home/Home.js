@@ -118,21 +118,6 @@ class Home extends Component {
           <div className="container-fluid container-100vh py-5 px-lg-5">
             <div className="row h-100">
               <div className="col-12 col-lg-6 text-white text-center mb-5 mb-lg-0">
-                <div className="animated jackInTheBox delay-500ms">
-                  <p className="mb-0 h3">{i18n.t("other.makeBooking")}</p>
-                  <p className="animated pulse infinite delay-1s slower">
-                    <a
-                      href={`tel:${phoneNumber.replace(/ /g, "")}`}
-                      className="display-4 link-brand link-no-underline"
-                    >
-                      {phoneNumber}
-                    </a>
-                  </p>
-                </div>
-                <div>
-                  <hr className="divider w-75 mx-auto" />
-                </div>
-
                 {isLoadingQuotes ? (
                   <h2 className="loading-text text-center mb-5">
                     <HollowDotsSpinner color="white" className="mx-auto" />
@@ -148,6 +133,20 @@ class Home extends Component {
                   // Error loading Quotes
                   ""
                 )}
+
+                <hr className="divider w-75 mx-auto" />
+
+                <div className="animated jackInTheBox delay-500ms">
+                  <p className="mb-0 h3">{i18n.t("other.makeBooking")}</p>
+                  <p className="animated pulse infinite delay-1s slower">
+                    <a
+                      href={`tel:${phoneNumber.replace(/ /g, "")}`}
+                      className="display-4 link-brand link-no-underline"
+                    >
+                      {phoneNumber}
+                    </a>
+                  </p>
+                </div>
               </div>
               <div className="col-12 col-lg-6 text-white text-center align-items-center">
                 {isLoadingPosts ? (

@@ -6,6 +6,7 @@
   --black-pearl: #1e272e;
   --good-night: #485460;
   --silver: #bdc3c7;
+  --silver-link: rgba(189, 195, 199, 0.75);
   --clouds: #ecf0f1;
   --concrete: #95a5a6;
   --belize-hole: #2980b9;
@@ -29,8 +30,10 @@
 
   /* Brand colors */
   --black: #000000;
+  --white: #ffffff;
+  --white-link: rgba(255, 255, 255, 0.75);
   --brand-color: #eeff05;
-  --brand-link: rgba(238, 255, 5, 0.7);
+  --brand-link: rgba(238, 255, 5, 0.75);
   --black-0-75: rgba(0, 0, 0, 0.75);
 
   /* Mesurement values */
@@ -140,6 +143,28 @@ body {
 
 .link-emerald:hover {
   color: var(--emerald-link);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.link-white {
+  color: var(--white);
+  text-decoration: underline;
+}
+
+.link-white:hover {
+  color: var(--white-link);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.link-silver {
+  color: var(--silver);
+  text-decoration: underline;
+}
+
+.link-silver:hover {
+  color: var(--silver-link);
   cursor: pointer;
   text-decoration: underline;
 }

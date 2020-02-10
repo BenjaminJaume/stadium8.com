@@ -1,0 +1,10 @@
+[class*="-navigation-icon"] {
+  font-size: 3em;
+  text-decoration: none;
+  /* color: var(--silver); */
+  filter: grayscale(100%);
+}
+
+[class*="-navigation-icon"]:hover {
+  filter: grayscale(0%);
+}

@@ -48,7 +48,7 @@ const openingHours = {
 const footballDetails = {
   morning: {
     price: {
-      colones: "10,000",
+      colones: "12,000",
       dollars: "20"
     },
     hourFrom: "08",
@@ -58,7 +58,7 @@ const footballDetails = {
   },
   afternoon: {
     price: {
-      colones: "15,000",
+      colones: "16,000",
       dollars: "30"
     },
     hourFrom: "12",

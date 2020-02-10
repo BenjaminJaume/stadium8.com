@@ -16,3 +16,4 @@ Website for the sport building is Samara, Costa Rica
 - [`react-big-calendar`](https://intljusticemission.github.io/react-big-calendar/examples/index.html)
 - [Bootstrap 4 with Responsive Font Sizes (RFS)](https://christianoliff.com/blog/bootstrap-with-rfs)
 - [React Toastify](https://fkhadra.github.io/react-toastify/)
+- [How to Create a Custom-styled Google Map in React](https://blog.alexdevero.com/custom-styled-google-map-react/)

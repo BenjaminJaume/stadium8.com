@@ -33,10 +33,11 @@ class ContactItems extends Component {
           rel="noopener noreferrer"
         >
           <img
-            src={`.${this.props.absPath}/images/brand-icons/instagram.png`}
+            src={`.${absPath}/images/brand-icons/instagram.png`}
             alt=""
             height="32"
             width="32"
+            className="align-text-bottom"
           />
         </a>
 
@@ -51,6 +52,7 @@ class ContactItems extends Component {
             alt=""
             height="32"
             width="32"
+            className="align-text-bottom"
           />
         </a>
 
@@ -65,8 +67,11 @@ class ContactItems extends Component {
             alt=""
             height="32"
             width="32"
+            className="align-text-bottom"
           />
         </a>
+
+        <br />
 
         <span className="whatsapp-brand-icon px-1">
           <OverlayTrigger
@@ -130,6 +135,7 @@ class ContactItems extends Component {
               alt=""
               height="32"
               width="32"
+              className="align-text-top"
             />
           </OverlayTrigger>
         </span>
@@ -145,6 +151,7 @@ class ContactItems extends Component {
             alt=""
             height="32"
             width="32"
+            className="align-text-top"
           />
         </a>
 
@@ -159,6 +166,7 @@ class ContactItems extends Component {
             alt=""
             height="32"
             width="32"
+            className="align-text-top"
           />
         </a>
 

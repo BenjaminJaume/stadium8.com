@@ -56,7 +56,7 @@ const GoogleCalendar = props => {
       defaultView="week"
       min={startDay}
       max={endDay}
-      views={["week", "agenda"]}
+      views={["week", "day", "agenda"]}
       formats={formats}
     />
   );

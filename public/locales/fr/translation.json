@@ -8,7 +8,7 @@
     "multisport": "Multisport"
   },
   "contact": {
-    "content": "Veuillez nous contacter si vous voulez en savoir plus",
+    "content": "Veuillez nous contacter pour toute demande de renseignements",
     "form": {
       "button": {
         "content": "Ce serait génial si ça avait marché",
@@ -76,6 +76,9 @@
     }
   },
   "footer": {
+    "presentation": {
+      "navigation": "Ouvrir Maps"
+    },
     "openingHours": {
       "title": "Horaires d'ouverture",
       "monday": "Lun",
@@ -89,8 +92,8 @@
       "to": "à"
     },
     "socialNetworks": {
+      "title": "Réseaux sociaux",
       "copyright": "Tous droits réservés",
-      "title": "sur les réseaux",
       "web-developer": "Développeur Web",
       "whatsappPopover": {
         "content": "Ouvrir WhatsApp ou copier",
@@ -100,6 +103,14 @@
         "openLink": "Ouvrir le lien avec",
         "copy": "Copier le numéro de téléphone"
       }
+    },
+    "participate": {
+      "title": "Participer",
+      "workWithUs": "Travailler avec nous",
+      "donate": "Donation",
+      "sponsor": "Sponsor",
+      "affiliate": "Affiliation",
+      "suggestions": "Suggestions"
     }
   },
   "page404": {
@@ -108,7 +119,7 @@
   },
   "other": {
     "homepageMessage": "Revenir à l'accueil",
-    "makeBooking": "Pour faire une réservation",
+    "makeBooking": "Réservation",
     "construction": {
       "hover": "Désolé pour la gêne occasionnée",
       "message": "Cette partie du site n'a pas encore ouverte"

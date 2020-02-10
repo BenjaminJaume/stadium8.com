@@ -8,7 +8,7 @@
     "multisport": "Multisport"
   },
   "contact": {
-    "content": "Please contact us for any general inquiry",
+    "content": "Please contact us for any inquiry",
     "form": {
       "button": {
         "content": "It would be awesome if it'd worked",
@@ -75,8 +75,11 @@
     }
   },
   "footer": {
+    "presentation": {
+      "navigation": "Open Maps"
+    },
     "openingHours": {
-      "title": "OPEN DAILY",
+      "title": "Open daily",
       "monday": "Mon",
       "tuesday": "Tue",
       "wednesday": "Wed",
@@ -88,7 +91,7 @@
     },
     "socialNetworks": {
       "copyright": "All right reserved",
-      "title": "on social medias",
+      "title": "Social networks",
       "web-developer": "Web Designer",
       "whatsappPopover": {
         "content": "Open WhatsApp or copy",
@@ -98,6 +101,14 @@
         "openLink": "Open link with",
         "copy": "Copy phone number"
       }
+    },
+    "participate": {
+      "title": "Participe",
+      "workWithUs": "Work with us",
+      "donate": "Donate",
+      "sponsor": "Sponsor",
+      "affiliate": "Affiliate",
+      "suggestions": "Suggestions"
     }
   },
   "page404": {
@@ -106,7 +117,7 @@
   },
   "other": {
     "homepageMessage": "Go back to the home page",
-    "makeBooking": "To make a booking",
+    "makeBooking": "Booking",
     "construction": {
       "hover": "Sorry for the inconvenience",
       "message": "This side of the website hasn't opened yet"

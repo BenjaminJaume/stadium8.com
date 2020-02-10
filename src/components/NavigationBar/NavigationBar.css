@@ -5,6 +5,10 @@
   letter-spacing: -0.5px;
 }
 
+.navbar-dark .navbar-nav .nav-link {
+  color: var(--white);
+}
+
 .nav-link:hover,
 .navbar-dropdown-menu .navbar-dropdown-item:hover {
   color: var(--brand-link) !important;
