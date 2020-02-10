@@ -113,6 +113,10 @@ body {
   color: var(--emerald);
 }
 
+.text-black {
+  color: var(--black);
+}
+
 /* LINK COLORS */
 .link-brand {
   color: var(--brand-color);

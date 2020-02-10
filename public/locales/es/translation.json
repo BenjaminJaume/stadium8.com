@@ -106,6 +106,9 @@
     "title": "Página no encontrada",
     "message": "Lo siento, pero la página que está buscando no está aquí...!"
   },
+  "map": {
+    "navigation": "Lanzar navegación"
+  },
   "other": {
     "homepageMessage": "Vuelve a la página de inicio",
     "makeBooking": "Para hacer una reservación",

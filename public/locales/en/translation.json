@@ -104,6 +104,9 @@
     "title": "Page not found",
     "message": "Sometimes you fall... but you should rise every time you do!"
   },
+  "map": {
+    "navigation": "Launch navigation"
+  },
   "other": {
     "homepageMessage": "Go back to the home page",
     "makeBooking": "To make a booking",

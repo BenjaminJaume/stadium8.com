@@ -172,31 +172,33 @@ class Home extends Component {
                         </span>
                       </div>
 
-                      {post.content.rendered.indexOf('<img src="') !== -1 ? (
-                        <span>
-                          <img
-                            src={
-                              this.extractPictureSrc(post.content.rendered)[0]
-                            }
-                            alt=""
-                            className="img-fluid"
-                            style={{ maxHeight: "300px" }}
-                            srcSet={
-                              this.extractPictureSrc(post.content.rendered)[1]
-                            }
-                            sizes="(max-width: 300px) 100vw, 600px"
-                          />
-                        </span>
-                      ) : (
-                        ""
-                      )}
-
-                      <div
-                        className="font-brand-2 text-white mx-2 p-1 px-lg-4 pb-lg-3"
-                        dangerouslySetInnerHTML={this.createMarkupPost(
-                          post.excerpt.rendered
+                      <div className="d-flex flex-wrap flex-lg-nowrap align-items-center justify-content-center">
+                        {post.content.rendered.indexOf('<img src="') !== -1 ? (
+                          <div>
+                            <img
+                              src={
+                                this.extractPictureSrc(post.content.rendered)[0]
+                              }
+                              alt="Post"
+                              className="img-fluid picture-post m-3"
+                              style={{}}
+                              srcSet={
+                                this.extractPictureSrc(post.content.rendered)[1]
+                              }
+                              // sizes="(max-width: 300px) 100vw, 600px"
+                            />
+                          </div>
+                        ) : (
+                          ""
                         )}
-                      />
+
+                        <div
+                          className="font-brand-2 text-white mx-2 p-1 px-lg-4 pb-lg-3"
+                          dangerouslySetInnerHTML={this.createMarkupPost(
+                            post.excerpt.rendered
+                          )}
+                        />
+                      </div>
                     </div>
                   ))
                 ) : (

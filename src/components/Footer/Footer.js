@@ -12,7 +12,7 @@ const Footer = ({ absPath, phoneNumber, email, openingHours }) => {
   return (
     <>
       <footer id="footer" className="py-5">
-        <div className="container-fluid pt-4">
+        <div className="container-fluid">
           <div className="row">
             <div className="col-lg-3" />
             <div className="col-12 col-lg-3">

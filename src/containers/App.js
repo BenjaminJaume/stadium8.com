@@ -13,10 +13,10 @@ import { getEvents } from "../components/GoogleCalendar/fetch";
 
 import Home from "./Home/Home";
 import Soccer5 from "./Soccer5/Soccer5";
-import Gym from "./Gym/Gym";
-import Multisport from "./Multisport/Multisport";
-import Events from "./Events/Events";
-import Spa from "./Spa/Spa";
+// import Gym from "./Gym/Gym";
+// import Multisport from "./Multisport/Multisport";
+// import Events from "./Events/Events";
+// import Spa from "./Spa/Spa";
 import Contact from "./Contact/Contact";
 import Page404 from "./Page404/Page404";
 

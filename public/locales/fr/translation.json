@@ -106,6 +106,9 @@
     "title": "Page non trouvée",
     "message": "C'est un coup dur... mais ne perdez pas de vu votre objectif!"
   },
+  "map": {
+    "navigation": "Lancer la navigation"
+  },
   "other": {
     "homepageMessage": "Revenir à l'accueil",
     "makeBooking": "Pour faire une réservation",
