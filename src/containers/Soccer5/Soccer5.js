@@ -1,7 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import GoogleCalendar from "../../components/GoogleCalendar/GoogleCalendar";
-import { IndexLinkContainer } from "react-router-bootstrap";
 import { Helmet } from "react-helmet";
 import { Config } from "../../components/Config/Config";
 

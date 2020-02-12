@@ -2,7 +2,6 @@ import React, { Component, Suspense } from "react";
 import i18n from "../i18n";
 import { BrowserRouter } from "react-router-dom";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
 import axios from "axios";
 
 import NavigationBar from "../components/NavigationBar/NavigationBar";
@@ -309,6 +308,7 @@ export default class App extends Component {
                 phoneNumber={phoneNumber}
                 openingHours={openingHours}
                 email={email}
+                lg={lg}
               />
             </Suspense>
           </Router>

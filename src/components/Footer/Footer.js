@@ -4,14 +4,58 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCopyright } from "@fortawesome/free-regular-svg-icons";
 import NavigationItems from "../NavigationItems/NavigationItems";
 import ContactItems from "../ContactItems/ContactItems";
-import { IndexLinkContainer } from "react-router-bootstrap";
 import { Config } from "../Config/Config";
 
 import "./Footer.css";
 
-const Footer = ({ phoneNumber, email, openingHours }) => {
+const Footer = ({ phoneNumber, email, openingHours, lg }) => {
   const absPath = Config.ABS_PATH;
   const { t } = useTranslation();
+
+  let separator;
+  let openingHoursWeekDayOpenHours;
+  let openingHoursWeekDayCloseHours;
+  let openingHoursWeekEndOpenHours;
+  let openingHoursWeekEndCloseHours;
+
+  function formatHours(hours) {
+    return hours % 12 || 12;
+  }
+
+  function amOrPm(hours) {
+    if (lg !== "fr") {
+      return hours >= 12 ? "pm" : "am";
+    } else {
+      return "";
+    }
+  }
+
+  switch (lg) {
+    case "fr":
+      separator = "h";
+
+      openingHoursWeekDayOpenHours = openingHours.weekDay.open.hours;
+      openingHoursWeekDayCloseHours = openingHours.weekDay.close.hours;
+      openingHoursWeekEndOpenHours = openingHours.weekEnd.open.hours;
+      openingHoursWeekEndCloseHours = openingHours.weekEnd.close.hours;
+      break;
+    default:
+      separator = ".";
+
+      openingHoursWeekDayOpenHours = formatHours(
+        openingHours.weekDay.open.hours
+      );
+      openingHoursWeekDayCloseHours = formatHours(
+        openingHours.weekDay.close.hours
+      );
+      openingHoursWeekEndOpenHours = formatHours(
+        openingHours.weekEnd.open.hours
+      );
+      openingHoursWeekEndCloseHours = formatHours(
+        openingHours.weekEnd.close.hours
+      );
+      break;
+  }
 
   return (
     <>
@@ -21,8 +65,11 @@ const Footer = ({ phoneNumber, email, openingHours }) => {
             <div className="col-lg-3">
               <p className="text-brand">STADIUM8</p>
               <p>
-                Del super iguana verde, 600 mts Noroeste, Playa Samara,
-                Guanacaste, Costa rica
+                Del super iguana verde, 600 mts Noroeste
+                <br />
+                Playa Samara, Guanacaste
+                <br />
+                Costa rica
               </p>
               <p className="mb-1">
                 <a
@@ -47,62 +94,75 @@ const Footer = ({ phoneNumber, email, openingHours }) => {
                 {t("footer.openingHours.title").toUpperCase()}
               </p>
               <p>
-                {`${t("footer.openingHours.monday")}  ${
-                  openingHours.weekDay.open.hours
-                }h${openingHours.weekDay.open.minutes} ${t(
+                {`${t(
+                  "footer.openingHours.monday"
+                )} ${openingHoursWeekDayOpenHours}${separator}${
+                  openingHours.weekDay.open.minutes
+                }${amOrPm(openingHours.weekDay.open.hours)} ${t(
                   "footer.openingHours.to"
-                )} ${openingHours.weekDay.close.hours}h${
+                )} ${openingHoursWeekDayCloseHours}${separator}${
                   openingHours.weekDay.close.minutes
-                }`}
+                }${amOrPm(openingHours.weekDay.close.hours)}`}
                 <br />
-                {`${t("footer.openingHours.tuesday")}  ${
-                  openingHours.weekDay.open.hours
-                }h${openingHours.weekDay.open.minutes} ${t(
+                {`${t(
+                  "footer.openingHours.tuesday"
+                )} ${openingHoursWeekDayOpenHours}${separator}${
+                  openingHours.weekDay.open.minutes
+                }${amOrPm(openingHours.weekDay.open.hours)} ${t(
                   "footer.openingHours.to"
-                )} ${openingHours.weekDay.close.hours}h${
+                )} ${openingHoursWeekDayCloseHours}${separator}${
                   openingHours.weekDay.close.minutes
-                }`}
+                }${amOrPm(openingHours.weekDay.close.hours)}`}
                 <br />
-                {`${t("footer.openingHours.wednesday")}  ${
-                  openingHours.weekDay.open.hours
-                }h${openingHours.weekDay.open.minutes} ${t(
+                {`${t(
+                  "footer.openingHours.wednesday"
+                )} ${openingHoursWeekDayOpenHours}${separator}${
+                  openingHours.weekDay.open.minutes
+                }${amOrPm(openingHours.weekDay.open.hours)} ${t(
                   "footer.openingHours.to"
-                )} ${openingHours.weekDay.close.hours}h${
+                )} ${openingHoursWeekDayCloseHours}${separator}${
                   openingHours.weekDay.close.minutes
-                }`}
+                }${amOrPm(openingHours.weekDay.close.hours)}`}
                 <br />
-                {`${t("footer.openingHours.thursday")}  ${
-                  openingHours.weekDay.open.hours
-                }h${openingHours.weekDay.open.minutes} ${t(
+                {`${t(
+                  "footer.openingHours.thursday"
+                )} ${openingHoursWeekDayOpenHours}${separator}${
+                  openingHours.weekDay.open.minutes
+                }${amOrPm(openingHours.weekDay.open.hours)} ${t(
                   "footer.openingHours.to"
-                )} ${openingHours.weekDay.close.hours}h${
+                )} ${openingHoursWeekDayCloseHours}${separator}${
                   openingHours.weekDay.close.minutes
-                }`}
+                }${amOrPm(openingHours.weekDay.close.hours)}`}
                 <br />
-                {`${t("footer.openingHours.friday")}  ${
-                  openingHours.weekDay.open.hours
-                }h${openingHours.weekDay.open.minutes} ${t(
+                {`${t(
+                  "footer.openingHours.friday"
+                )} ${openingHoursWeekDayOpenHours}${separator}${
+                  openingHours.weekDay.open.minutes
+                }${amOrPm(openingHours.weekDay.open.hours)} ${t(
                   "footer.openingHours.to"
-                )} ${openingHours.weekDay.close.hours}h${
+                )} ${openingHoursWeekDayCloseHours}${separator}${
                   openingHours.weekDay.close.minutes
-                }`}
+                }${amOrPm(openingHours.weekDay.close.hours)}`}
                 <br />
-                {`${t("footer.openingHours.saturday")}  ${
-                  openingHours.weekEnd.open.hours
-                }h${openingHours.weekEnd.open.minutes} ${t(
+                {`${t(
+                  "footer.openingHours.saturday"
+                )} ${openingHoursWeekEndOpenHours}${separator}${
+                  openingHours.weekEnd.open.minutes
+                }${amOrPm(openingHours.weekEnd.open.hours)} ${t(
                   "footer.openingHours.to"
-                )} ${openingHours.weekEnd.close.hours}h${
+                )} ${openingHoursWeekEndCloseHours}${separator}${
                   openingHours.weekEnd.close.minutes
-                }`}
+                }${amOrPm(openingHours.weekEnd.close.hours)}`}
                 <br />
-                {`${t("footer.openingHours.sunday")}  ${
-                  openingHours.weekEnd.open.hours
-                }h${openingHours.weekEnd.open.minutes} ${t(
+                {`${t(
+                  "footer.openingHours.sunday"
+                )} ${openingHoursWeekEndOpenHours}${separator}${
+                  openingHours.weekEnd.open.minutes
+                }${amOrPm(openingHours.weekEnd.open.hours)} ${t(
                   "footer.openingHours.to"
-                )} ${openingHours.weekEnd.close.hours}h${
+                )} ${openingHoursWeekEndCloseHours}${separator}${
                   openingHours.weekEnd.close.minutes
-                }`}
-                <br />
+                }${amOrPm(openingHours.weekEnd.close.hours)}`}
               </p>
             </div>
 

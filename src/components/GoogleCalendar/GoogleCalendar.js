@@ -43,6 +43,9 @@ const GoogleCalendar = props => {
     },
     timeGutterFormat: function(date, culture, localizer) {
       return localizer.format(date, "HH:mm", culture);
+    },
+    dayHeaderFormat: function(date, culture, localizer) {
+      return localizer.format(date, "dddd DD/MM", culture);
     }
   };
 
