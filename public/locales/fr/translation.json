@@ -1,17 +1,8 @@
 {
-  "navbar": {
-    "contact": "Contact",
-    "events": "Évènements",
-    "soccer5": "Football5",
-    "gymnasium": "Gymnase",
-    "home": "Accueil",
-    "multisport": "Multisport"
-  },
   "contact": {
     "content": "Veuillez nous contacter pour toute demande de renseignements",
     "form": {
       "button": {
-        "content": "Ce serait génial si ça avait marché",
         "title": "Envoyer"
       },
       "email": {
@@ -50,18 +41,75 @@
     },
     "title": "Contact"
   },
+  "footer": {
+    "openingHours": {
+      "friday": "Ven",
+      "from": "de",
+      "monday": "Lun",
+      "saturday": "Sam",
+      "sunday": "Dim",
+      "thursday": "Jeu",
+      "title": "Horaires d'ouverture",
+      "to": "à",
+      "tuesday": "Mar",
+      "wednesday": "Mer"
+    },
+    "participate": {
+      "affiliate": "Affiliation",
+      "donate": "Donation",
+      "sponsor": "Sponsor",
+      "suggestions": "Suggestions",
+      "title": "Participer",
+      "workWithUs": "Travailler avec nous"
+    },
+    "presentation": {
+      "navigation": "Ouvrir Maps"
+    },
+    "socialNetworks": {
+      "copyright": "Tous droits réservés",
+      "title": "Réseaux sociaux",
+      "web-developer": "Développeur Web",
+      "whatsappPopover": {
+        "content": "Ouvrir WhatsApp ou copier",
+        "copied": "Copié!",
+        "copy": "Copier le numéro de téléphone",
+        "openLink": "Ouvrir le lien avec",
+        "or": "ou",
+        "title": "Contactez nous"
+      }
+    }
+  },
+  "navbar": {
+    "contact": "Contact",
+    "events": "Évènements",
+    "gymnasium": "Gymnase",
+    "home": "Accueil",
+    "multisport": "Multisport",
+    "soccer5": "Football5"
+  },
+  "other": {
+    "construction": {
+      "hover": "Désolé pour la gêne occasionnée",
+      "message": "Cette partie du site n'a pas encore ouverte"
+    },
+    "homepageMessage": "Revenir à l'accueil",
+    "makeBooking": "Réservation"
+  },
+  "page404": {
+    "message": "C'est un coup dur... mais ne perdez pas de vu votre objectif!",
+    "title": "Page non trouvée"
+  },
   "soccer5": {
-    "title": "Football5",
     "calendar": {
       "content": "",
       "title": "Calendrier"
     },
     "prices": {
-      "hour": "heure",
       "afternoon": {
         "title": "Midi"
       },
       "buttonContact": "Réservez votre place",
+      "hour": "heure",
       "morning": {
         "title": "Matin"
       },
@@ -73,56 +121,7 @@
     "rules": {
       "content": "À écrire",
       "title": "Règles"
-    }
-  },
-  "footer": {
-    "presentation": {
-      "navigation": "Ouvrir Maps"
     },
-    "openingHours": {
-      "title": "Horaires d'ouverture",
-      "monday": "Lun",
-      "tuesday": "Mar",
-      "wednesday": "Mer",
-      "thursday": "Jeu",
-      "friday": "Ven",
-      "saturday": "Sam",
-      "sunday": "Dim",
-      "from": "de",
-      "to": "à"
-    },
-    "socialNetworks": {
-      "title": "Réseaux sociaux",
-      "copyright": "Tous droits réservés",
-      "web-developer": "Développeur Web",
-      "whatsappPopover": {
-        "content": "Ouvrir WhatsApp ou copier",
-        "copied": "Copié!",
-        "or": "ou",
-        "title": "Contactez nous",
-        "openLink": "Ouvrir le lien avec",
-        "copy": "Copier le numéro de téléphone"
-      }
-    },
-    "participate": {
-      "title": "Participer",
-      "workWithUs": "Travailler avec nous",
-      "donate": "Donation",
-      "sponsor": "Sponsor",
-      "affiliate": "Affiliation",
-      "suggestions": "Suggestions"
-    }
-  },
-  "page404": {
-    "title": "Page non trouvée",
-    "message": "C'est un coup dur... mais ne perdez pas de vu votre objectif!"
-  },
-  "other": {
-    "homepageMessage": "Revenir à l'accueil",
-    "makeBooking": "Réservation",
-    "construction": {
-      "hover": "Désolé pour la gêne occasionnée",
-      "message": "Cette partie du site n'a pas encore ouverte"
-    }
+    "title": "Football5"
   }
 }

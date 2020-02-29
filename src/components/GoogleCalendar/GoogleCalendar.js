@@ -17,18 +17,8 @@ const localizer = BigCalendar.momentLocalizer(moment);
 const GoogleCalendar = props => {
   const { footballDetails, events } = props;
 
-  const startDay = new Date();
-  startDay.setHours(
-    footballDetails.morning.hourFrom,
-    footballDetails.morning.minuteFrom,
-    0
-  );
-  const endDay = new Date();
-  endDay.setHours(
-    footballDetails.night.hourTo,
-    footballDetails.night.minuteTo,
-    0
-  );
+  const startDay = new Date(footballDetails.morning.from);
+  const endDay = new Date(footballDetails.night.to);
 
   const formats = {
     dayFormat: function(date, culture, localizer) {

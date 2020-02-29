@@ -5,57 +5,13 @@ import { faCopyright } from "@fortawesome/free-regular-svg-icons";
 import NavigationItems from "../NavigationItems/NavigationItems";
 import ContactItems from "../ContactItems/ContactItems";
 import { Config } from "../Config/Config";
+import TimeFormatting from "../TimeFormatting/TimeFormatting";
 
 import "./Footer.css";
 
 const Footer = ({ phoneNumber, email, openingHours, lg }) => {
   const absPath = Config.ABS_PATH;
   const { t } = useTranslation();
-
-  let separator;
-  let openingHoursWeekDayOpenHours;
-  let openingHoursWeekDayCloseHours;
-  let openingHoursWeekEndOpenHours;
-  let openingHoursWeekEndCloseHours;
-
-  function formatHours(hours) {
-    return hours % 12 || 12;
-  }
-
-  function amOrPm(hours) {
-    if (lg !== "fr") {
-      return hours >= 12 ? "pm" : "am";
-    } else {
-      return "";
-    }
-  }
-
-  switch (lg) {
-    case "fr":
-      separator = "h";
-
-      openingHoursWeekDayOpenHours = openingHours.weekDay.open.hours;
-      openingHoursWeekDayCloseHours = openingHours.weekDay.close.hours;
-      openingHoursWeekEndOpenHours = openingHours.weekEnd.open.hours;
-      openingHoursWeekEndCloseHours = openingHours.weekEnd.close.hours;
-      break;
-    default:
-      separator = ".";
-
-      openingHoursWeekDayOpenHours = formatHours(
-        openingHours.weekDay.open.hours
-      );
-      openingHoursWeekDayCloseHours = formatHours(
-        openingHours.weekDay.close.hours
-      );
-      openingHoursWeekEndOpenHours = formatHours(
-        openingHours.weekEnd.open.hours
-      );
-      openingHoursWeekEndCloseHours = formatHours(
-        openingHours.weekEnd.close.hours
-      );
-      break;
-  }
 
   return (
     <>
@@ -94,75 +50,95 @@ const Footer = ({ phoneNumber, email, openingHours, lg }) => {
                 {t("footer.openingHours.title").toUpperCase()}
               </p>
               <p>
-                {`${t(
-                  "footer.openingHours.monday"
-                )} ${openingHoursWeekDayOpenHours}${separator}${
-                  openingHours.weekDay.open.minutes
-                }${amOrPm(openingHours.weekDay.open.hours)} ${t(
-                  "footer.openingHours.to"
-                )} ${openingHoursWeekDayCloseHours}${separator}${
-                  openingHours.weekDay.close.minutes
-                }${amOrPm(openingHours.weekDay.close.hours)}`}
+                {`${t("footer.openingHours.monday")} `}
+                <TimeFormatting
+                  date={new Date(openingHours.weekDay.open)}
+                  lg={lg}
+                />
+                {` ${t("footer.openingHours.to")} `}
+                <TimeFormatting
+                  date={new Date(openingHours.weekDay.close)}
+                  lg={lg}
+                />
+
                 <br />
-                {`${t(
-                  "footer.openingHours.tuesday"
-                )} ${openingHoursWeekDayOpenHours}${separator}${
-                  openingHours.weekDay.open.minutes
-                }${amOrPm(openingHours.weekDay.open.hours)} ${t(
-                  "footer.openingHours.to"
-                )} ${openingHoursWeekDayCloseHours}${separator}${
-                  openingHours.weekDay.close.minutes
-                }${amOrPm(openingHours.weekDay.close.hours)}`}
+
+                {`${t("footer.openingHours.tuesday")} `}
+                <TimeFormatting
+                  date={new Date(openingHours.weekDay.open)}
+                  lg={lg}
+                />
+                {` ${t("footer.openingHours.to")} `}
+                <TimeFormatting
+                  date={new Date(openingHours.weekDay.close)}
+                  lg={lg}
+                />
+
                 <br />
-                {`${t(
-                  "footer.openingHours.wednesday"
-                )} ${openingHoursWeekDayOpenHours}${separator}${
-                  openingHours.weekDay.open.minutes
-                }${amOrPm(openingHours.weekDay.open.hours)} ${t(
-                  "footer.openingHours.to"
-                )} ${openingHoursWeekDayCloseHours}${separator}${
-                  openingHours.weekDay.close.minutes
-                }${amOrPm(openingHours.weekDay.close.hours)}`}
+
+                {`${t("footer.openingHours.wednesday")} `}
+
+                <TimeFormatting
+                  date={new Date(openingHours.weekDay.open)}
+                  lg={lg}
+                />
+                {` ${t("footer.openingHours.to")} `}
+                <TimeFormatting
+                  date={new Date(openingHours.weekDay.close)}
+                  lg={lg}
+                />
+
                 <br />
-                {`${t(
-                  "footer.openingHours.thursday"
-                )} ${openingHoursWeekDayOpenHours}${separator}${
-                  openingHours.weekDay.open.minutes
-                }${amOrPm(openingHours.weekDay.open.hours)} ${t(
-                  "footer.openingHours.to"
-                )} ${openingHoursWeekDayCloseHours}${separator}${
-                  openingHours.weekDay.close.minutes
-                }${amOrPm(openingHours.weekDay.close.hours)}`}
+
+                {`${t("footer.openingHours.thursday")} `}
+                <TimeFormatting
+                  date={new Date(openingHours.weekDay.open)}
+                  lg={lg}
+                />
+                {` ${t("footer.openingHours.to")} `}
+                <TimeFormatting
+                  date={new Date(openingHours.weekDay.close)}
+                  lg={lg}
+                />
+
                 <br />
-                {`${t(
-                  "footer.openingHours.friday"
-                )} ${openingHoursWeekDayOpenHours}${separator}${
-                  openingHours.weekDay.open.minutes
-                }${amOrPm(openingHours.weekDay.open.hours)} ${t(
-                  "footer.openingHours.to"
-                )} ${openingHoursWeekDayCloseHours}${separator}${
-                  openingHours.weekDay.close.minutes
-                }${amOrPm(openingHours.weekDay.close.hours)}`}
+
+                {`${t("footer.openingHours.friday")} `}
+                <TimeFormatting
+                  date={new Date(openingHours.weekDay.open)}
+                  lg={lg}
+                />
+                {` ${t("footer.openingHours.to")} `}
+                <TimeFormatting
+                  date={new Date(openingHours.weekDay.close)}
+                  lg={lg}
+                />
+
                 <br />
-                {`${t(
-                  "footer.openingHours.saturday"
-                )} ${openingHoursWeekEndOpenHours}${separator}${
-                  openingHours.weekEnd.open.minutes
-                }${amOrPm(openingHours.weekEnd.open.hours)} ${t(
-                  "footer.openingHours.to"
-                )} ${openingHoursWeekEndCloseHours}${separator}${
-                  openingHours.weekEnd.close.minutes
-                }${amOrPm(openingHours.weekEnd.close.hours)}`}
+
+                {`${t("footer.openingHours.saturday")} `}
+                <TimeFormatting
+                  date={new Date(openingHours.weekEnd.open)}
+                  lg={lg}
+                />
+                {` ${t("footer.openingHours.to")} `}
+                <TimeFormatting
+                  date={new Date(openingHours.weekEnd.close)}
+                  lg={lg}
+                />
+
                 <br />
-                {`${t(
-                  "footer.openingHours.sunday"
-                )} ${openingHoursWeekEndOpenHours}${separator}${
-                  openingHours.weekEnd.open.minutes
-                }${amOrPm(openingHours.weekEnd.open.hours)} ${t(
-                  "footer.openingHours.to"
-                )} ${openingHoursWeekEndCloseHours}${separator}${
-                  openingHours.weekEnd.close.minutes
-                }${amOrPm(openingHours.weekEnd.close.hours)}`}
+
+                {`${t("footer.openingHours.sunday")} `}
+                <TimeFormatting
+                  date={new Date(openingHours.weekEnd.open)}
+                  lg={lg}
+                />
+                {` ${t("footer.openingHours.to")} `}
+                <TimeFormatting
+                  date={new Date(openingHours.weekEnd.close)}
+                  lg={lg}
+                />
               </p>
             </div>
 

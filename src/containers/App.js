@@ -23,24 +23,12 @@ const email = "contact@stadium8.com";
 
 const openingHours = {
   weekDay: {
-    open: {
-      hours: "6",
-      minutes: "00"
-    },
-    close: {
-      hours: "22",
-      minutes: "00"
-    }
+    open: new Date().setHours(6, 0),
+    close: new Date().setHours(22, 0)
   },
   weekEnd: {
-    open: {
-      hours: "8",
-      minutes: "00"
-    },
-    close: {
-      hours: "22",
-      minutes: "00"
-    }
+    open: new Date().setHours(8, 0),
+    close: new Date().setHours(22, 0)
   }
 };
 
@@ -50,30 +38,24 @@ const footballDetails = {
       colones: "12,000",
       dollars: "20"
     },
-    hourFrom: "08",
-    minuteFrom: "00",
-    hourTo: "12",
-    minuteTo: "00"
+    from: new Date().setHours(8, 0),
+    to: new Date().setHours(12, 0)
   },
   afternoon: {
     price: {
       colones: "16,000",
       dollars: "30"
     },
-    hourFrom: "12",
-    minuteFrom: "00",
-    hourTo: "17",
-    minuteTo: "00"
+    from: new Date().setHours(12, 0),
+    to: new Date().setHours(17, 0)
   },
   night: {
     price: {
       colones: "20,000",
       dollars: "40"
     },
-    hourFrom: "17",
-    minuteFrom: "00",
-    hourTo: "22",
-    minuteTo: "00"
+    from: new Date().setHours(17, 0),
+    to: new Date().setHours(22, 0)
   }
 };
 
@@ -267,6 +249,7 @@ export default class App extends Component {
                     events={events}
                     errorEvents={errorEvents}
                     phoneNumber={phoneNumber}
+                    lg={lg}
                   />
                 </Route>
                 {/* <Route path="/gym" component={Gym}>

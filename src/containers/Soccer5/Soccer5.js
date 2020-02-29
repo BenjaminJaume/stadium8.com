@@ -3,13 +3,14 @@ import { useTranslation } from "react-i18next";
 import GoogleCalendar from "../../components/GoogleCalendar/GoogleCalendar";
 import { Helmet } from "react-helmet";
 import { Config } from "../../components/Config/Config";
+import TimeFormatting from "../../components/TimeFormatting/TimeFormatting";
 
 import "react-tabs/style/react-tabs.css";
 import "./Soccer5.css";
 
 const Soccer5 = props => {
   const absPath = Config.ABS_PATH;
-  const { footballDetails, events, phoneNumber } = props;
+  const { footballDetails, events, phoneNumber, lg } = props;
   const { t } = useTranslation();
 
   return (
@@ -66,7 +67,15 @@ const Soccer5 = props => {
                           {t("soccer5.prices.morning.title")}
                         </h3>
                         <h3>
-                          {`${footballDetails.morning.hourFrom}h${footballDetails.morning.minuteFrom} - ${footballDetails.morning.hourTo}h${footballDetails.morning.minuteTo}`}
+                          <TimeFormatting
+                            date={new Date(footballDetails.morning.from)}
+                            lg={lg}
+                          />{" "}
+                          -{" "}
+                          <TimeFormatting
+                            date={new Date(footballDetails.morning.to)}
+                            lg={lg}
+                          />
                         </h3>
                       </div>
                       <h1>
@@ -88,7 +97,15 @@ const Soccer5 = props => {
                           {t("soccer5.prices.afternoon.title")}
                         </h3>
                         <h3>
-                          {`${footballDetails.afternoon.hourFrom}h${footballDetails.afternoon.minuteFrom} - ${footballDetails.afternoon.hourTo}h${footballDetails.afternoon.minuteTo}`}
+                          <TimeFormatting
+                            date={new Date(footballDetails.afternoon.from)}
+                            lg={lg}
+                          />{" "}
+                          -{" "}
+                          <TimeFormatting
+                            date={new Date(footballDetails.afternoon.to)}
+                            lg={lg}
+                          />
                         </h3>
                       </div>
                       <h1>
@@ -110,7 +127,15 @@ const Soccer5 = props => {
                           {t("soccer5.prices.night.title")}
                         </h3>
                         <h3>
-                          {`${footballDetails.night.hourFrom}h${footballDetails.night.minuteFrom} - ${footballDetails.night.hourTo}h${footballDetails.night.minuteTo}`}
+                          <TimeFormatting
+                            date={new Date(footballDetails.night.from)}
+                            lg={lg}
+                          />{" "}
+                          -{" "}
+                          <TimeFormatting
+                            date={new Date(footballDetails.night.to)}
+                            lg={lg}
+                          />
                         </h3>
                       </div>
                       <h1>

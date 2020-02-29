@@ -1,17 +1,8 @@
 {
-  "navbar": {
-    "contact": "Contact",
-    "events": "Events",
-    "soccer5": "Soccer5",
-    "gymnasium": "Gym",
-    "home": "Home",
-    "multisport": "Multisport"
-  },
   "contact": {
     "content": "Please contact us for any inquiry",
     "form": {
       "button": {
-        "content": "It would be awesome if it'd worked",
         "title": "Submit"
       },
       "email": {
@@ -50,17 +41,73 @@
     },
     "title": "Contact"
   },
+  "footer": {
+    "openingHours": {
+      "friday": "Fri",
+      "monday": "Mon",
+      "saturday": "Sat",
+      "sunday": "Sun",
+      "thursday": "Thu",
+      "title": "Open daily",
+      "to": "to",
+      "tuesday": "Tue",
+      "wednesday": "Wed"
+    },
+    "participate": {
+      "affiliate": "Affiliate",
+      "donate": "Donate",
+      "sponsor": "Sponsor",
+      "suggestions": "Suggestions",
+      "title": "Participe",
+      "workWithUs": "Work with us"
+    },
+    "presentation": {
+      "navigation": "Open Maps"
+    },
+    "socialNetworks": {
+      "copyright": "All right reserved",
+      "title": "Social networks",
+      "web-developer": "Web Designer",
+      "whatsappPopover": {
+        "content": "Open WhatsApp or copy",
+        "copied": "Copied!",
+        "copy": "Copy phone number",
+        "openLink": "Open link with",
+        "or": "or",
+        "title": "Contact us"
+      }
+    }
+  },
+  "navbar": {
+    "contact": "Contact",
+    "events": "Events",
+    "gymnasium": "Gym",
+    "home": "Home",
+    "multisport": "Multisport",
+    "soccer5": "Soccer5"
+  },
+  "other": {
+    "construction": {
+      "hover": "Sorry for the inconvenience",
+      "message": "This side of the website hasn't opened yet"
+    },
+    "homepageMessage": "Go back to the home page",
+    "makeBooking": "Booking"
+  },
+  "page404": {
+    "message": "Sometimes you fall... but you should rise every time you do!",
+    "title": "Page not found"
+  },
   "soccer5": {
-    "title": "Soccer5",
     "calendar": {
       "title": "Calendar"
     },
     "prices": {
-      "hour": "hour",
       "afternoon": {
         "title": "Afternoon"
       },
       "buttonContact": "Book your spot",
+      "hour": "hour",
       "morning": {
         "title": "Morning"
       },
@@ -72,55 +119,7 @@
     "rules": {
       "content": "To write",
       "title": "Rules"
-    }
-  },
-  "footer": {
-    "presentation": {
-      "navigation": "Open Maps"
     },
-    "openingHours": {
-      "title": "Open daily",
-      "monday": "Mon",
-      "tuesday": "Tue",
-      "wednesday": "Wed",
-      "thursday": "Thu",
-      "friday": "Fri",
-      "saturday": "Sat",
-      "sunday": "Sun",
-      "to": "to"
-    },
-    "socialNetworks": {
-      "copyright": "All right reserved",
-      "title": "Social networks",
-      "web-developer": "Web Designer",
-      "whatsappPopover": {
-        "content": "Open WhatsApp or copy",
-        "copied": "Copied!",
-        "or": "or",
-        "title": "Contact us",
-        "openLink": "Open link with",
-        "copy": "Copy phone number"
-      }
-    },
-    "participate": {
-      "title": "Participe",
-      "workWithUs": "Work with us",
-      "donate": "Donate",
-      "sponsor": "Sponsor",
-      "affiliate": "Affiliate",
-      "suggestions": "Suggestions"
-    }
-  },
-  "page404": {
-    "title": "Page not found",
-    "message": "Sometimes you fall... but you should rise every time you do!"
-  },
-  "other": {
-    "homepageMessage": "Go back to the home page",
-    "makeBooking": "Booking",
-    "construction": {
-      "hover": "Sorry for the inconvenience",
-      "message": "This side of the website hasn't opened yet"
-    }
+    "title": "Soccer5"
   }
 }
