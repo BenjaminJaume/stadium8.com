@@ -55,6 +55,7 @@ const Soccer5 = props => {
                     <GoogleCalendar
                       footballDetails={footballDetails}
                       events={events}
+                      lg={lg}
                     />
                   </div>
                 </div>

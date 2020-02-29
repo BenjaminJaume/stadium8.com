@@ -52,7 +52,7 @@ const MapContainer = withScriptjs(
           {isInfoboxVisible && (
             <InfoWindow onCloseClick={handleCloseInfoWindow}>
               <div className="mx-3">
-                <p className="text-center text-black font-weight-bold mb-1">
+                <p className="text-center text-black font-weight-bold mb-2">
                   STADIUM8
                 </p>
                 <p className="mb-1">

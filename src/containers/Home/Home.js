@@ -116,7 +116,7 @@ class Home extends Component {
             draggable
           /> */}
           <div className="container-fluid container-100vh py-5 px-lg-5">
-            <div className="row h-100">
+            <div className="row h-100 align-items-center">
               <div className="col-12 col-lg-6 text-white text-center mb-5 mb-lg-0">
                 {isLoadingQuotes ? (
                   <h2 className="loading-text text-center mb-5">

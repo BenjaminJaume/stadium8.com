@@ -2,7 +2,16 @@
 
 Website for the sport building is Samara, Costa Rica
 
-# Tools
+## Tools
+
+On this React, I've used many different NPM packages and created few custom components myself:
+
+- Google Calendar: [react-big-calendar](https://www.npmjs.com/package/react-big-calendar) + custom component
+- Google Maps: [react-google-maps](https://www.npmjs.com/package/react-google-maps) with a custom theme
+- URL social médias with [urlgeni.us](https://app.urlgeni.us/)
+- [i18next](https://www.i18next.com/): plugin that allow me to translate instantly every pages of the site
+
+## Resources
 
 - Photofiltre
 

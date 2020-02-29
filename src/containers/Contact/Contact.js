@@ -31,7 +31,7 @@ class Contact extends Component {
 
   render() {
     const { absPath, MAPS_API_KEY } = Config;
-    const { email } = this.props;
+    const { email, lg } = this.props;
     const { isInfoboxVisible } = this.state;
 
     // const styles = {
@@ -56,7 +56,7 @@ class Contact extends Component {
                 <div className="opacity-black-75 text-white rounded text-center py-5 px-2 px-lg-5">
                   <div className="container">
                     <div className="row">
-                      <div className="col-12 col-lg-6 mb-4 mb-lg-0">
+                      <div className="col-12 col-lg-6 mb-4 mb-lg-0 order-1 order-sm-2">
                         <h1 className="mb-3">{i18next.t("contact.title")}</h1>
                         <p>{i18next.t("contact.content")}</p>
                         <div className="container-fluid">
@@ -67,7 +67,7 @@ class Contact extends Component {
                           </div>
                         </div>
                       </div>
-                      <div className="col-12 col-lg-6 px-0">
+                      <div className="col-12 col-lg-6 px-0 order-2 order-lg-1">
                         <div className="map-container border border-dark rounded pt-3 mx-auto">
                           <MapContainer
                             // @ts-ignore

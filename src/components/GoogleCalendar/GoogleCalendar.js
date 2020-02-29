@@ -1,6 +1,7 @@
 import React from "react";
 import BigCalendar from "react-big-calendar";
 import moment from "moment";
+import { useWindowSize } from "../WindowSize/WindowSize";
 
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import "./GoogleCalendar.css";
@@ -16,6 +17,7 @@ const localizer = BigCalendar.momentLocalizer(moment);
 
 const GoogleCalendar = props => {
   const { footballDetails, events } = props;
+  const windowSize = useWindowSize();
 
   const startDay = new Date(footballDetails.morning.from);
   const endDay = new Date(footballDetails.night.to);
@@ -46,7 +48,7 @@ const GoogleCalendar = props => {
       events={events}
       startAccessor="start"
       endAccessor="end"
-      defaultView="week"
+      defaultView={windowSize.width >= 576 ? "week" : "day"}
       min={startDay}
       max={endDay}
       views={["week", "day", "agenda"]}
