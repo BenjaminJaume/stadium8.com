@@ -13,7 +13,7 @@ import Home from "./Home/Home";
 import Soccer5 from "./Soccer5/Soccer5";
 // import Gym from "./Gym/Gym";
 // import Multisport from "./Multisport/Multisport";
-// import Events from "./Events/Events";
+import Events from "./Events/Events";
 // import Spa from "./Spa/Spa";
 import Contact from "./Contact/Contact";
 import Page404 from "./Page404/Page404";
@@ -75,10 +75,17 @@ export default class App extends Component {
       postsFR: [],
       isLoadingQuotes: false,
       isLoadingPosts: false,
-      errorQuotes: null,
-      errorPosts: null,
+      errorQuotes: "",
+      errorPosts: "",
       events: [],
-      errorEvents: null
+      eventContentES: "",
+      eventContentEN: "",
+      eventContentFR: "",
+      urlEventPictureES: "",
+      urlEventPictureEN: "",
+      urlEventPictureFR: "",
+      isLoadingEventPicture: false,
+      errorEventPicture: ""
     };
   }
 
@@ -94,9 +101,15 @@ export default class App extends Component {
       this.changeLanguage(i18n.language);
     }, 500);
 
-    this.setState({ isLoadingQuotes: true, isLoadingPosts: true });
-    // English
-    // Quotes
+    // Setting  loaders
+    this.setState({
+      isLoadingQuotes: true,
+      isLoadingPosts: true,
+      isLoadingEventPicture: true
+    });
+
+    // ENGLISH
+    // 1/3: Quotes
     axios
       .get(
         `https://stadium8.com/wp-json/wp/v2/posts?categories=51&per_page=${quotesPerPage}`
@@ -108,13 +121,18 @@ export default class App extends Component {
             isLoadingQuotes: false
           });
         } else {
-          throw new Error("Something went wrong with Quotes");
+          this.setState({
+            errorQuotes: "Something went wrong loading the quotes",
+            isLoadingQuotes: false
+          });
         }
       })
       .catch(error =>
         this.setState({ errorQuotes: error, isLoadingQuotes: false })
       );
-    // Posts
+
+    // ENGLISH
+    // 2/3: Posts
     axios
       .get(
         `https://stadium8.com/wp-json/wp/v2/posts/?categories=53&per_page=${postsPerPage}`
@@ -126,16 +144,70 @@ export default class App extends Component {
             isLoadingPosts: false
           });
         } else {
-          throw new Error("Something went wrong with Posts");
+          this.setState({
+            errorPosts: "Something went wrong loading the posts",
+            isLoadingPosts: false
+          });
         }
       })
       .catch(error =>
         this.setState({ errorPosts: error, isLoadingPosts: false })
       );
 
-    this.setState({ isLoadingQuotes: true, isLoadingPosts: true });
-    // French
-    // Quotes
+    // ENGLISH
+    // 3/3: Events
+    axios
+      .get(`https://stadium8.com/wp-json/wp/v2/posts?categories=56&per_page=1`)
+      .then(response => {
+        if (response.status === 200) {
+          console.log(response.data[0]);
+          this.setState({
+            eventContentEN: response.data[0].excerpt.rendered
+          });
+          axios
+            .get(response.data[0]._links["wp:attachment"][0].href)
+            .then(response => {
+              if (response.status === 200) {
+                this.setState({
+                  urlEventPictureEN: response.data[0].guid.rendered,
+                  isLoadingEventPicture: false
+                });
+              } else {
+                this.setState({
+                  errorEventPicture: "Something went wrong loading the events",
+                  isLoadingEventPicture: false
+                });
+              }
+            })
+            .catch(error =>
+              this.setState({
+                errorEventPicture: error,
+                isLoadingEventPicture: false
+              })
+            );
+        } else {
+          this.setState({
+            errorEventPicture: "Something went wrong loading the events",
+            isLoadingEventPicture: false
+          });
+        }
+      })
+      .catch(error =>
+        this.setState({
+          errorEventPicture: error,
+          isLoadingEventPicture: false
+        })
+      );
+
+    // Resetting  loaders
+    this.setState({
+      isLoadingQuotes: true,
+      isLoadingPosts: true,
+      isLoadingEventPicture: true
+    });
+
+    // FRENCH
+    // 1/3: Quotes
     axios
       .get(
         `https://stadium8.com/wp-json/wp/v2/posts?categories=47&per_page=${quotesPerPage}`
@@ -147,14 +219,18 @@ export default class App extends Component {
             isLoadingQuotes: false
           });
         } else {
-          throw new Error("Something went wrong with Quotes");
+          this.setState({
+            errorQuotes: "Something went wrong loading the quotes",
+            isLoadingQuotes: false
+          });
         }
       })
       .catch(error =>
         this.setState({ errorQuotes: error, isLoadingQuotes: false })
       );
 
-    // Posts
+    // FRENCH
+    // 2/3: Posts
     axios
       .get(
         `https://stadium8.com/wp-json/wp/v2/posts/?categories=48&per_page=${postsPerPage}`
@@ -166,16 +242,69 @@ export default class App extends Component {
             isLoadingPosts: false
           });
         } else {
-          throw new Error("Something went wrong with Posts");
+          this.setState({
+            errorPosts: "Something went wrong loading the posts",
+            isLoadingPosts: false
+          });
         }
       })
       .catch(error =>
         this.setState({ errorPosts: error, isLoadingPosts: false })
       );
 
-    this.setState({ isLoadingQuotes: true, isLoadingPosts: true });
-    // Spanish
-    // Quotes
+    // FRENCH
+    // 3/3: Events
+    axios
+      .get(`https://stadium8.com/wp-json/wp/v2/posts?categories=57&per_page=1`)
+      .then(response => {
+        if (response.status === 200) {
+          this.setState({
+            eventContentFR: response.data[0].excerpt.rendered
+          });
+          axios
+            .get(response.data[0]._links["wp:attachment"][0].href)
+            .then(response => {
+              if (response.status === 200) {
+                this.setState({
+                  urlEventPictureFR: response.data[0].guid.rendered,
+                  isLoadingEventPicture: false
+                });
+              } else {
+                this.setState({
+                  errorEventPicture: "Something went wrong loading the posts",
+                  isLoadingPosts: false
+                });
+              }
+            })
+            .catch(error =>
+              this.setState({
+                errorEventPicture: error,
+                isLoadingEventPicture: false
+              })
+            );
+        } else {
+          this.setState({
+            errorEventPicture: "Something went wrong loading the posts",
+            isLoadingPosts: false
+          });
+        }
+      })
+      .catch(error =>
+        this.setState({
+          errorEventPicture: error,
+          isLoadingEventPicture: false
+        })
+      );
+
+    // Resetting  loaders
+    this.setState({
+      isLoadingQuotes: true,
+      isLoadingPosts: true,
+      isLoadingEventPicture: true
+    });
+
+    // SPANISH
+    // 1/3: Quotes
     axios
       .get(
         `https://stadium8.com/wp-json/wp/v2/posts?categories=52&per_page=${quotesPerPage}`
@@ -187,14 +316,18 @@ export default class App extends Component {
             isLoadingQuotes: false
           });
         } else {
-          throw new Error("Something went wrong with Quotes");
+          this.setState({
+            errorQuotes: "Something went wrong loading the quotes",
+            isLoadingQuotes: false
+          });
         }
       })
       .catch(error =>
         this.setState({ errorQuotes: error, isLoadingQuotes: false })
       );
 
-    // Posts
+    // SPANISH
+    // 2/3: Posts
     axios
       .get(
         `https://stadium8.com/wp-json/wp/v2/posts/?categories=54&per_page=${postsPerPage}`
@@ -206,11 +339,58 @@ export default class App extends Component {
             isLoadingPosts: false
           });
         } else {
-          throw new Error("Something went wrong with Posts");
+          this.setState({
+            errorPosts: "Something went wrong loading the posts",
+            isLoadingPosts: false
+          });
         }
       })
       .catch(error =>
         this.setState({ errorPosts: error, isLoadingPosts: false })
+      );
+
+    // SPANISH
+    // 3/3: Events
+    axios
+      .get(`https://stadium8.com/wp-json/wp/v2/posts?categories=55&per_page=1`)
+      .then(response => {
+        if (response.status === 200) {
+          this.setState({
+            eventContentES: response.data[0].excerpt.rendered
+          });
+          axios
+            .get(response.data[0]._links["wp:attachment"][0].href)
+            .then(response => {
+              if (response.status === 200) {
+                this.setState({
+                  urlEventPictureES: response.data[0].guid.rendered,
+                  isLoadingEventPicture: false
+                });
+              } else {
+                this.setState({
+                  errorEventPicture: "Something went wrong loading the posts",
+                  isLoadingPosts: false
+                });
+              }
+            })
+            .catch(error =>
+              this.setState({
+                errorEventPicture: error,
+                isLoadingEventPicture: false
+              })
+            );
+        } else {
+          this.setState({
+            errorEventPicture: "Something went wrong loading the posts",
+            isLoadingPosts: false
+          });
+        }
+      })
+      .catch(error =>
+        this.setState({
+          errorEventPicture: error,
+          isLoadingEventPicture: false
+        })
       );
 
     getEvents(events => {
@@ -227,12 +407,19 @@ export default class App extends Component {
       postsES,
       postsEN,
       postsFR,
-      isLoadingPosts,
       isLoadingQuotes,
+      isLoadingPosts,
       errorQuotes,
       errorPosts,
       events,
-      errorEvents
+      eventContentES,
+      eventContentEN,
+      eventContentFR,
+      urlEventPictureES,
+      urlEventPictureEN,
+      urlEventPictureFR,
+      isLoadingEventPicture,
+      errorEventPicture
     } = this.state;
 
     return (
@@ -247,19 +434,29 @@ export default class App extends Component {
                   <Soccer5
                     footballDetails={footballDetails}
                     events={events}
-                    errorEvents={errorEvents}
                     phoneNumber={phoneNumber}
                     lg={lg}
                   />
                 </Route>
-                {/* <Route path="/gym" component={Gym}>
+                <Route path="/events" component={Events}>
+                  <Events
+                    lg={lg}
+                    urlEventPictureES={urlEventPictureES}
+                    urlEventPictureEN={urlEventPictureEN}
+                    urlEventPictureFR={urlEventPictureFR}
+                    eventContentES={eventContentES}
+                    eventContentEN={eventContentEN}
+                    eventContentFR={eventContentFR}
+                    isLoadingEventPicture={isLoadingEventPicture}
+                    errorEventPicture={errorEventPicture}
+                  />
+                </Route>
+                {/* 
+                <Route path="/gym" component={Gym}>
                   <Gym  />
                 </Route>
                 <Route path="/multisport" component={Multisport}>
                   <Multisport  />
-                </Route>
-                <Route path="/events" component={Events}>
-                  <Events  />
                 </Route>
                 <Route path="/spa" component={Spa}>
                   <Spa  />

@@ -159,9 +159,8 @@ const Soccer5 = props => {
 
                 <div>
                   <div>
-                    <p className="h2">{t("soccer5.rules.title")}</p>
+                    <p className="h2 text-brand">{t("soccer5.rules.title")}</p>
                   </div>
-
                   {t("soccer5.rules.content")}
                 </div>
               </div>

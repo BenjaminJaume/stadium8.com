@@ -69,28 +69,19 @@ const NavigationBar = ({ onClick, lg }) => {
                 <span>{t("navbar.soccer5")}</span>
               </IndexLinkContainer>
             </li>
-            <li className="nav-item" title={t("other.construction.message")}>
+
+            <li className="nav-item">
               <IndexLinkContainer
-                to="/gym"
-                href="/gym"
-                className="nav-link disabled"
+                to="/contact"
+                href="/contact"
+                className="nav-link"
                 data-toggle="collapse"
                 data-target=".navbar-collapse.show"
               >
-                <span>{t("navbar.gymnasium")}</span>
+                <span>{t("navbar.contact")}</span>
               </IndexLinkContainer>
             </li>
-            <li className="nav-item" title={t("other.construction.message")}>
-              <IndexLinkContainer
-                to="/multisport"
-                href="/multisport"
-                className="nav-link disabled"
-                data-toggle="collapse"
-                data-target=".navbar-collapse.show"
-              >
-                <span>{t("navbar.multisport")}</span>
-              </IndexLinkContainer>
-            </li>
+
             <li className="nav-item" title={t("other.construction.message")}>
               <IndexLinkContainer
                 to="/events"
@@ -102,6 +93,31 @@ const NavigationBar = ({ onClick, lg }) => {
                 <span>{t("navbar.events")}</span>
               </IndexLinkContainer>
             </li>
+
+            <li className="nav-item" title={t("other.construction.message")}>
+              <IndexLinkContainer
+                to="/gym"
+                href="/gym"
+                className="nav-link disabled"
+                data-toggle="collapse"
+                data-target=".navbar-collapse.show"
+              >
+                <span>{t("navbar.gymnasium")}</span>
+              </IndexLinkContainer>
+            </li>
+
+            <li className="nav-item" title={t("other.construction.message")}>
+              <IndexLinkContainer
+                to="/multisport"
+                href="/multisport"
+                className="nav-link disabled"
+                data-toggle="collapse"
+                data-target=".navbar-collapse.show"
+              >
+                <span>{t("navbar.multisport")}</span>
+              </IndexLinkContainer>
+            </li>
+
             <li className="nav-item" title={t("other.construction.message")}>
               <IndexLinkContainer
                 to="/spa"
@@ -111,17 +127,6 @@ const NavigationBar = ({ onClick, lg }) => {
                 data-target=".navbar-collapse.show"
               >
                 <span>Spa</span>
-              </IndexLinkContainer>
-            </li>
-            <li className="nav-item">
-              <IndexLinkContainer
-                to="/contact"
-                href="/contact"
-                className="nav-link"
-                data-toggle="collapse"
-                data-target=".navbar-collapse.show"
-              >
-                <span>{t("navbar.contact")}</span>
               </IndexLinkContainer>
             </li>
 

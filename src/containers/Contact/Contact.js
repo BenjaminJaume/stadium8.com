@@ -31,7 +31,7 @@ class Contact extends Component {
 
   render() {
     const { absPath, MAPS_API_KEY } = Config;
-    const { email, lg } = this.props;
+    const { email } = this.props;
     const { isInfoboxVisible } = this.state;
 
     // const styles = {

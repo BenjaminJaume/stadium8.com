@@ -41,6 +41,9 @@
     },
     "title": "Contact"
   },
+  "events": {
+    "error": "Il n'y a pas d'évènements à venir"
+  },
   "footer": {
     "openingHours": {
       "friday": "Ven",
@@ -101,7 +104,6 @@
   },
   "soccer5": {
     "calendar": {
-      "content": "",
       "title": "Calendrier"
     },
     "prices": {

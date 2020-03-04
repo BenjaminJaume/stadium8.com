@@ -2,10 +2,11 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCopyright } from "@fortawesome/free-regular-svg-icons";
-import NavigationItems from "../NavigationItems/NavigationItems";
+// import NavigationItems from "../NavigationItems/NavigationItems";
 import ContactItems from "../ContactItems/ContactItems";
 import { Config } from "../Config/Config";
 import TimeFormatting from "../TimeFormatting/TimeFormatting";
+import { IndexLinkContainer } from "react-router-bootstrap";
 
 import "./Footer.css";
 
@@ -27,29 +28,195 @@ const Footer = ({ phoneNumber, email, openingHours, lg }) => {
                 <br />
                 Costa rica
               </p>
+              <p>
+                <a
+                  href="https://goo.gl/maps/ynj6pWqmiLVZD1Gx9"
+                  className="link-brand"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {t("footer.presentation.navigation")}
+                </a>
+              </p>
               <p className="mb-1">
                 <a
                   href={`tel:${phoneNumber.replace(/ /g, "")}`}
-                  className="link-brand link-no-underline"
+                  className="link-silver link-no-underline"
                 >
                   {phoneNumber}
                 </a>
               </p>
               <p>
-                <a href={`mailto:${email}`} className="link-brand">
+                <a href={`mailto:${email}`} className="link-silver">
                   {email}
                 </a>
               </p>
-              <div>
-                <p className="mb-0">{t("footer.presentation.navigation")}</p>
-                <NavigationItems />
-              </div>
             </div>
             <div className="col-12 col-lg-3">
               <p className="text-brand">
                 {t("footer.openingHours.title").toUpperCase()}
               </p>
-              <p>
+
+              <table className="mx-auto mb-3 mb-lg-0">
+                <tbody>
+                  <tr>
+                    <td align="right">{`${t(
+                      "footer.openingHours.monday"
+                    )} `}</td>
+                    <td>
+                      <span className="mx-1">
+                        <TimeFormatting
+                          date={new Date(openingHours.weekDay.open)}
+                          lg={lg}
+                        />
+                      </span>
+                    </td>
+                    <td>{` ${t("footer.openingHours.to")} `}</td>
+                    <td>
+                      <span className="mx-1">
+                        <TimeFormatting
+                          date={new Date(openingHours.weekDay.close)}
+                          lg={lg}
+                        />
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="right">{`${t(
+                      "footer.openingHours.tuesday"
+                    )} `}</td>
+                    <td>
+                      <span className="mx-1">
+                        <TimeFormatting
+                          date={new Date(openingHours.weekDay.open)}
+                          lg={lg}
+                        />
+                      </span>
+                    </td>
+                    <td>{` ${t("footer.openingHours.to")} `}</td>
+                    <td>
+                      <span className="mx-1">
+                        <TimeFormatting
+                          date={new Date(openingHours.weekDay.close)}
+                          lg={lg}
+                        />
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="right">{`${t(
+                      "footer.openingHours.wednesday"
+                    )} `}</td>
+                    <td>
+                      <span className="mx-1">
+                        <TimeFormatting
+                          date={new Date(openingHours.weekDay.open)}
+                          lg={lg}
+                        />
+                      </span>
+                    </td>
+                    <td>{` ${t("footer.openingHours.to")} `}</td>
+                    <td>
+                      <span className="mx-1">
+                        <TimeFormatting
+                          date={new Date(openingHours.weekDay.close)}
+                          lg={lg}
+                        />
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="right">{`${t(
+                      "footer.openingHours.thursday"
+                    )} `}</td>
+                    <td>
+                      <span className="mx-1">
+                        <TimeFormatting
+                          date={new Date(openingHours.weekDay.open)}
+                          lg={lg}
+                        />
+                      </span>
+                    </td>
+                    <td>{` ${t("footer.openingHours.to")} `}</td>
+                    <td>
+                      <span className="mx-1">
+                        <TimeFormatting
+                          date={new Date(openingHours.weekDay.close)}
+                          lg={lg}
+                        />
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="right">{`${t(
+                      "footer.openingHours.friday"
+                    )} `}</td>
+                    <td>
+                      <span className="mx-1">
+                        <TimeFormatting
+                          date={new Date(openingHours.weekDay.open)}
+                          lg={lg}
+                        />
+                      </span>
+                    </td>
+                    <td>{` ${t("footer.openingHours.to")} `}</td>
+                    <td>
+                      <span className="mx-1">
+                        <TimeFormatting
+                          date={new Date(openingHours.weekDay.close)}
+                          lg={lg}
+                        />
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="right">{`${t(
+                      "footer.openingHours.saturday"
+                    )} `}</td>
+                    <td>
+                      <span className="mx-1">
+                        <TimeFormatting
+                          date={new Date(openingHours.weekEnd.open)}
+                          lg={lg}
+                        />
+                      </span>
+                    </td>
+                    <td>{` ${t("footer.openingHours.to")} `}</td>
+                    <td>
+                      <span className="mx-1">
+                        <TimeFormatting
+                          date={new Date(openingHours.weekEnd.close)}
+                          lg={lg}
+                        />
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="right">{`${t(
+                      "footer.openingHours.sunday"
+                    )} `}</td>
+                    <td>
+                      <span className="mx-1">
+                        <TimeFormatting
+                          date={new Date(openingHours.weekEnd.open)}
+                          lg={lg}
+                        />
+                      </span>
+                    </td>
+                    <td>{` ${t("footer.openingHours.to")} `}</td>
+                    <td>
+                      <span className="mx-1">
+                        <TimeFormatting
+                          date={new Date(openingHours.weekEnd.close)}
+                          lg={lg}
+                        />
+                      </span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              {/* <p>
                 {`${t("footer.openingHours.monday")} `}
                 <TimeFormatting
                   date={new Date(openingHours.weekDay.open)}
@@ -139,7 +306,7 @@ const Footer = ({ phoneNumber, email, openingHours, lg }) => {
                   date={new Date(openingHours.weekEnd.close)}
                   lg={lg}
                 />
-              </p>
+              </p> */}
             </div>
 
             <div className="col-12 col-lg-3">
@@ -160,11 +327,51 @@ const Footer = ({ phoneNumber, email, openingHours, lg }) => {
               </p>
 
               <dl className="text-muted">
-                <dt className="mb-3">{t("footer.participate.workWithUs")}</dt>
-                <dt>{t("footer.participate.donate")}</dt>
-                <dt>{t("footer.participate.sponsor")}</dt>
-                <dt className="mb-3">{t("footer.participate.affiliate")}</dt>
-                <dt>{t("footer.participate.suggestions")}</dt>
+                <dt className="mb-3">
+                  <IndexLinkContainer
+                    to="/contact"
+                    href="/contact"
+                    className="link-silver link-no-underline"
+                  >
+                    <span>{t("footer.participate.workWithUs")}</span>
+                  </IndexLinkContainer>
+                </dt>
+                <dt>
+                  <IndexLinkContainer
+                    to="/contact"
+                    href="/contact"
+                    className="link-silver link-no-underline"
+                  >
+                    <span>{t("footer.participate.donate")}</span>
+                  </IndexLinkContainer>
+                </dt>
+                <dt>
+                  <IndexLinkContainer
+                    to="/contact"
+                    href="/contact"
+                    className="link-silver link-no-underline"
+                  >
+                    <span>{t("footer.participate.sponsor")}</span>
+                  </IndexLinkContainer>
+                </dt>
+                <dt className="mb-3">
+                  <IndexLinkContainer
+                    to="/contact"
+                    href="/contact"
+                    className="link-silver link-no-underline"
+                  >
+                    <span>{t("footer.participate.affiliate")}</span>
+                  </IndexLinkContainer>
+                </dt>
+                <dt>
+                  <IndexLinkContainer
+                    to="/contact"
+                    href="/contact"
+                    className="link-silver link-no-underline"
+                  >
+                    <span>{t("footer.participate.suggestions")}</span>
+                  </IndexLinkContainer>
+                </dt>
               </dl>
               {/* <p>
                 <IndexLinkContainer

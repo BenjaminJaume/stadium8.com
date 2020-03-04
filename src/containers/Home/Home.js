@@ -13,18 +13,7 @@ import "./Home.css";
 class Home extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      quotesES: [],
-      quotesEN: [],
-      quotesFR: [],
-      postsES: [],
-      postsEN: [],
-      postsFR: [],
-      isLoadingQuotes: false,
-      isLoadingPosts: false,
-      errorQuotes: null,
-      errorPosts: null
-    };
+
     this.createMarkupPost = this.createMarkupPost.bind(this);
     this.createMarkupQuote = this.createMarkupQuote.bind(this);
     this.extractPictureSrc = this.extractPictureSrc.bind(this);

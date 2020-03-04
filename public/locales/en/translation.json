@@ -41,9 +41,13 @@
     },
     "title": "Contact"
   },
+  "events": {
+    "error": "There is no events coming soon"
+  },
   "footer": {
     "openingHours": {
       "friday": "Fri",
+      "from": "from",
       "monday": "Mon",
       "saturday": "Sat",
       "sunday": "Sun",
@@ -58,7 +62,7 @@
       "donate": "Donate",
       "sponsor": "Sponsor",
       "suggestions": "Suggestions",
-      "title": "Participe",
+      "title": "Participate",
       "workWithUs": "Work with us"
     },
     "presentation": {
