@@ -30,7 +30,7 @@ const Footer = ({ phoneNumber, email, openingHours, lg }) => {
               </p>
               <p>
                 <a
-                  href="https://goo.gl/maps/ynj6pWqmiLVZD1Gx9"
+                  href="https://g.page/stadium8"
                   className="link-brand"
                   target="_blank"
                   rel="noopener noreferrer"

@@ -105,8 +105,8 @@ class Home extends Component {
             draggable
           /> */}
           <div className="container-fluid container-100vh py-5 px-lg-5">
-            <div className="row h-100 align-items-center">
-              <div className="col-12 col-lg-6 text-white text-center mb-5 mb-lg-0">
+            <div className="row h-100">
+              <div className="col-12 col-lg-6 text-white text-center mb-5 mb-lg-0 align-self-center">
                 {isLoadingQuotes ? (
                   <h2 className="loading-text text-center mb-5">
                     <HollowDotsSpinner color="white" className="mx-auto" />
@@ -137,7 +137,7 @@ class Home extends Component {
                   </p>
                 </div>
               </div>
-              <div className="col-12 col-lg-6 text-white text-center align-items-center">
+              <div className="col-12 col-lg-6 text-white text-center align-self-start align-items-center">
                 {isLoadingPosts ? (
                   <h2 className="loading-text mb-5">
                     <HollowDotsSpinner color="white" className="mx-auto" />
@@ -146,9 +146,68 @@ class Home extends Component {
                   posts.map(post => (
                     <div
                       key={post.id}
-                      className="opacity-black-75 rounded border border-black pt-4 mb-4"
+                      className="opacity-black-75 rounded border border-black py-4 mb-4"
                     >
-                      <div className="mb-2">
+                      <div className="container">
+                        <div className="row">
+                          <div
+                            className={`col-12 order-0 order-lg-1 ${
+                              post.content.rendered.indexOf('<img src="') !== -1
+                                ? "col-lg-7"
+                                : "text-center"
+                            }`}
+                            align="left"
+                          >
+                            <p className="text-brand font-weight-bold h3">
+                              {post.title.rendered}
+                            </p>
+                            <p className="text-white font-weight-bold align-text-bottom">
+                              <FontAwesomeIcon
+                                icon={faClock}
+                                className="mr-1"
+                              />
+                              {`${post.date.slice(8, 10)}/${post.date.slice(
+                                5,
+                                7
+                              )}/${post.date.slice(0, 4)}`}
+                            </p>
+
+                            <div
+                              className="post-content font-brand-2 text-white mb-3 mb-lg-0"
+                              align="left"
+                              dangerouslySetInnerHTML={this.createMarkupPost(
+                                post.excerpt.rendered
+                              )}
+                            />
+                          </div>
+
+                          {post.content.rendered.indexOf('<img src="') !==
+                          -1 ? (
+                            <div className="col-12 col-lg-5 order-1 order-lg-0 align-self-center">
+                              <div>
+                                <img
+                                  src={
+                                    this.extractPictureSrc(
+                                      post.content.rendered
+                                    )[0]
+                                  }
+                                  alt="Post"
+                                  className="img-fluid h-100 w-100"
+                                  style={{}}
+                                  srcSet={
+                                    this.extractPictureSrc(
+                                      post.content.rendered
+                                    )[1]
+                                  }
+                                  // sizes="(max-width: 300px) 100vw, 600px"
+                                />
+                              </div>
+                            </div>
+                          ) : (
+                            ""
+                          )}
+
+                          {/* <div className="mb-2">
                         <span className="text-white font-weight-bold align-text-bottom mb-0 mx-3">
                           <FontAwesomeIcon icon={faClock} className="mr-1" />
                           {`${post.date.slice(8, 10)}/${post.date.slice(
@@ -188,6 +247,8 @@ class Home extends Component {
                             post.excerpt.rendered
                           )}
                         />
+                      </div> */}
+                        </div>
                       </div>
                     </div>
                   ))

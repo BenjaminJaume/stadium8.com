@@ -160,7 +160,6 @@ export default class App extends Component {
       .get(`https://stadium8.com/wp-json/wp/v2/posts?categories=56&per_page=1`)
       .then(response => {
         if (response.status === 200) {
-          console.log(response.data[0]);
           this.setState({
             eventContentEN: response.data[0].excerpt.rendered
           });

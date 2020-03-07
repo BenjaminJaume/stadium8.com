@@ -7,7 +7,6 @@
   width: 500px;
 }
 
-.picture-post {
-  min-width: 200px;
-  max-width: 200px;
+.post-content p {
+  margin-bottom: 0;
 }
