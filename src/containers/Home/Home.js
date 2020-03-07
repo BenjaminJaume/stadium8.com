@@ -151,10 +151,10 @@ class Home extends Component {
                       <div className="mb-2">
                         <span className="text-white font-weight-bold align-text-bottom mb-0 mx-3">
                           <FontAwesomeIcon icon={faClock} className="mr-1" />
-                          {`${post.modified.slice(8, 10)}/${post.modified.slice(
+                          {`${post.date.slice(8, 10)}/${post.date.slice(
                             5,
                             7
-                          )}/${post.modified.slice(0, 4)}`}
+                          )}/${post.date.slice(0, 4)}`}
                         </span>
                         <span className="text-brand font-weight-bold h3 mb-0">
                           {post.title.rendered}
@@ -183,6 +183,7 @@ class Home extends Component {
 
                         <div
                           className="font-brand-2 text-white mx-2 p-1 px-lg-4 pb-lg-3"
+                          align="left"
                           dangerouslySetInnerHTML={this.createMarkupPost(
                             post.excerpt.rendered
                           )}

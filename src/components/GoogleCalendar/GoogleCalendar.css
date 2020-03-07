@@ -46,3 +46,7 @@
 .rbc-allday-cell {
   display: none;
 }
+
+.rbc-agenda-view table.rbc-agenda-table .rbc-agenda-time-cell {
+  border-left: 1px solid #ddd;
+}
