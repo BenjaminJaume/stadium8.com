@@ -1,33 +1,29 @@
 import React from "react";
-// import "./CarouselQuotes.css";
+// import "./Quotes.css";
 
-const CarouselQuotes = props => {
-  const { quotes } = props;
-
-  // Time (in ms) that each quote will be displayed
-  const dataInterval = 10000;
+const Quotes = props => {
+  const { random, quotes } = props;
 
   return (
-    <div id="carousel-home" className="carousel slide" data-ride="carousel">
-      <div className="carousel-inner">
-        {quotes[0] ? (
-          <div className="carousel-item active" data-interval={dataInterval}>
-            <span
-              dangerouslySetInnerHTML={props.createMarkup(
-                quotes[0].content.rendered
-              )}
-            />{" "}
-            -{" "}
-            <span
-              dangerouslySetInnerHTML={props.createMarkup(
-                quotes[0].title.rendered
-              )}
-            />
-          </div>
-        ) : (
-          ""
-        )}
-        {quotes[1] ? (
+    <div>
+      {quotes[random] ? (
+        <div>
+          <span
+            dangerouslySetInnerHTML={props.createMarkup(
+              quotes[random].content.rendered
+            )}
+          />{" "}
+          -{" "}
+          <span
+            dangerouslySetInnerHTML={props.createMarkup(
+              quotes[random].title.rendered
+            )}
+          />
+        </div>
+      ) : (
+        ""
+      )}
+      {/* {quotes[1] ? (
           <div className="carousel-item" data-interval={dataInterval}>
             <span
               dangerouslySetInnerHTML={props.createMarkup(
@@ -94,10 +90,9 @@ const CarouselQuotes = props => {
           </div>
         ) : (
           ""
-        )}
-      </div>
+        )} */}
     </div>
   );
 };
 
-export default CarouselQuotes;
+export default Quotes;

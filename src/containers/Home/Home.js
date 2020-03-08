@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import i18n from "i18next";
 import { HollowDotsSpinner } from "react-epic-spinners";
-import CarouselQuotes from "../../components/CarouselQuotes/CarouselQuotes";
+import Quotes from "../../components/Quotes/Quotes";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClock } from "@fortawesome/free-regular-svg-icons";
 import { Config } from "../../components/Config/Config";
@@ -47,11 +47,15 @@ class Home extends Component {
 
   render() {
     const absPath = Config.ABS_PATH;
+
     const {
       lg,
       quotesES,
       quotesEN,
       quotesFR,
+      randomEN,
+      randomFR,
+      randomES,
       postsES,
       postsEN,
       postsFR,
@@ -63,24 +67,29 @@ class Home extends Component {
     } = this.props;
 
     var quotes = [];
+    var random = 0;
     var posts = [];
 
     switch (lg) {
       case "es":
         posts = postsES;
         quotes = quotesES;
+        random = randomES;
         break;
       case "en":
         posts = postsEN;
         quotes = quotesEN;
+        random = randomEN;
         break;
       case "fr":
         posts = postsFR;
         quotes = quotesFR;
+        random = randomFR;
         break;
       default:
         posts = postsEN;
         quotes = quotesEN;
+        random = randomEN;
         break;
     }
 
@@ -113,7 +122,8 @@ class Home extends Component {
                   </h2>
                 ) : !errorQuotes ? (
                   <div className="font-italic h1 mb-0">
-                    <CarouselQuotes
+                    <Quotes
+                      random={random}
                       quotes={quotes}
                       createMarkup={this.createMarkupQuote}
                     />

@@ -70,6 +70,9 @@ export default class App extends Component {
       quotesES: [],
       quotesEN: [],
       quotesFR: [],
+      randomES: 0,
+      randomEN: 0,
+      randomFR: 0,
       postsES: [],
       postsEN: [],
       postsFR: [],
@@ -118,8 +121,13 @@ export default class App extends Component {
         if (response.status === 200) {
           this.setState({
             quotesEN: response.data,
+            randomEN: Math.floor(
+              1 + Math.random() * (response.data.length - 1)
+            ),
             isLoadingQuotes: false
           });
+
+          console.log(this.state.random);
         } else {
           this.setState({
             errorQuotes: "Something went wrong loading the quotes",
@@ -215,8 +223,12 @@ export default class App extends Component {
         if (response.status === 200) {
           this.setState({
             quotesFR: response.data,
+            randomFR: Math.floor(
+              1 + Math.random() * (response.data.length - 1)
+            ),
             isLoadingQuotes: false
           });
+          console.log(this.state.random);
         } else {
           this.setState({
             errorQuotes: "Something went wrong loading the quotes",
@@ -312,8 +324,12 @@ export default class App extends Component {
         if (response.status === 200) {
           this.setState({
             quotesES: response.data,
+            randomES: Math.floor(
+              1 + Math.random() * (response.data.length - 1)
+            ),
             isLoadingQuotes: false
           });
+          console.log(this.state.random);
         } else {
           this.setState({
             errorQuotes: "Something went wrong loading the quotes",
@@ -400,9 +416,13 @@ export default class App extends Component {
   render() {
     const {
       lg,
+      random,
       quotesES,
       quotesEN,
       quotesFR,
+      randomES,
+      randomEN,
+      randomFR,
       postsES,
       postsEN,
       postsFR,
@@ -466,9 +486,13 @@ export default class App extends Component {
                 <Route path="/" component={Home} exact>
                   <Home
                     lg={lg}
+                    random={random}
                     quotesES={quotesES}
                     quotesEN={quotesEN}
                     quotesFR={quotesFR}
+                    randomEN={randomEN}
+                    randomFR={randomFR}
+                    randomES={randomES}
                     postsES={postsES}
                     postsEN={postsEN}
                     postsFR={postsFR}
