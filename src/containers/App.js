@@ -59,6 +59,9 @@ const footballDetails = {
   }
 };
 
+const mapDefaultCenter = [9.8826942, -85.5313173];
+const markerPosition = [9.883997, -85.539393];
+
 const quotesPerPage = 5;
 const postsPerPage = 3;
 
@@ -126,8 +129,6 @@ export default class App extends Component {
             ),
             isLoadingQuotes: false
           });
-
-          console.log(this.state.random);
         } else {
           this.setState({
             errorQuotes: "Something went wrong loading the quotes",
@@ -228,7 +229,6 @@ export default class App extends Component {
             ),
             isLoadingQuotes: false
           });
-          console.log(this.state.random);
         } else {
           this.setState({
             errorQuotes: "Something went wrong loading the quotes",
@@ -329,7 +329,6 @@ export default class App extends Component {
             ),
             isLoadingQuotes: false
           });
-          console.log(this.state.random);
         } else {
           this.setState({
             errorQuotes: "Something went wrong loading the quotes",
@@ -481,7 +480,11 @@ export default class App extends Component {
                   <Spa  />
                 </Route> */}
                 <Route path="/contact" component={Contact}>
-                  <Contact email={email} />
+                  <Contact
+                    email={email}
+                    mapDefaultCenter={mapDefaultCenter}
+                    markerPosition={markerPosition}
+                  />
                 </Route>
                 <Route path="/" component={Home} exact>
                   <Home

@@ -30,17 +30,11 @@ class Contact extends Component {
   }
 
   render() {
-    const { absPath, MAPS_API_KEY } = Config;
-    const { email } = this.props;
+    const absPath = Config.ABS_PATH;
+    const MAPS_API_KEY = Config.MAPS_API_KEY;
+
+    const { email, mapDefaultCenter, markerPosition } = this.props;
     const { isInfoboxVisible } = this.state;
-
-    // const styles = {
-    //   width: "75%",
-    //   height: "536px"
-    // };
-
-    const mapDefaultCenter = [9.8826942, -85.5313173];
-    const markerPosition = [9.883997, -85.539393];
 
     return (
       <div
@@ -68,7 +62,7 @@ class Contact extends Component {
                         </div>
                       </div>
                       <div className="col-12 col-lg-6 px-0 order-2 order-lg-1">
-                        <div className="map-container border border-dark rounded pt-3 mx-auto">
+                        <div className="map-container border border-dark rounded mx-auto">
                           <MapContainer
                             // @ts-ignore
                             googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${MAPS_API_KEY}`}
