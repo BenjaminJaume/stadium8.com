@@ -34,12 +34,9 @@ class Home extends Component {
 
   extractPictureSrc(data) {
     const srcStart = data.indexOf('<img src="') + 10;
-    const srcEnd = data.indexOf('alt=""') - 6;
+    const srcEnd = data.indexOf('alt=""') - 2;
 
-    const srcSetStart = data.indexOf("srcset=") + 8;
-    const srcSetEnd = data.indexOf('" sizes=') - 5;
-
-    return [data.slice(srcStart, srcEnd), data.slice(srcSetStart, srcSetEnd)];
+    return data.slice(srcStart, srcEnd);
   }
 
   // notify = () =>
@@ -196,19 +193,11 @@ class Home extends Component {
                             <div className="col-12 col-lg-5 order-1 order-lg-0 align-self-center">
                               <div>
                                 <img
-                                  src={
-                                    this.extractPictureSrc(
-                                      post.content.rendered
-                                    )[0]
-                                  }
+                                  src={this.extractPictureSrc(
+                                    post.content.rendered
+                                  )}
                                   alt="Post"
                                   className="img-fluid h-100 w-100"
-                                  style={{}}
-                                  srcSet={
-                                    this.extractPictureSrc(
-                                      post.content.rendered
-                                    )[1]
-                                  }
                                   // sizes="(max-width: 300px) 100vw, 600px"
                                 />
                               </div>
