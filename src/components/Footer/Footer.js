@@ -30,7 +30,7 @@ const Footer = ({ phoneNumber, email, openingHours, lg }) => {
               </p>
               <p>
                 <a
-                  href="https://g.page/stadium8"
+                  href="https://urlgeni.us/google_places/stadium8"
                   className="link-brand"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -215,98 +215,6 @@ const Footer = ({ phoneNumber, email, openingHours, lg }) => {
                   </tr>
                 </tbody>
               </table>
-
-              {/* <p>
-                {`${t("footer.openingHours.monday")} `}
-                <TimeFormatting
-                  date={new Date(openingHours.weekDay.open)}
-                  lg={lg}
-                />
-                {` ${t("footer.openingHours.to")} `}
-                <TimeFormatting
-                  date={new Date(openingHours.weekDay.close)}
-                  lg={lg}
-                />
-
-                <br />
-
-                {`${t("footer.openingHours.tuesday")} `}
-                <TimeFormatting
-                  date={new Date(openingHours.weekDay.open)}
-                  lg={lg}
-                />
-                {` ${t("footer.openingHours.to")} `}
-                <TimeFormatting
-                  date={new Date(openingHours.weekDay.close)}
-                  lg={lg}
-                />
-
-                <br />
-
-                {`${t("footer.openingHours.wednesday")} `}
-
-                <TimeFormatting
-                  date={new Date(openingHours.weekDay.open)}
-                  lg={lg}
-                />
-                {` ${t("footer.openingHours.to")} `}
-                <TimeFormatting
-                  date={new Date(openingHours.weekDay.close)}
-                  lg={lg}
-                />
-
-                <br />
-
-                {`${t("footer.openingHours.thursday")} `}
-                <TimeFormatting
-                  date={new Date(openingHours.weekDay.open)}
-                  lg={lg}
-                />
-                {` ${t("footer.openingHours.to")} `}
-                <TimeFormatting
-                  date={new Date(openingHours.weekDay.close)}
-                  lg={lg}
-                />
-
-                <br />
-
-                {`${t("footer.openingHours.friday")} `}
-                <TimeFormatting
-                  date={new Date(openingHours.weekDay.open)}
-                  lg={lg}
-                />
-                {` ${t("footer.openingHours.to")} `}
-                <TimeFormatting
-                  date={new Date(openingHours.weekDay.close)}
-                  lg={lg}
-                />
-
-                <br />
-
-                {`${t("footer.openingHours.saturday")} `}
-                <TimeFormatting
-                  date={new Date(openingHours.weekEnd.open)}
-                  lg={lg}
-                />
-                {` ${t("footer.openingHours.to")} `}
-                <TimeFormatting
-                  date={new Date(openingHours.weekEnd.close)}
-                  lg={lg}
-                />
-
-                <br />
-
-                {`${t("footer.openingHours.sunday")} `}
-                <TimeFormatting
-                  date={new Date(openingHours.weekEnd.open)}
-                  lg={lg}
-                />
-                {` ${t("footer.openingHours.to")} `}
-                <TimeFormatting
-                  date={new Date(openingHours.weekEnd.close)}
-                  lg={lg}
-                />
-              </p> */}
             </div>
 
             <div className="col-12 col-lg-3">
@@ -373,55 +281,6 @@ const Footer = ({ phoneNumber, email, openingHours, lg }) => {
                   </IndexLinkContainer>
                 </dt>
               </dl>
-              {/* <p>
-                <IndexLinkContainer
-                  to="/"
-                  href="/"
-                  className="link-silver link-no-underline"
-                >
-                  <span>{t("footer.participate.workWithUs")}</span>
-                </IndexLinkContainer>
-              </p>
-
-              <p className="mb-0">
-                <IndexLinkContainer
-                  to="/"
-                  href="/"
-                  className="link-silver link-no-underline disabled"
-                >
-                  <span>{t("footer.participate.donate")}</span>
-                </IndexLinkContainer>
-              </p>
-
-              <p className="mb-0">
-                <IndexLinkContainer
-                  to="/"
-                  href="/"
-                  className="link-silver link-no-underline"
-                >
-                  <span>{t("footer.participate.sponsor")}</span>
-                </IndexLinkContainer>
-              </p>
-
-              <p>
-                <IndexLinkContainer
-                  to="/"
-                  href="/"
-                  className="link-silver link-no-underline"
-                >
-                  <span>{t("footer.participate.affiliate")}</span>
-                </IndexLinkContainer>
-              </p>
-
-              <p className="mb-0">
-                <IndexLinkContainer
-                  to="/"
-                  href="/"
-                  className="link-silver link-no-underline"
-                >
-                  <span>{t("footer.participate.suggestions")}</span>
-                </IndexLinkContainer>
-              </p> */}
             </div>
           </div>
           <div className="row">

@@ -27,7 +27,7 @@ class ContactItems extends Component {
     return (
       <>
         <a
-          href="https://urlgeni.us/instagram/uSRT"
+          href="https://urlgeni.us/instagram/stadium8"
           className="instagram-brand-icon px-1"
           target="_blank"
           rel="noopener noreferrer"
@@ -42,7 +42,7 @@ class ContactItems extends Component {
         </a>
 
         <a
-          href="https://urlgeni.us/facebook/YLfC"
+          href="https://urlgeni.us/facebook/stadium8"
           className="facebook-brand-icon px-1"
           target="_blank"
           rel="noopener noreferrer"
@@ -57,7 +57,7 @@ class ContactItems extends Component {
         </a>
 
         <a
-          href="https://urlgeni.us/fb_messenger/tN2D"
+          href="https://urlgeni.us/fb_messenger/stadium8"
           className="messenger-brand-icon px-1"
           target="_blank"
           rel="noopener noreferrer"
@@ -156,7 +156,7 @@ class ContactItems extends Component {
         </a>
 
         <a
-          href="https://urlgeni.us/youtube/channel/N3NZ"
+          href="https://urlgeni.us/youtube/channel/stadium8"
           className="youtube-brand-icon px-1"
           target="_blank"
           rel="noopener noreferrer"
