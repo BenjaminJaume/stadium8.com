@@ -21,6 +21,7 @@ const GoogleCalendar = props => {
 
   const startDay = new Date(footballDetails.morning.from);
   const endDay = new Date(footballDetails.night.to);
+  endDay.setHours(endDay.getHours() - 1);
 
   const formats = {
     dayFormat: function(date, culture, localizer) {
@@ -50,7 +51,7 @@ const GoogleCalendar = props => {
       endAccessor="end"
       defaultView={windowSize.width >= 576 ? "week" : "day"}
       min={startDay}
-      max={endDay}
+      // max={endDay}
       views={["week", "day", "agenda"]}
       formats={formats}
     />

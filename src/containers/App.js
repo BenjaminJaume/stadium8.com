@@ -55,7 +55,7 @@ const footballDetails = {
       dollars: "40"
     },
     from: new Date().setHours(17, 0),
-    to: new Date().setHours(22, 0)
+    to: new Date().setHours(22, 30)
   }
 };
 
