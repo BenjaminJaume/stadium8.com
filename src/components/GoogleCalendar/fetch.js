@@ -8,11 +8,13 @@ export function getEvents(callback) {
     if (!err) {
       const events = [];
       JSON.parse(resp.text).items.map(event => {
-        return events.push({
-          start: new Date(event.start.dateTime.toString()),
-          end: new Date(event.end.dateTime.toString()),
-          title: event.summary
-        });
+        if (event.status === "confirmed") {
+          return events.push({
+            start: new Date(event.start.dateTime.toString()),
+            end: new Date(event.end.dateTime.toString()),
+            title: event.summary
+          });
+        }
       });
       callback(events);
     }
