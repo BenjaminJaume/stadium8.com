@@ -22,8 +22,34 @@ export function getEvents(callback) {
   request.get(GOOGLE_CALENDAR_URL).end((err, resp) => {
     if (!err) {
       let events = [];
+      let cancelledEvents = [];
+      let replacedEvents = [];
+
+      // Catch cancelled and replaced events in recurring events
+      JSON.parse(resp.text).items.map(event => {
+        if (event.recurringEventId && event.status === "cancelled") {
+          cancelledEvents.push({
+            id: event.recurringEventId,
+            time: new Date(event.originalStartTime.dateTime)
+          });
+        } else if (event.recurringEventId && event.status === "confirmed") {
+          replacedEvents.push({
+            id: event.recurringEventId,
+            time: new Date(event.originalStartTime.dateTime),
+            summary: event.summary
+          });
+        }
+        return "";
+      });
+
+      console.log(replacedEvents);
 
       JSON.parse(resp.text).items.map(event => {
+        // If the event is not cancelled
+        if (event.status !== "confirmed") {
+          return "";
+        }
+
         // If the event is recurrent
         if (event.recurrence) {
           var tempArray = [];
@@ -56,6 +82,18 @@ export function getEvents(callback) {
 
           rule.all();
 
+          // Remove cancelled events from the array
+          rule._cache.all.forEach(item => {
+            cancelledEvents.forEach(e => {
+              if (e.time.getTime() === item.getTime() && e.id === event.id) {
+                const index = rule._cache.all.findIndex(function(x) {
+                  return x.valueOf() === e.time.valueOf();
+                });
+                rule._cache.all.splice(index, 1);
+              }
+            });
+          });
+
           // Calculate duration (in hours)
           var duration =
             (new Date(event.end.dateTime) - new Date(event.start.dateTime)) /
@@ -65,16 +103,30 @@ export function getEvents(callback) {
             const endTime = new Date(item);
             endTime.setHours(item.getHours() + duration);
 
-            tempArray.push({
-              start: item,
-              end: endTime,
-              title: event.summary
+            rule._cache.all.forEach(item => {
+              replacedEvents.forEach(e => {
+                // Replaced single events from recurrence list from the array
+                if (e.time.getTime() === item.getTime() && e.id === event.id) {
+                  console.log(e.summary);
+                  tempArray.push({
+                    start: item,
+                    end: endTime,
+                    title: e.summary
+                  });
+                  // If this is a normal recurrent event
+                } else {
+                  tempArray.push({
+                    start: item,
+                    end: endTime,
+                    title: event.summary
+                  });
+                }
+              });
             });
           });
 
           events = events.concat(tempArray);
         } else {
-          console.log(!event.recurringEventId);
           if (event.status === "confirmed" && !event.recurringEventId) {
             events.push({
               start: new Date(event.start.dateTime),
@@ -84,6 +136,7 @@ export function getEvents(callback) {
           }
           return events;
         }
+        return "";
       });
       callback(events);
     }
