@@ -16,7 +16,8 @@ const Footer = ({ phoneNumber, email, openingHours, lg }) => {
 
   return (
     <>
-      <footer id="footer" className="py-5">
+      <footer id="footer">
+        <div className="footer-top"><br /></div>
         <div className="container-fluid">
           <div className="row">
             <div className="col-lg-3">
@@ -283,7 +284,7 @@ const Footer = ({ phoneNumber, email, openingHours, lg }) => {
               </dl>
             </div>
           </div>
-          <div className="row">
+          <div className="row pt-5">
             <div className="col-12">
               <div className="d-inline mx-auto">
                 <p className="text-silver mb-0">

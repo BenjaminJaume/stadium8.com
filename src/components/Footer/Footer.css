@@ -1,11 +1,22 @@
+.row.h-100 {
+  padding-bottom: 200px;
+}
+
 footer {
   background-color: var(--black);
   color: var(--silver);
   text-align: center;
+
+  bottom: 100px;
 }
 
 footer a:hover {
   text-decoration: none;
+}
+
+footer .container-fluid {
+  position: relative;
+  bottom: 100px;
 }
 
 .popover-footer {
@@ -21,6 +32,18 @@ footer a:hover {
 
 .popover-footer:focus {
   outline: 0;
+}
+
+.footer-top {
+  content: "";
+  position: relative;
+  bottom: 100px;
+  left: 0;
+  right: 0;
+  height: 100px;
+  width: 100%;
+  background-image: url("/images/wave.png");
+  background-size: cover;
 }
 
 /* Extra small devices (portrait phones, less than 576px) */
