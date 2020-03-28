@@ -42,7 +42,7 @@ footer .container-fluid {
   right: 0;
   height: 100px;
   width: 100%;
-  background-image: url("/images/wave.png");
+  background-image: url("./wave.png");
   background-size: cover;
 }
 
