@@ -42,8 +42,6 @@ export function getEvents(callback) {
         return "";
       });
 
-      console.log(replacedEvents);
-
       JSON.parse(resp.text).items.map(event => {
         // If the event is not cancelled
         if (event.status !== "confirmed") {
@@ -86,7 +84,7 @@ export function getEvents(callback) {
           rule._cache.all.forEach(item => {
             cancelledEvents.forEach(e => {
               if (e.time.getTime() === item.getTime() && e.id === event.id) {
-                const index = rule._cache.all.findIndex(function(x) {
+                const index = rule._cache.all.findIndex(function (x) {
                   return x.valueOf() === e.time.valueOf();
                 });
                 rule._cache.all.splice(index, 1);
@@ -107,7 +105,6 @@ export function getEvents(callback) {
               replacedEvents.forEach(e => {
                 // Replaced single events from recurrence list from the array
                 if (e.time.getTime() === item.getTime() && e.id === event.id) {
-                  console.log(e.summary);
                   tempArray.push({
                     start: item,
                     end: endTime,

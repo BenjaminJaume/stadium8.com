@@ -201,7 +201,8 @@ const DropdownLanguage = ({ onClick, lg }) => {
         </li>
       );
     default:
-      console.log("no lang");
+    // No language selected
+    // console.log("no lang");
   }
 };
 
