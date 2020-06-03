@@ -245,6 +245,10 @@ body {
   animation-delay: 0.5s;
 }
 
+[class*="wp-image-"] {
+  display: none;
+}
+
 /* Extra small devices (portrait phones, less than 576px) */
 /* @media (max-width: 575px) {
 } */

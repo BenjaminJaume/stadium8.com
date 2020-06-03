@@ -5,6 +5,7 @@ import Quotes from "../../components/Quotes/Quotes";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClock } from "@fortawesome/free-regular-svg-icons";
 import { Config } from "../../components/Config/Config";
+import { FacebookProvider, EmbeddedPost } from 'react-facebook';
 // import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -33,7 +34,7 @@ class Home extends Component {
   }
 
   extractPictureSrc(data) {
-    const srcStart = data.indexOf('<img src="') + 10;
+    const srcStart = data.indexOf('src="') + 10;
     const srcEnd = data.indexOf('alt=""') - 2;
 
     return data.slice(srcStart, srcEnd);
@@ -99,8 +100,11 @@ class Home extends Component {
       >
         <div
           className="color-brand-filter"
-          // onLoad={this.notify}
+        // onLoad={this.notify}
         >
+          {/* <FacebookProvider appId="123456789">
+            <EmbeddedPost href="https://www.facebook.com/stadium8samara/posts/166907711524035" width="500" />
+          </FacebookProvider> */}
           {/* <ToastContainer
             position="bottom-center"
             autoClose={false}
@@ -126,9 +130,9 @@ class Home extends Component {
                     />
                   </div>
                 ) : (
-                  // Error loading Quotes
-                  ""
-                )}
+                      // Error loading Quotes
+                      ""
+                    )}
 
                 <hr className="divider w-75 mx-auto" />
 
@@ -162,8 +166,8 @@ class Home extends Component {
                               post.content.rendered.indexOf('<img src="') !== -1
                                 ? "col-lg-7"
                                 : "text-center"
-                            }`}
-                            align="left"
+                              }`}
+                          // align="left"
                           >
                             <p className="text-brand font-weight-bold h3">
                               {post.title.rendered}
@@ -183,28 +187,26 @@ class Home extends Component {
                               className="post-content font-brand-2 text-white mb-3 mb-lg-0"
                               align="left"
                               dangerouslySetInnerHTML={this.createMarkupPost(
-                                post.excerpt.rendered
+                                post.content.rendered
                               )}
                             />
                           </div>
 
-                          {post.content.rendered.indexOf('<img src="') !==
-                          -1 ? (
-                            <div className="col-12 col-lg-5 order-1 order-lg-0 align-self-center">
-                              <div>
+                          {post.content.rendered.indexOf('src="') !==
+                            -1 ? (
+                              <div className="col-12 col-lg-5 order-1 order-lg-0 align-self-center mx-auto">
                                 <img
                                   src={this.extractPictureSrc(
                                     post.content.rendered
                                   )}
                                   alt="Post"
                                   className="img-fluid h-100 w-100"
-                                  // sizes="(max-width: 300px) 100vw, 600px"
+                                // sizes="(max-width: 300px) 100vw, 600px"
                                 />
                               </div>
-                            </div>
-                          ) : (
-                            ""
-                          )}
+                            ) : (
+                              ""
+                            )}
 
                           {/* <div className="mb-2">
                         <span className="text-white font-weight-bold align-text-bottom mb-0 mx-3">
@@ -252,9 +254,9 @@ class Home extends Component {
                     </div>
                   ))
                 ) : (
-                  // Error loading posts
-                  ""
-                )}
+                      // Error loading posts
+                      ""
+                    )}
               </div>
             </div>
           </div>
